@@ -5,10 +5,8 @@ import fr.inria.aoste.timesquare.ecl.EclQVToHelper;
 modeltype Ecore uses 'http://www.eclipse.org/emf/2002/Ecore';
 //modeltype pivot uses 'http://www.eclipse.org/ocl/3.1.0/Pivot';
 
-	modeltype inMM1 uses 'http://www.gemoc.org/sample/tfsm'
-import 'platform:/plugin/org.gemoc.sample.tfsm.model/model/tfsm.ecore';
-	modeltype inMM2 uses 'http://www.gemoc.org/sample/tfsm'
-import 'platform:/plugin/org.gemoc.sample.tfsm.model/model/tfsm.ecore';
+	modeltype inMM1 uses 'http://www.gemoc.org/sample/tfsm';
+	modeltype inMM2 uses 'http://www.gemoc.org/sample/tfsm';
 modeltype ocl uses 'http://www.eclipse.org/ocl/3.1.0/CompleteOCLCST';
 
 modeltype QVT uses 'http://www.eclipse.org/QVT/1.0.0/Operational';//http://www.eclipse.org/m2m/qvt/oml/1.0.0/Stdlib';//http://www.eclipse.org/qvt/1.0/ImperativeOCL'; 
@@ -323,10 +321,10 @@ query identifyUserRelations() {
 	seqOfAbstractEntity				+= getLibObjects("platform:/plugin/fr.inria.aoste.timesquare.ccslkernel.model/ccsllibrary/CCSL.ccslLib")[TimeModel::CCSLModel::ClockExpressionAndRelation::AbstractEntity];
 	seqOfExpressionDeclaration		+= getLibObjects("platform:/plugin/fr.inria.aoste.timesquare.ccslkernel.model/ccsllibrary/CCSL.ccslLib")[TimeModel::CCSLModel::ClockExpressionAndRelation::ExpressionDeclaration];
 	kernelTypes 					+= getLibObjects("platform:/plugin/fr.inria.aoste.timesquare.ccslkernel.model/ccsllibrary/CCSL.ccslLib")[TimeModel::BasicType::Type];
-	seqOfRelationDeclaration		+= getLibObjects("./TFSMMoC.ccslLib")[TimeModel::CCSLModel::ClockExpressionAndRelation::RelationDeclaration];
-	seqOfAbstractEntity				+= getLibObjects("./TFSMMoC.ccslLib")[TimeModel::CCSLModel::ClockExpressionAndRelation::AbstractEntity];
-	seqOfExpressionDeclaration		+= getLibObjects("./TFSMMoC.ccslLib")[TimeModel::CCSLModel::ClockExpressionAndRelation::ExpressionDeclaration];
-	kernelTypes 					+= getLibObjects("./TFSMMoC.ccslLib")[TimeModel::BasicType::Type];
+	seqOfRelationDeclaration		+= getLibObjects("platform:/resource/org.gemoc.bcool.example.producttfsmandtfsm/interfaces/TFSMMoC.ccslLib")[TimeModel::CCSLModel::ClockExpressionAndRelation::RelationDeclaration];
+	seqOfAbstractEntity				+= getLibObjects("platform:/resource/org.gemoc.bcool.example.producttfsmandtfsm/interfaces/TFSMMoC.ccslLib")[TimeModel::CCSLModel::ClockExpressionAndRelation::AbstractEntity];
+	seqOfExpressionDeclaration		+= getLibObjects("platform:/resource/org.gemoc.bcool.example.producttfsmandtfsm/interfaces/TFSMMoC.ccslLib")[TimeModel::CCSLModel::ClockExpressionAndRelation::ExpressionDeclaration];
+	kernelTypes 					+= getLibObjects("platform:/resource/org.gemoc.bcool.example.producttfsmandtfsm/interfaces/TFSMMoC.ccslLib")[TimeModel::BasicType::Type];
 	seqOfRelationDeclaration		+= getLibObjects("platform:/plugin/fr.inria.aoste.timesquare.ccslkernel.model/ccsllibrary/kernel.ccslLib")[TimeModel::CCSLModel::ClockExpressionAndRelation::RelationDeclaration];
 	seqOfAbstractEntity				+= getLibObjects("platform:/plugin/fr.inria.aoste.timesquare.ccslkernel.model/ccsllibrary/kernel.ccslLib")[TimeModel::CCSLModel::ClockExpressionAndRelation::AbstractEntity];
 	seqOfExpressionDeclaration		+= getLibObjects("platform:/plugin/fr.inria.aoste.timesquare.ccslkernel.model/ccsllibrary/kernel.ccslLib")[TimeModel::CCSLModel::ClockExpressionAndRelation::ExpressionDeclaration];
@@ -335,10 +333,10 @@ query identifyUserRelations() {
 	seqOfAbstractEntity				+= getLibObjects("platform:/plugin/fr.inria.aoste.timesquare.ccslkernel.model/ccsllibrary/CCSL.ccslLib")[TimeModel::CCSLModel::ClockExpressionAndRelation::AbstractEntity];
 	seqOfExpressionDeclaration		+= getLibObjects("platform:/plugin/fr.inria.aoste.timesquare.ccslkernel.model/ccsllibrary/CCSL.ccslLib")[TimeModel::CCSLModel::ClockExpressionAndRelation::ExpressionDeclaration];
 	kernelTypes 					+= getLibObjects("platform:/plugin/fr.inria.aoste.timesquare.ccslkernel.model/ccsllibrary/CCSL.ccslLib")[TimeModel::BasicType::Type];
-	seqOfRelationDeclaration		+= getLibObjects("./TFSMMoC.ccslLib")[TimeModel::CCSLModel::ClockExpressionAndRelation::RelationDeclaration];
-	seqOfAbstractEntity				+= getLibObjects("./TFSMMoC.ccslLib")[TimeModel::CCSLModel::ClockExpressionAndRelation::AbstractEntity];
-	seqOfExpressionDeclaration		+= getLibObjects("./TFSMMoC.ccslLib")[TimeModel::CCSLModel::ClockExpressionAndRelation::ExpressionDeclaration];
-	kernelTypes 					+= getLibObjects("./TFSMMoC.ccslLib")[TimeModel::BasicType::Type];
+	seqOfRelationDeclaration		+= getLibObjects("platform:/resource/org.gemoc.bcool.example.producttfsmandtfsm/interfaces/TFSMMoC.ccslLib")[TimeModel::CCSLModel::ClockExpressionAndRelation::RelationDeclaration];
+	seqOfAbstractEntity				+= getLibObjects("platform:/resource/org.gemoc.bcool.example.producttfsmandtfsm/interfaces/TFSMMoC.ccslLib")[TimeModel::CCSLModel::ClockExpressionAndRelation::AbstractEntity];
+	seqOfExpressionDeclaration		+= getLibObjects("platform:/resource/org.gemoc.bcool.example.producttfsmandtfsm/interfaces/TFSMMoC.ccslLib")[TimeModel::CCSLModel::ClockExpressionAndRelation::ExpressionDeclaration];
+	kernelTypes 					+= getLibObjects("platform:/resource/org.gemoc.bcool.example.producttfsmandtfsm/interfaces/TFSMMoC.ccslLib")[TimeModel::BasicType::Type];
 
 
 	seqOfRelationDeclaration		+= getLibObjects("platform:/resource/org.gemoc.bcool.example.producttfsmandtfsm/library/bcoollib.ccslLib")[TimeModel::CCSLModel::ClockExpressionAndRelation::RelationDeclaration];
@@ -417,7 +415,7 @@ main() {
 
 			
 
-		if () then {
+		if (dse1.name=dse2.name) then {
 		
 			
 			map MatchingandCoordinationSharedEvents (
@@ -454,15 +452,15 @@ mapping MatchingandCoordinationSharedEvents (
 					name := name + dse1.name;
 					name := name + dse2.name;
 	
-			type := seqOfRelationDeclaration->select(rd | rd.name = "")->first();
+			type := seqOfRelationDeclaration->select(rd | rd.name = "RendezVous")->first();
 			
 					bindings += object TimeModel::CCSLModel::ClockExpressionAndRelation::Binding{
 						bindable := dse1;
-						_abstract := seqOfRelationDeclaration->select(rd | rd.name = "")->first().oclAsType(TimeModel::CCSLModel::ClockExpressionAndRelation::RelationDeclaration).allSubobjectsOfKind(TimeModel::CCSLModel::ClockExpressionAndRelation::AbstractEntity)->asSequence()->at(1).oclAsType(TimeModel::CCSLModel::ClockExpressionAndRelation::AbstractEntity);
+						_abstract := seqOfRelationDeclaration->select(rd | rd.name = "RendezVous")->first().oclAsType(TimeModel::CCSLModel::ClockExpressionAndRelation::RelationDeclaration).allSubobjectsOfKind(TimeModel::CCSLModel::ClockExpressionAndRelation::AbstractEntity)->asSequence()->at(1).oclAsType(TimeModel::CCSLModel::ClockExpressionAndRelation::AbstractEntity);
 					};
 					bindings += object TimeModel::CCSLModel::ClockExpressionAndRelation::Binding{
 						bindable := dse2;
-						_abstract := seqOfRelationDeclaration->select(rd | rd.name = "")->first().oclAsType(TimeModel::CCSLModel::ClockExpressionAndRelation::RelationDeclaration).allSubobjectsOfKind(TimeModel::CCSLModel::ClockExpressionAndRelation::AbstractEntity)->asSequence()->at(2).oclAsType(TimeModel::CCSLModel::ClockExpressionAndRelation::AbstractEntity);
+						_abstract := seqOfRelationDeclaration->select(rd | rd.name = "RendezVous")->first().oclAsType(TimeModel::CCSLModel::ClockExpressionAndRelation::RelationDeclaration).allSubobjectsOfKind(TimeModel::CCSLModel::ClockExpressionAndRelation::AbstractEntity)->asSequence()->at(2).oclAsType(TimeModel::CCSLModel::ClockExpressionAndRelation::AbstractEntity);
 					};
 
 end{
@@ -507,7 +505,7 @@ mapping DSEtoClock (iname: String) : TimeModel::CCSLModel::ClockExpressionAndRel
 
 		imports+= object TimeModel::ImportStatement{
 				importURI := 'platform:/resource/org.gemoc.bcool.example.producttfsmandtfsm/library/bcoollib.ccslLib';
-				alias := 'lib_2';	
+				alias := 'lib_1';	
 				}; 
 
 	imports+= object TimeModel::ImportStatement{
@@ -519,7 +517,7 @@ mapping DSEtoClock (iname: String) : TimeModel::CCSLModel::ClockExpressionAndRel
 			alias := 'model_1_2';	
 		}; 
 	imports+= object TimeModel::ImportStatement{
-			importURI := './TFSMMoC.ccslLib';
+			importURI := 'platform:/resource/org.gemoc.bcool.example.producttfsmandtfsm/interfaces/TFSMMoC.ccslLib';
 			alias := 'model_1_3';	
 		}; 
 	imports+= object TimeModel::ImportStatement{
@@ -531,7 +529,7 @@ mapping DSEtoClock (iname: String) : TimeModel::CCSLModel::ClockExpressionAndRel
 			alias := 'model_2_2';	
 		}; 
 	imports+= object TimeModel::ImportStatement{
-			importURI := './TFSMMoC.ccslLib';
+			importURI := 'platform:/resource/org.gemoc.bcool.example.producttfsmandtfsm/interfaces/TFSMMoC.ccslLib';
 			alias := 'model_2_3';	
 		}; 
 

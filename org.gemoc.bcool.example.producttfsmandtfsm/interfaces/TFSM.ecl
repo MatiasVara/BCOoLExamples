@@ -4,7 +4,7 @@ import 'platform:/plugin/org.gemoc.sample.tfsm.model/model/tfsm.ecore'
 ECLimport "platform:/plugin/fr.inria.aoste.timesquare.ccslkernel.model/ccsllibrary/kernel.ccslLib"
 ECLimport "platform:/plugin/fr.inria.aoste.timesquare.ccslkernel.model/ccsllibrary/CCSL.ccslLib"
 --ECLimport "platform:/plugin/org.gemoc.sample.tfsm.moc.lib/ccsl/TFSMMoC.ccslLib"
-ECLimport "./TFSMMoC.ccslLib"
+ECLimport "platform:/resource/org.gemoc.bcool.example.producttfsmandtfsm/interfaces/TFSMMoC.ccslLib"
 
 package tfsm
 /**
@@ -14,12 +14,12 @@ package tfsm
 	 * DSE linked to specific DSA
 	 */ 
   	context FSMClock
-     def: ticks : Event = self.ticks()
+     def: ticks : Event = self
   	context Transition
-     def: fire : Event = self.fire()
+     def: fire : Event = self
   	-- Mapped to the evaluation of the guard
   	context EvaluateGuard
-     def : evaluate : Event = self.evaluate()
+     def : evaluate : Event = self
     
 	/**
 	 * DSE with no associated DSA
