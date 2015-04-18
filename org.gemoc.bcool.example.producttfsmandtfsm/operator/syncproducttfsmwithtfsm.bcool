@@ -4,8 +4,8 @@ ImportLib "platform:/resource/org.gemoc.bcool.example.producttfsmandtfsm/library
 ImportLib "platform:/resource/org.gemoc.bcool.example.producttfsmandtfsm/library/facilities.bcoollib"
 
 
-ImportInterface "platform:/resource/org.gemoc.bcool.example.producttfsmandtfsm/interfaces/TFSM.ecl" as i_tfsm1// left
-ImportInterface "platform:/resource/org.gemoc.bcool.example.producttfsmandtfsm/interfaces/TFSM.ecl" as i_tfsm2 // left
+ImportInterface "platform:/plugin/org.gemoc.sample.tfsm.eclmoc2as/ecl/TFSM.ecl" as i_tfsm1// left
+ImportInterface "platform:/plugin/org.gemoc.sample.tfsm.eclmoc2as/ecl/TFSM.ecl" as i_tfsm2 // left
 
 Spec test 
 

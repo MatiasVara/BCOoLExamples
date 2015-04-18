@@ -1,2 +1,57 @@
 <?xml version="1.0" encoding="ASCII"?>
-<xmi:XMI xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI"/>
+<feedback:ActionModel xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:feedback="http://timesquare.inria.fr/feedback">
+  <events name="MSE_sec_ticks">
+    <caller href="jobA.tfsm#//@tfsms.0/@localClock"/>
+    <action href="http://tfsmextended#//FSMClock/ticks"/>
+    <solverEvent href="jobA_MoCC.extendedCCSL#//@subBlock.0/@elements.0"/>
+  </events>
+  <events name="MSE_t1_2_fire">
+    <caller href="jobA.tfsm#//@tfsms.0/@ownedTransitions.0"/>
+    <action href="http://tfsmextended#//Transition/fire"/>
+    <solverEvent href="jobA_MoCC.extendedCCSL#//@subBlock.0/@elements.1"/>
+  </events>
+  <events name="MSE_t2_1_fire">
+    <caller href="jobA.tfsm#//@tfsms.0/@ownedTransitions.1"/>
+    <action href="http://tfsmextended#//Transition/fire"/>
+    <solverEvent href="jobA_MoCC.extendedCCSL#//@subBlock.0/@elements.2"/>
+  </events>
+  <events name="MSE_tinit_fire">
+    <caller href="jobA.tfsm#//@tfsms.0/@ownedTransitions.2"/>
+    <action href="http://tfsmextended#//Transition/fire"/>
+    <solverEvent href="jobA_MoCC.extendedCCSL#//@subBlock.0/@elements.3"/>
+  </events>
+  <events name="MSE_pong_occurs">
+    <solverEvent href="jobA_MoCC.extendedCCSL#//@subBlock.0/@elements.4"/>
+  </events>
+  <events name="MSE_ping_occurs">
+    <solverEvent href="jobA_MoCC.extendedCCSL#//@subBlock.0/@elements.5"/>
+  </events>
+  <events name="MSE_init_occurs">
+    <solverEvent href="jobA_MoCC.extendedCCSL#//@subBlock.0/@elements.6"/>
+  </events>
+  <events name="MSE_S2_entering">
+    <solverEvent href="jobA_MoCC.extendedCCSL#//@subBlock.0/@elements.7"/>
+  </events>
+  <events name="MSE_S1_entering">
+    <solverEvent href="jobA_MoCC.extendedCCSL#//@subBlock.0/@elements.8"/>
+  </events>
+  <events name="MSE_init_entering">
+    <solverEvent href="jobA_MoCC.extendedCCSL#//@subBlock.0/@elements.9"/>
+  </events>
+  <events name="MSE_S2_leaving">
+    <solverEvent href="jobA_MoCC.extendedCCSL#//@subBlock.0/@elements.10"/>
+  </events>
+  <events name="MSE_S1_leaving">
+    <solverEvent href="jobA_MoCC.extendedCCSL#//@subBlock.0/@elements.11"/>
+  </events>
+  <events name="MSE_init_leaving">
+    <solverEvent href="jobA_MoCC.extendedCCSL#//@subBlock.0/@elements.12"/>
+  </events>
+  <events name="MSE_A_start">
+    <solverEvent href="jobA_MoCC.extendedCCSL#//@subBlock.0/@elements.13"/>
+  </events>
+  <events name="MSE_A_stall">
+    <solverEvent href="jobA_MoCC.extendedCCSL#//@subBlock.0/@elements.14"/>
+  </events>
+  <importStatements importURI="platform:/5"/>
+</feedback:ActionModel>

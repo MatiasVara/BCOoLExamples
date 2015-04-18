@@ -2,13 +2,13 @@ BCoolLibrary facilities{
 
 
 relationDeclarations { 
-	RelationDeclaration RendezVous {formalParameters{occurs, occurs}  }
+	RelationDeclaration RendezVous { }
 
 }
 
 
 expressionDeclarations {
-	ExpressionDeclaration AfterN { formalParameters { A_entering , A_leaving }}
+	ExpressionDeclaration AfterN { }
 }
 
 }
