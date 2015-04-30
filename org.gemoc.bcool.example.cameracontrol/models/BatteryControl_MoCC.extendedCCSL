@@ -1,0 +1,106 @@
+ClockConstraintSystem BatteryControl {
+	imports {
+		import "platform:/plugin/fr.inria.aoste.timesquare.ccslkernel.model/ccsllibrary/kernel.ccslLib" as kernel ;
+		import "platform:/plugin/fr.inria.aoste.timesquare.ccslkernel.model/ccsllibrary/CCSL.ccslLib" as CCSL ;
+		import "platform:/resource/org.gemoc.bcool.example.cameracontrol/models/lib4RT.ccslLib" as lib4RT ;
+		import "platform:/resource/org.gemoc.bcool.example.cameracontrol/models/BatteryControl.uml" as Model ;
+	}
+	entryBlock mainBlock
+	Block mainBlock {
+		Expression DecisionNode1intermediate_allStartChoices1 = Union
+		( Clock1 -> BatteryisHigh_startAction,
+		Clock2 -> BatteryisLow_startAction )
+		Expression Merge1intermediate_unionOfIncomesB1 = Union
+		( Clock1 -> BatteryisLow_finishAction,
+		Clock2 -> BatteryisHigh_finishAction )
+		Expression Merge1intermediate_unionOfIncomesB3 = Union
+		( Clock1 -> Merge1intermediate_unionOfIncomesB1,
+		Clock2 -> InitSystem_finishAction )
+		Relation BatteryisLowCauses_waitControlToExecutenotComingfrom [ Causes ]
+		( LeftClock -> DecisionNode1_finishIt,
+		RightClock -> BatteryisLow_startAction )
+		Relation BatteryisHighCauses_waitControlToExecutenotComingfrom [ Causes ]
+		( LeftClock -> DecisionNode1_finishIt,
+		RightClock -> BatteryisHigh_startAction )
+		Relation InitSystemCauses_waitControlToExecutenotComingfrom [ Causes ]
+		( LeftClock -> InitialNode1_finishIt,
+		RightClock -> InitSystem_startAction )
+		Relation ReadBatteryStatusCauses_waitControlToExecutenotComingfrom [ Causes ]
+		( LeftClock -> Merge1_finishIt,
+		RightClock -> ReadBatteryStatus_startAction )
+		Relation BatteryisLowAlternates_StartAlternatesWithFinish [ Alternates ]
+		( AlternatesLeftClock -> BatteryisLow_startAction,
+		AlternatesRightClock -> BatteryisLow_finishAction )
+		Relation BatteryisHighAlternates_StartAlternatesWithFinish [ Alternates ]
+		( AlternatesLeftClock -> BatteryisHigh_startAction,
+		AlternatesRightClock -> BatteryisHigh_finishAction )
+		Relation InitSystemAlternates_StartAlternatesWithFinish [ Alternates ]
+		( AlternatesLeftClock -> InitSystem_startAction,
+		AlternatesRightClock -> InitSystem_finishAction )
+		Relation ReadBatteryStatusAlternates_StartAlternatesWithFinish [ Alternates ]
+		( AlternatesLeftClock -> ReadBatteryStatus_startAction,
+		AlternatesRightClock -> ReadBatteryStatus_finishAction )
+		Relation BatteryControlCauses_startCausesInit [ Causes ]
+		( LeftClock -> BatteryControl_startActivity,
+		RightClock -> InitialNode1_startIt )
+		Relation DecisionNode1Exclusion_DecisionCausalitiesOutgoingActions [ Exclusion ]
+		( Clock2 -> BatteryisHigh_startAction,
+		Clock1 -> BatteryisLow_startAction )
+		Relation DecisionNode1Alternates_DecisionCausalitiesOutgoingActionsAlternates [ Alternates ]
+		( AlternatesLeftClock -> DecisionNode1_startIt,
+		AlternatesRightClock -> DecisionNode1intermediate_allStartChoices1 )
+		Relation Merge1Precedes_MergeCausalitiesforThreeActions [ Precedes ]
+		( LeftClock -> Merge1intermediate_unionOfIncomesB3,
+		RightClock -> Merge1_startIt )
+		Relation DecisionNode1Coincides_instantaneousExecution [ Coincides ]
+		( Clock2 -> DecisionNode1_startIt,
+		Clock1 -> DecisionNode1_finishIt )
+		Relation Merge1Coincides_instantaneousExecution [ Coincides ]
+		( Clock2 -> Merge1_startIt,
+		Clock1 -> Merge1_finishIt )
+		Relation InitialNode1Coincides_instantaneousExecution [ Coincides ]
+		( Clock2 -> InitialNode1_startIt,
+		Clock1 -> InitialNode1_finishIt )
+		Relation DecisionNode1Causes_waitInputToControlFromAction [ Causes ]
+		( LeftClock -> ReadBatteryStatus_finishAction,
+		RightClock -> DecisionNode1_startIt )
+		Clock DecisionNode1_startIt : clock -> evt_DecisionNode1_startIt
+		( "DecisionNode1" )
+		Clock Merge1_startIt : clock -> evt_Merge1_startIt
+		( "Merge1" )
+		Clock InitialNode1_startIt : clock -> evt_InitialNode1_startIt
+		( "InitialNode1" )
+		Clock DecisionNode1_finishIt : clock -> evt_DecisionNode1_finishIt
+		( "DecisionNode1" )
+		Clock Merge1_finishIt : clock -> evt_Merge1_finishIt
+		( "Merge1" )
+		Clock InitialNode1_finishIt : clock -> evt_InitialNode1_finishIt
+		( "InitialNode1" )
+		Clock DecisionNode1_temporalEvent : clock -> evt_DecisionNode1_temporalEvent
+		( "DecisionNode1" )
+		Clock Merge1_temporalEvent : clock -> evt_Merge1_temporalEvent
+		( "Merge1" )
+		Clock InitialNode1_temporalEvent : clock -> evt_InitialNode1_temporalEvent
+		( "InitialNode1" )
+		Clock BatteryControl_startActivity : clock -> evt_BatteryControl_startActivity
+		( "BatteryControl::BatteryControl" )
+		Clock BatteryControl_finishActivity : clock -> evt_BatteryControl_finishActivity
+		( "BatteryControl::BatteryControl" )
+		Clock BatteryisLow_startAction : clock -> evt_BatteryisLow_startAction
+		( "BatteryisLow" )
+		Clock BatteryisHigh_startAction : clock -> evt_BatteryisHigh_startAction
+		( "BatteryisHigh" )
+		Clock InitSystem_startAction : clock -> evt_InitSystem_startAction
+		( "InitSystem" )
+		Clock ReadBatteryStatus_startAction : clock -> evt_ReadBatteryStatus_startAction
+		( "ReadBatteryStatus" )
+		Clock BatteryisLow_finishAction : clock -> evt_BatteryisLow_finishAction
+		( "BatteryisLow" )
+		Clock BatteryisHigh_finishAction : clock -> evt_BatteryisHigh_finishAction
+		( "BatteryisHigh" )
+		Clock InitSystem_finishAction : clock -> evt_InitSystem_finishAction
+		( "InitSystem" )
+		Clock ReadBatteryStatus_finishAction : clock -> evt_ReadBatteryStatus_finishAction
+		( "ReadBatteryStatus" )
+	}
+}

@@ -1,0 +1,450 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<viewpoint:DAnalysis xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:description="http://www.eclipse.org/sirius/description/1.1.0" xmlns:description_1="http://www.eclipse.org/sirius/diagram/description/1.1.0" xmlns:diagram="http://www.eclipse.org/sirius/diagram/1.1.0" xmlns:notation="http://www.eclipse.org/gmf/runtime/1.0.2/notation" xmlns:style="http://www.eclipse.org/sirius/diagram/description/style/1.1.0" xmlns:uml="http://www.eclipse.org/uml2/5.0.0/UML" xmlns:viewpoint="http://www.eclipse.org/sirius/1.1.0" xsi:schemaLocation="http://www.eclipse.org/sirius/description/1.1.0 http://www.eclipse.org/sirius/1.1.0#//description http://www.eclipse.org/sirius/diagram/description/1.1.0 http://www.eclipse.org/sirius/diagram/1.1.0#//description http://www.eclipse.org/sirius/diagram/description/style/1.1.0 http://www.eclipse.org/sirius/diagram/1.1.0#//description/style" xmi:id="_61vJ4OgmEeSXpo4jtdtXdg" selectedViews="_73800OgmEeSXpo4jtdtXdg" version="8.1.1">
+  <models xmi:type="uml:Model" href="BatteryControl.uml#_yw2GYOgmEeSXpo4jtdtXdg"/>
+  <ownedViews xmi:type="viewpoint:DRepresentationContainer" xmi:id="_73800OgmEeSXpo4jtdtXdg" initialized="true">
+    <ownedRepresentations xmi:type="diagram:DSemanticDiagram" xmi:id="_-8CQ4OgmEeSXpo4jtdtXdg" name="BatteryControl Activity Diagram">
+      <ownedAnnotationEntries xmi:type="description:AnnotationEntry" xmi:id="_-8WZ8OgmEeSXpo4jtdtXdg" source="GMF_DIAGRAMS">
+        <data xmi:type="notation:Diagram" xmi:id="_-8WZ8egmEeSXpo4jtdtXdg" type="Sirius" element="_-8CQ4OgmEeSXpo4jtdtXdg" measurementUnit="Pixel">
+          <children xmi:type="notation:Node" xmi:id="_-8jOQOgmEeSXpo4jtdtXdg" type="2002" element="_-8CQ4egmEeSXpo4jtdtXdg">
+            <children xmi:type="notation:Node" xmi:id="_-85zkOgmEeSXpo4jtdtXdg" type="5006"/>
+            <children xmi:type="notation:Node" xmi:id="_-87BsOgmEeSXpo4jtdtXdg" type="7001">
+              <children xmi:type="notation:Node" xmi:id="_LY6BQOgnEeSXpo4jtdtXdg" type="3007" element="_LYJzUOgnEeSXpo4jtdtXdg">
+                <children xmi:type="notation:Node" xmi:id="_LY7PYOgnEeSXpo4jtdtXdg" type="5003">
+                  <layoutConstraint xmi:type="notation:Location" xmi:id="_LY7PYegnEeSXpo4jtdtXdg" x="-1"/>
+                </children>
+                <children xmi:type="notation:Node" xmi:id="_LZAH4OgnEeSXpo4jtdtXdg" type="3005" element="_LYcHMOgnEeSXpo4jtdtXdg">
+                  <styles xmi:type="notation:ShapeStyle" xmi:id="_LZAH4egnEeSXpo4jtdtXdg" fontName="Sans"/>
+                  <layoutConstraint xmi:type="notation:Bounds" xmi:id="_LZAH4ugnEeSXpo4jtdtXdg"/>
+                </children>
+                <styles xmi:type="notation:ShapeStyle" xmi:id="_LY6BQegnEeSXpo4jtdtXdg" fontName="Sans" fontHeight="8"/>
+                <layoutConstraint xmi:type="notation:Bounds" xmi:id="_LY6BQugnEeSXpo4jtdtXdg" x="151" y="30" width="13" height="13"/>
+              </children>
+              <children xmi:type="notation:Node" xmi:id="_NkoR8OgnEeSXpo4jtdtXdg" type="3008" element="_NjIdIOgnEeSXpo4jtdtXdg">
+                <children xmi:type="notation:Node" xmi:id="_Nko5AOgnEeSXpo4jtdtXdg" type="5005"/>
+                <children xmi:type="notation:Node" xmi:id="_NkpgEOgnEeSXpo4jtdtXdg" type="7002">
+                  <styles xmi:type="notation:SortingStyle" xmi:id="_NkpgEegnEeSXpo4jtdtXdg"/>
+                  <styles xmi:type="notation:FilteringStyle" xmi:id="_NkpgEugnEeSXpo4jtdtXdg"/>
+                </children>
+                <styles xmi:type="notation:ShapeStyle" xmi:id="_NkoR8egnEeSXpo4jtdtXdg" fontName="Sans" fontHeight="8" bold="true"/>
+                <layoutConstraint xmi:type="notation:Bounds" xmi:id="_NkoR8ugnEeSXpo4jtdtXdg" x="96" y="150" width="126" height="27"/>
+              </children>
+              <children xmi:type="notation:Node" xmi:id="_a5GYsOgnEeSXpo4jtdtXdg" type="3007" element="_a2tMAOgnEeSXpo4jtdtXdg">
+                <children xmi:type="notation:Node" xmi:id="_a5G_wOgnEeSXpo4jtdtXdg" type="5003">
+                  <layoutConstraint xmi:type="notation:Location" xmi:id="_a5G_wegnEeSXpo4jtdtXdg" x="-1"/>
+                </children>
+                <children xmi:type="notation:Node" xmi:id="_a5Hm0OgnEeSXpo4jtdtXdg" type="3017" element="_a36s8OgnEeSXpo4jtdtXdg">
+                  <styles xmi:type="notation:ShapeStyle" xmi:id="_a5Hm0egnEeSXpo4jtdtXdg" fontName="Sans"/>
+                  <layoutConstraint xmi:type="notation:Bounds" xmi:id="_a5Hm0ugnEeSXpo4jtdtXdg"/>
+                </children>
+                <styles xmi:type="notation:ShapeStyle" xmi:id="_a5GYsegnEeSXpo4jtdtXdg" fontName="Sans" fontHeight="8"/>
+                <layoutConstraint xmi:type="notation:Bounds" xmi:id="_a5GYsugnEeSXpo4jtdtXdg" x="139" y="198" width="30" height="30"/>
+              </children>
+              <children xmi:type="notation:Node" xmi:id="_gitFgOgnEeSXpo4jtdtXdg" type="3008" element="_ghSwQOgnEeSXpo4jtdtXdg">
+                <children xmi:type="notation:Node" xmi:id="_gitskOgnEeSXpo4jtdtXdg" type="5005"/>
+                <children xmi:type="notation:Node" xmi:id="_gitskegnEeSXpo4jtdtXdg" type="7002">
+                  <styles xmi:type="notation:SortingStyle" xmi:id="_gitskugnEeSXpo4jtdtXdg"/>
+                  <styles xmi:type="notation:FilteringStyle" xmi:id="_gitsk-gnEeSXpo4jtdtXdg"/>
+                </children>
+                <styles xmi:type="notation:ShapeStyle" xmi:id="_gitFgegnEeSXpo4jtdtXdg" fontName="Sans" fontHeight="8" bold="true"/>
+                <layoutConstraint xmi:type="notation:Bounds" xmi:id="_gitFgugnEeSXpo4jtdtXdg" x="47" y="258" width="99" height="39"/>
+              </children>
+              <children xmi:type="notation:Node" xmi:id="_qB8AEOgnEeSXpo4jtdtXdg" type="3008" element="_qBpsMOgnEeSXpo4jtdtXdg">
+                <children xmi:type="notation:Node" xmi:id="_qB8nIOgnEeSXpo4jtdtXdg" type="5005"/>
+                <children xmi:type="notation:Node" xmi:id="_qB8nIegnEeSXpo4jtdtXdg" type="7002">
+                  <styles xmi:type="notation:SortingStyle" xmi:id="_qB8nIugnEeSXpo4jtdtXdg"/>
+                  <styles xmi:type="notation:FilteringStyle" xmi:id="_qB8nI-gnEeSXpo4jtdtXdg"/>
+                </children>
+                <styles xmi:type="notation:ShapeStyle" xmi:id="_qB8AEegnEeSXpo4jtdtXdg" fontName="Sans" fontHeight="8" bold="true"/>
+                <layoutConstraint xmi:type="notation:Bounds" xmi:id="_qB8AEugnEeSXpo4jtdtXdg" x="172" y="258" width="94" height="39"/>
+              </children>
+              <children xmi:type="notation:Node" xmi:id="_0claAOgnEeSXpo4jtdtXdg" type="3007" element="_0ZaKMOgnEeSXpo4jtdtXdg">
+                <children xmi:type="notation:Node" xmi:id="_0cmBEOgnEeSXpo4jtdtXdg" type="5003">
+                  <layoutConstraint xmi:type="notation:Location" xmi:id="_0cmBEegnEeSXpo4jtdtXdg" x="-1"/>
+                </children>
+                <children xmi:type="notation:Node" xmi:id="_0cmoIOgnEeSXpo4jtdtXdg" type="3017" element="_0aM0YOgnEeSXpo4jtdtXdg">
+                  <styles xmi:type="notation:ShapeStyle" xmi:id="_0cmoIegnEeSXpo4jtdtXdg" fontName="Sans"/>
+                  <layoutConstraint xmi:type="notation:Bounds" xmi:id="_0cmoIugnEeSXpo4jtdtXdg"/>
+                </children>
+                <styles xmi:type="notation:ShapeStyle" xmi:id="_0claAegnEeSXpo4jtdtXdg" fontName="Sans" fontHeight="8"/>
+                <layoutConstraint xmi:type="notation:Bounds" xmi:id="_0claAugnEeSXpo4jtdtXdg" x="148" y="102" width="20" height="20"/>
+              </children>
+              <children xmi:type="notation:Node" xmi:id="_2HS_UOwMEeS2Ldq17F2vNQ" type="3008" element="_2G-2QOwMEeS2Ldq17F2vNQ">
+                <children xmi:type="notation:Node" xmi:id="_2HX30OwMEeS2Ldq17F2vNQ" type="5005"/>
+                <children xmi:type="notation:Node" xmi:id="_2HYe4OwMEeS2Ldq17F2vNQ" type="7002">
+                  <styles xmi:type="notation:SortingStyle" xmi:id="_2HYe4ewMEeS2Ldq17F2vNQ"/>
+                  <styles xmi:type="notation:FilteringStyle" xmi:id="_2HYe4uwMEeS2Ldq17F2vNQ"/>
+                </children>
+                <styles xmi:type="notation:ShapeStyle" xmi:id="_2HS_UewMEeS2Ldq17F2vNQ" fontName="Noto Sans" fontHeight="8" bold="true"/>
+                <layoutConstraint xmi:type="notation:Bounds" xmi:id="_2HS_UuwMEeS2Ldq17F2vNQ" x="91" y="53" height="27"/>
+              </children>
+              <styles xmi:type="notation:SortingStyle" xmi:id="_-87BsegmEeSXpo4jtdtXdg"/>
+              <styles xmi:type="notation:FilteringStyle" xmi:id="_-87BsugmEeSXpo4jtdtXdg"/>
+            </children>
+            <styles xmi:type="notation:ShapeStyle" xmi:id="_-8jOQegmEeSXpo4jtdtXdg" fontName="Sans"/>
+            <layoutConstraint xmi:type="notation:Bounds" xmi:id="_-8jOQugmEeSXpo4jtdtXdg" x="36" y="-108" width="303" height="315"/>
+          </children>
+          <styles xmi:type="notation:DiagramStyle" xmi:id="_-8WZ8ugmEeSXpo4jtdtXdg"/>
+          <edges xmi:type="notation:Edge" xmi:id="_C5qHkOgoEeSXpo4jtdtXdg" type="4001" element="_C2KusOgoEeSXpo4jtdtXdg" source="_a5GYsOgnEeSXpo4jtdtXdg" target="_gitFgOgnEeSXpo4jtdtXdg">
+            <children xmi:type="notation:Node" xmi:id="_C5rVsOgoEeSXpo4jtdtXdg" visible="false" type="6001">
+              <layoutConstraint xmi:type="notation:Bounds" xmi:id="_C5rVsegoEeSXpo4jtdtXdg" y="-10"/>
+            </children>
+            <children xmi:type="notation:Node" xmi:id="_C5rVsugoEeSXpo4jtdtXdg" visible="false" type="6002">
+              <layoutConstraint xmi:type="notation:Bounds" xmi:id="_C5rVs-goEeSXpo4jtdtXdg" y="10"/>
+            </children>
+            <children xmi:type="notation:Node" xmi:id="_C5r8wOgoEeSXpo4jtdtXdg" visible="false" type="6003">
+              <layoutConstraint xmi:type="notation:Bounds" xmi:id="_C5r8wegoEeSXpo4jtdtXdg" y="10"/>
+            </children>
+            <styles xmi:type="notation:ConnectorStyle" xmi:id="_C5qHkegoEeSXpo4jtdtXdg" routing="Rectilinear"/>
+            <styles xmi:type="notation:FontStyle" xmi:id="_C5qHkugoEeSXpo4jtdtXdg" fontName="Sans" fontHeight="8"/>
+            <bendpoints xmi:type="notation:RelativeBendpoints" xmi:id="_C5qHk-goEeSXpo4jtdtXdg" points="[0, 0, 43, -45]$[-43, 0, 0, -45]$[-43, 57, 0, 12]"/>
+            <sourceAnchor xmi:type="notation:IdentityAnchor" xmi:id="_C5sj0OgoEeSXpo4jtdtXdg" id="(0.0,0.5)"/>
+            <targetAnchor xmi:type="notation:IdentityAnchor" xmi:id="_C5sj0egoEeSXpo4jtdtXdg" id="(0.5051546391752577,0.0)"/>
+          </edges>
+          <edges xmi:type="notation:Edge" xmi:id="_FIHjMOgoEeSXpo4jtdtXdg" type="4001" element="_FH1PUOgoEeSXpo4jtdtXdg" source="_a5GYsOgnEeSXpo4jtdtXdg" target="_qB8AEOgnEeSXpo4jtdtXdg">
+            <children xmi:type="notation:Node" xmi:id="_FIIKQOgoEeSXpo4jtdtXdg" visible="false" type="6001">
+              <layoutConstraint xmi:type="notation:Bounds" xmi:id="_FIIKQegoEeSXpo4jtdtXdg" y="-10"/>
+            </children>
+            <children xmi:type="notation:Node" xmi:id="_FIIKQugoEeSXpo4jtdtXdg" visible="false" type="6002">
+              <layoutConstraint xmi:type="notation:Bounds" xmi:id="_FIIKQ-goEeSXpo4jtdtXdg" y="10"/>
+            </children>
+            <children xmi:type="notation:Node" xmi:id="_FIIKROgoEeSXpo4jtdtXdg" visible="false" type="6003">
+              <layoutConstraint xmi:type="notation:Bounds" xmi:id="_FIIKRegoEeSXpo4jtdtXdg" y="10"/>
+            </children>
+            <styles xmi:type="notation:ConnectorStyle" xmi:id="_FIHjMegoEeSXpo4jtdtXdg" routing="Rectilinear"/>
+            <styles xmi:type="notation:FontStyle" xmi:id="_FIHjMugoEeSXpo4jtdtXdg" fontName="Sans" fontHeight="8"/>
+            <bendpoints xmi:type="notation:RelativeBendpoints" xmi:id="_FIHjM-goEeSXpo4jtdtXdg" points="[0, 0, -49, -45]$[49, 0, 0, -45]$[49, 57, 0, 12]"/>
+            <sourceAnchor xmi:type="notation:IdentityAnchor" xmi:id="_FIIKRugoEeSXpo4jtdtXdg" id="(1.0,0.5)"/>
+            <targetAnchor xmi:type="notation:IdentityAnchor" xmi:id="_FIIxUOgoEeSXpo4jtdtXdg" id="(0.5,0.0)"/>
+          </edges>
+          <edges xmi:type="notation:Edge" xmi:id="_HClr0OgoEeSXpo4jtdtXdg" type="4001" element="_G_zdkOgoEeSXpo4jtdtXdg" source="_0claAOgnEeSXpo4jtdtXdg" target="_NkoR8OgnEeSXpo4jtdtXdg">
+            <children xmi:type="notation:Node" xmi:id="_HCmS4OgoEeSXpo4jtdtXdg" visible="false" type="6001">
+              <layoutConstraint xmi:type="notation:Bounds" xmi:id="_HCmS4egoEeSXpo4jtdtXdg" y="-10"/>
+            </children>
+            <children xmi:type="notation:Node" xmi:id="_HCmS4ugoEeSXpo4jtdtXdg" visible="false" type="6002">
+              <layoutConstraint xmi:type="notation:Bounds" xmi:id="_HCmS4-goEeSXpo4jtdtXdg" y="10"/>
+            </children>
+            <children xmi:type="notation:Node" xmi:id="_HCmS5OgoEeSXpo4jtdtXdg" visible="false" type="6003">
+              <layoutConstraint xmi:type="notation:Bounds" xmi:id="_HCmS5egoEeSXpo4jtdtXdg" y="10"/>
+            </children>
+            <styles xmi:type="notation:ConnectorStyle" xmi:id="_HClr0egoEeSXpo4jtdtXdg" routing="Rectilinear"/>
+            <styles xmi:type="notation:FontStyle" xmi:id="_HClr0ugoEeSXpo4jtdtXdg" fontName="Sans" fontHeight="8"/>
+            <bendpoints xmi:type="notation:RelativeBendpoints" xmi:id="_HClr0-goEeSXpo4jtdtXdg" points="[6, 2, 15, -28]$[6, 42, 15, 12]"/>
+            <sourceAnchor xmi:type="notation:IdentityAnchor" xmi:id="_HCmS5ugoEeSXpo4jtdtXdg" id="(0.35,0.9)"/>
+            <targetAnchor xmi:type="notation:IdentityAnchor" xmi:id="_HCm58OgoEeSXpo4jtdtXdg" id="(0.4032258064516129,0.0)"/>
+          </edges>
+          <edges xmi:type="notation:Edge" xmi:id="_I2n1QOgoEeSXpo4jtdtXdg" type="4001" element="_IzwHcOgoEeSXpo4jtdtXdg" source="_gitFgOgnEeSXpo4jtdtXdg" target="_0claAOgnEeSXpo4jtdtXdg">
+            <children xmi:type="notation:Node" xmi:id="_I2ocUOgoEeSXpo4jtdtXdg" visible="false" type="6001">
+              <layoutConstraint xmi:type="notation:Bounds" xmi:id="_I2ocUegoEeSXpo4jtdtXdg" y="-10"/>
+            </children>
+            <children xmi:type="notation:Node" xmi:id="_I2ocUugoEeSXpo4jtdtXdg" visible="false" type="6002">
+              <layoutConstraint xmi:type="notation:Bounds" xmi:id="_I2ocU-goEeSXpo4jtdtXdg" y="10"/>
+            </children>
+            <children xmi:type="notation:Node" xmi:id="_I2ocVOgoEeSXpo4jtdtXdg" visible="false" type="6003">
+              <layoutConstraint xmi:type="notation:Bounds" xmi:id="_I2ocVegoEeSXpo4jtdtXdg" y="10"/>
+            </children>
+            <styles xmi:type="notation:ConnectorStyle" xmi:id="_I2n1QegoEeSXpo4jtdtXdg" routing="Rectilinear"/>
+            <styles xmi:type="notation:FontStyle" xmi:id="_I2n1QugoEeSXpo4jtdtXdg" fontName="Sans" fontHeight="8"/>
+            <bendpoints xmi:type="notation:RelativeBendpoints" xmi:id="_I2n1Q-goEeSXpo4jtdtXdg" points="[-49, 24, -101, 170]$[-77, 24, -129, 170]$[-77, -144, -129, 2]$[48, -144, -4, 2]"/>
+            <sourceAnchor xmi:type="notation:IdentityAnchor" xmi:id="_I2ocVugoEeSXpo4jtdtXdg" id="(0.5051546391752577,0.0)"/>
+            <targetAnchor xmi:type="notation:IdentityAnchor" xmi:id="_I2ocV-goEeSXpo4jtdtXdg" id="(0.0,0.5)"/>
+          </edges>
+          <edges xmi:type="notation:Edge" xmi:id="_J4h-MOgoEeSXpo4jtdtXdg" type="4001" element="_J4QRYOgoEeSXpo4jtdtXdg" source="_qB8AEOgnEeSXpo4jtdtXdg" target="_0claAOgnEeSXpo4jtdtXdg">
+            <children xmi:type="notation:Node" xmi:id="_J4ilQOgoEeSXpo4jtdtXdg" visible="false" type="6001">
+              <layoutConstraint xmi:type="notation:Bounds" xmi:id="_J4ilQegoEeSXpo4jtdtXdg" y="-10"/>
+            </children>
+            <children xmi:type="notation:Node" xmi:id="_J4ilQugoEeSXpo4jtdtXdg" visible="false" type="6002">
+              <layoutConstraint xmi:type="notation:Bounds" xmi:id="_J4ilQ-goEeSXpo4jtdtXdg" y="10"/>
+            </children>
+            <children xmi:type="notation:Node" xmi:id="_J4ilROgoEeSXpo4jtdtXdg" visible="false" type="6003">
+              <layoutConstraint xmi:type="notation:Bounds" xmi:id="_J4ilRegoEeSXpo4jtdtXdg" y="10"/>
+            </children>
+            <styles xmi:type="notation:ConnectorStyle" xmi:id="_J4h-MegoEeSXpo4jtdtXdg" routing="Rectilinear"/>
+            <styles xmi:type="notation:FontStyle" xmi:id="_J4h-MugoEeSXpo4jtdtXdg" fontName="Sans" fontHeight="8"/>
+            <bendpoints xmi:type="notation:RelativeBendpoints" xmi:id="_J4h-M-goEeSXpo4jtdtXdg" points="[25, 18, 106, 154]$[44, 18, 125, 154]$[44, -144, 125, -8]$[-75, -144, 6, -8]"/>
+            <sourceAnchor xmi:type="notation:IdentityAnchor" xmi:id="_J4jMUOgoEeSXpo4jtdtXdg" id="(0.7282608695652174,0.0)"/>
+            <targetAnchor xmi:type="notation:IdentityAnchor" xmi:id="_J4jMUegoEeSXpo4jtdtXdg" id="(0.5,1.0)"/>
+          </edges>
+          <edges xmi:type="notation:Edge" xmi:id="_wXZo0OwCEeSZA_BCH3PzWA" type="4001" element="_wXXMkOwCEeSZA_BCH3PzWA" source="_NkoR8OgnEeSXpo4jtdtXdg" target="_a5GYsOgnEeSXpo4jtdtXdg">
+            <children xmi:type="notation:Node" xmi:id="_wXaP4OwCEeSZA_BCH3PzWA" visible="false" type="6001">
+              <layoutConstraint xmi:type="notation:Bounds" xmi:id="_wXaP4ewCEeSZA_BCH3PzWA" y="-10"/>
+            </children>
+            <children xmi:type="notation:Node" xmi:id="_wXaP4uwCEeSZA_BCH3PzWA" visible="false" type="6002">
+              <layoutConstraint xmi:type="notation:Bounds" xmi:id="_wXaP4-wCEeSZA_BCH3PzWA" y="10"/>
+            </children>
+            <children xmi:type="notation:Node" xmi:id="_wXaP5OwCEeSZA_BCH3PzWA" visible="false" type="6003">
+              <layoutConstraint xmi:type="notation:Bounds" xmi:id="_wXaP5ewCEeSZA_BCH3PzWA" y="10"/>
+            </children>
+            <styles xmi:type="notation:ConnectorStyle" xmi:id="_wXZo0ewCEeSZA_BCH3PzWA" routing="Rectilinear"/>
+            <styles xmi:type="notation:FontStyle" xmi:id="_wXZo0uwCEeSZA_BCH3PzWA" fontName="Noto Sans" fontHeight="8"/>
+            <bendpoints xmi:type="notation:RelativeBendpoints" xmi:id="_wXZo0-wCEeSZA_BCH3PzWA" points="[-5, 19, -1, -26]$[-5, 30, -1, -15]"/>
+            <sourceAnchor xmi:type="notation:IdentityAnchor" xmi:id="_wXbeAOwCEeSZA_BCH3PzWA" id="(0.5,0.721025641025641)"/>
+            <targetAnchor xmi:type="notation:IdentityAnchor" xmi:id="_wXbeAewCEeSZA_BCH3PzWA" id="(0.5,0.5)"/>
+          </edges>
+          <edges xmi:type="notation:Edge" xmi:id="_8fVfcOwMEeS2Ldq17F2vNQ" type="4001" element="_8fOxwOwMEeS2Ldq17F2vNQ" source="_LY6BQOgnEeSXpo4jtdtXdg" target="_2HS_UOwMEeS2Ldq17F2vNQ">
+            <children xmi:type="notation:Node" xmi:id="_8fWGgOwMEeS2Ldq17F2vNQ" visible="false" type="6001">
+              <layoutConstraint xmi:type="notation:Bounds" xmi:id="_8fWGgewMEeS2Ldq17F2vNQ" y="-10"/>
+            </children>
+            <children xmi:type="notation:Node" xmi:id="_8fWtkOwMEeS2Ldq17F2vNQ" visible="false" type="6002">
+              <layoutConstraint xmi:type="notation:Bounds" xmi:id="_8fWtkewMEeS2Ldq17F2vNQ" y="10"/>
+            </children>
+            <children xmi:type="notation:Node" xmi:id="_8fWtkuwMEeS2Ldq17F2vNQ" visible="false" type="6003">
+              <layoutConstraint xmi:type="notation:Bounds" xmi:id="_8fWtk-wMEeS2Ldq17F2vNQ" y="10"/>
+            </children>
+            <styles xmi:type="notation:ConnectorStyle" xmi:id="_8fVfcewMEeS2Ldq17F2vNQ" routing="Rectilinear"/>
+            <styles xmi:type="notation:FontStyle" xmi:id="_8fVfcuwMEeS2Ldq17F2vNQ" fontName="Noto Sans" fontHeight="8"/>
+            <bendpoints xmi:type="notation:RelativeBendpoints" xmi:id="_8fVfc-wMEeS2Ldq17F2vNQ" points="[-4, -5, 2, -26]$[-4, 17, 2, -4]"/>
+            <sourceAnchor xmi:type="notation:IdentityAnchor" xmi:id="_8fZJ0OwMEeS2Ldq17F2vNQ" id="(0.46153846153846156,0.46153846153846156)"/>
+            <targetAnchor xmi:type="notation:IdentityAnchor" xmi:id="_8fZJ0ewMEeS2Ldq17F2vNQ" id="(0.4066666666666667,0.1851851851851852)"/>
+          </edges>
+          <edges xmi:type="notation:Edge" xmi:id="_AYuL0OwNEeS2Ldq17F2vNQ" type="4001" element="_AYcfAOwNEeS2Ldq17F2vNQ" source="_2HS_UOwMEeS2Ldq17F2vNQ" target="_0claAOgnEeSXpo4jtdtXdg">
+            <children xmi:type="notation:Node" xmi:id="_AYuL1OwNEeS2Ldq17F2vNQ" visible="false" type="6001">
+              <layoutConstraint xmi:type="notation:Bounds" xmi:id="_AYuy4OwNEeS2Ldq17F2vNQ" y="-10"/>
+            </children>
+            <children xmi:type="notation:Node" xmi:id="_AYuy4ewNEeS2Ldq17F2vNQ" visible="false" type="6002">
+              <layoutConstraint xmi:type="notation:Bounds" xmi:id="_AYuy4uwNEeS2Ldq17F2vNQ" y="10"/>
+            </children>
+            <children xmi:type="notation:Node" xmi:id="_AYuy4-wNEeS2Ldq17F2vNQ" visible="false" type="6003">
+              <layoutConstraint xmi:type="notation:Bounds" xmi:id="_AYuy5OwNEeS2Ldq17F2vNQ" y="10"/>
+            </children>
+            <styles xmi:type="notation:ConnectorStyle" xmi:id="_AYuL0ewNEeS2Ldq17F2vNQ" routing="Rectilinear"/>
+            <styles xmi:type="notation:FontStyle" xmi:id="_AYuL0uwNEeS2Ldq17F2vNQ" fontName="Noto Sans" fontHeight="8"/>
+            <bendpoints xmi:type="notation:RelativeBendpoints" xmi:id="_AYuL0-wNEeS2Ldq17F2vNQ" points="[4, 3, -5, -24]$[4, 27, -5, 0]"/>
+            <sourceAnchor xmi:type="notation:IdentityAnchor" xmi:id="_AYuy5ewNEeS2Ldq17F2vNQ" id="(0.41333333333333333,0.8888888888888888)"/>
+            <targetAnchor xmi:type="notation:IdentityAnchor" xmi:id="_AYuy5uwNEeS2Ldq17F2vNQ" id="(0.65,0.0)"/>
+          </edges>
+        </data>
+      </ownedAnnotationEntries>
+      <ownedDiagramElements xmi:type="diagram:DNodeContainer" xmi:id="_-8CQ4egmEeSXpo4jtdtXdg" name="BatteryControl">
+        <target xmi:type="uml:Activity" href="BatteryControl.uml#_2CGbwOgmEeSXpo4jtdtXdg"/>
+        <semanticElements xmi:type="uml:Activity" href="BatteryControl.uml#_2CGbwOgmEeSXpo4jtdtXdg"/>
+        <arrangeConstraints>KEEP_LOCATION</arrangeConstraints>
+        <arrangeConstraints>KEEP_SIZE</arrangeConstraints>
+        <arrangeConstraints>KEEP_RATIO</arrangeConstraints>
+        <ownedStyle xmi:type="diagram:FlatContainerStyle" xmi:id="_-8CQ4ugmEeSXpo4jtdtXdg" labelSize="9" borderSize="1" borderSizeComputationExpression="1" backgroundStyle="Liquid">
+          <labelColor xmi:type="viewpoint:RGBValues" xmi:id="_-8CQ4-gmEeSXpo4jtdtXdg"/>
+          <description xmi:type="style:FlatContainerStyleDescription" href="platform:/plugin/org.obeonetwork.dsl.uml2.design/description/uml2.odesign#//@ownedViewpoints[name='Design']/@ownedRepresentations[name='Activity%20Diagram']/@defaultLayer/@containerMappings[name='AD_Activity']/@style"/>
+          <borderColor xmi:type="viewpoint:RGBValues" xmi:id="_-8CQ5OgmEeSXpo4jtdtXdg" red="114" green="73" blue="110"/>
+          <backgroundColor xmi:type="viewpoint:RGBValues" xmi:id="_-8CQ5egmEeSXpo4jtdtXdg" red="255" green="255" blue="255"/>
+          <foregroundColor xmi:type="viewpoint:RGBValues" xmi:id="_-8CQ5ugmEeSXpo4jtdtXdg" red="245" green="239" blue="244"/>
+        </ownedStyle>
+        <actualMapping xmi:type="description_1:ContainerMapping" href="platform:/plugin/org.obeonetwork.dsl.uml2.design/description/uml2.odesign#//@ownedViewpoints[name='Design']/@ownedRepresentations[name='Activity%20Diagram']/@defaultLayer/@containerMappings[name='AD_Activity']"/>
+        <ownedDiagramElements xmi:type="diagram:DNode" xmi:id="_LYJzUOgnEeSXpo4jtdtXdg" outgoingEdges="_8fOxwOwMEeS2Ldq17F2vNQ" width="3" height="3" resizeKind="NSEW">
+          <target xmi:type="uml:InitialNode" href="BatteryControl.uml#_LUSnAOgnEeSXpo4jtdtXdg"/>
+          <semanticElements xmi:type="uml:InitialNode" href="BatteryControl.uml#_LUSnAOgnEeSXpo4jtdtXdg"/>
+          <arrangeConstraints>KEEP_LOCATION</arrangeConstraints>
+          <arrangeConstraints>KEEP_SIZE</arrangeConstraints>
+          <arrangeConstraints>KEEP_RATIO</arrangeConstraints>
+          <ownedStyle xmi:type="diagram:WorkspaceImage" xmi:id="_LYcHMOgnEeSXpo4jtdtXdg" showIcon="false" workspacePath="/org.obeonetwork.dsl.uml2.design/images/InitNode.png">
+            <labelColor xmi:type="viewpoint:RGBValues" xmi:id="_LYcHMegnEeSXpo4jtdtXdg"/>
+            <description xmi:type="style:WorkspaceImageDescription" href="platform:/plugin/org.obeonetwork.dsl.uml2.design/description/uml2.odesign#//@ownedViewpoints[name='Design']/@ownedRepresentations[name='Activity%20Diagram']/@defaultLayer/@containerMappings[name='AD_Activity']/@subNodeMappings[name='AD_ControlNode']/@conditionnalStyles.0/@style"/>
+            <borderColor xmi:type="viewpoint:RGBValues" xmi:id="_LYcHMugnEeSXpo4jtdtXdg"/>
+          </ownedStyle>
+          <actualMapping xmi:type="description_1:NodeMapping" href="platform:/plugin/org.obeonetwork.dsl.uml2.design/description/uml2.odesign#//@ownedViewpoints[name='Design']/@ownedRepresentations[name='Activity%20Diagram']/@defaultLayer/@containerMappings[name='AD_Activity']/@subNodeMappings[name='AD_ControlNode']"/>
+        </ownedDiagramElements>
+        <ownedDiagramElements xmi:type="diagram:DNode" xmi:id="_a2tMAOgnEeSXpo4jtdtXdg" outgoingEdges="_C2KusOgoEeSXpo4jtdtXdg _FH1PUOgoEeSXpo4jtdtXdg" incomingEdges="_wXXMkOwCEeSZA_BCH3PzWA" width="3" height="3">
+          <target xmi:type="uml:DecisionNode" href="BatteryControl.uml#_a2S8UOgnEeSXpo4jtdtXdg"/>
+          <semanticElements xmi:type="uml:DecisionNode" href="BatteryControl.uml#_a2S8UOgnEeSXpo4jtdtXdg"/>
+          <arrangeConstraints>KEEP_LOCATION</arrangeConstraints>
+          <arrangeConstraints>KEEP_SIZE</arrangeConstraints>
+          <arrangeConstraints>KEEP_RATIO</arrangeConstraints>
+          <ownedStyle xmi:type="diagram:Lozenge" xmi:id="_a36s8OgnEeSXpo4jtdtXdg" showIcon="false">
+            <labelColor xmi:type="viewpoint:RGBValues" xmi:id="_a36s8egnEeSXpo4jtdtXdg"/>
+            <description xmi:type="style:LozengeNodeDescription" href="platform:/plugin/org.obeonetwork.dsl.uml2.design/description/uml2.odesign#//@ownedViewpoints[name='Design']/@ownedRepresentations[name='Activity%20Diagram']/@defaultLayer/@containerMappings[name='AD_Activity']/@subNodeMappings[name='AD_ControlNode']/@conditionnalStyles.5/@style"/>
+            <borderColor xmi:type="viewpoint:RGBValues" xmi:id="_a36s8ugnEeSXpo4jtdtXdg" red="39" green="76" blue="114"/>
+            <color xmi:type="viewpoint:RGBValues" xmi:id="_a36s8-gnEeSXpo4jtdtXdg" red="114" green="159" blue="207"/>
+          </ownedStyle>
+          <actualMapping xmi:type="description_1:NodeMapping" href="platform:/plugin/org.obeonetwork.dsl.uml2.design/description/uml2.odesign#//@ownedViewpoints[name='Design']/@ownedRepresentations[name='Activity%20Diagram']/@defaultLayer/@containerMappings[name='AD_Activity']/@subNodeMappings[name='AD_ControlNode']"/>
+        </ownedDiagramElements>
+        <ownedDiagramElements xmi:type="diagram:DNode" xmi:id="_0ZaKMOgnEeSXpo4jtdtXdg" outgoingEdges="_G_zdkOgoEeSXpo4jtdtXdg" incomingEdges="_IzwHcOgoEeSXpo4jtdtXdg _J4QRYOgoEeSXpo4jtdtXdg _AYcfAOwNEeS2Ldq17F2vNQ" width="2" height="2">
+          <target xmi:type="uml:MergeNode" href="BatteryControl.uml#_0ZDk4OgnEeSXpo4jtdtXdg"/>
+          <semanticElements xmi:type="uml:MergeNode" href="BatteryControl.uml#_0ZDk4OgnEeSXpo4jtdtXdg"/>
+          <arrangeConstraints>KEEP_LOCATION</arrangeConstraints>
+          <arrangeConstraints>KEEP_SIZE</arrangeConstraints>
+          <arrangeConstraints>KEEP_RATIO</arrangeConstraints>
+          <ownedStyle xmi:type="diagram:Lozenge" xmi:id="_0aM0YOgnEeSXpo4jtdtXdg" showIcon="false">
+            <labelColor xmi:type="viewpoint:RGBValues" xmi:id="_0aM0YegnEeSXpo4jtdtXdg"/>
+            <description xmi:type="style:LozengeNodeDescription" href="platform:/plugin/org.obeonetwork.dsl.uml2.design/description/uml2.odesign#//@ownedViewpoints[name='Design']/@ownedRepresentations[name='Activity%20Diagram']/@defaultLayer/@containerMappings[name='AD_Activity']/@subNodeMappings[name='AD_ControlNode']/@conditionnalStyles.4/@style"/>
+            <borderColor xmi:type="viewpoint:RGBValues" xmi:id="_0aM0YugnEeSXpo4jtdtXdg" red="114" green="73" blue="110"/>
+            <color xmi:type="viewpoint:RGBValues" xmi:id="_0aM0Y-gnEeSXpo4jtdtXdg" red="173" green="127" blue="168"/>
+          </ownedStyle>
+          <actualMapping xmi:type="description_1:NodeMapping" href="platform:/plugin/org.obeonetwork.dsl.uml2.design/description/uml2.odesign#//@ownedViewpoints[name='Design']/@ownedRepresentations[name='Activity%20Diagram']/@defaultLayer/@containerMappings[name='AD_Activity']/@subNodeMappings[name='AD_ControlNode']"/>
+        </ownedDiagramElements>
+        <ownedDiagramElements xmi:type="diagram:DNodeContainer" xmi:id="_NjIdIOgnEeSXpo4jtdtXdg" name="ReadBatteryStatus" outgoingEdges="_wXXMkOwCEeSZA_BCH3PzWA" incomingEdges="_G_zdkOgoEeSXpo4jtdtXdg">
+          <target xmi:type="uml:OpaqueAction" href="BatteryControl.uml#_NiQTYOgnEeSXpo4jtdtXdg"/>
+          <semanticElements xmi:type="uml:OpaqueAction" href="BatteryControl.uml#_NiQTYOgnEeSXpo4jtdtXdg"/>
+          <arrangeConstraints>KEEP_LOCATION</arrangeConstraints>
+          <arrangeConstraints>KEEP_SIZE</arrangeConstraints>
+          <arrangeConstraints>KEEP_RATIO</arrangeConstraints>
+          <ownedStyle xmi:type="diagram:FlatContainerStyle" xmi:id="_Njm-QOgnEeSXpo4jtdtXdg" labelFormat="bold" showIcon="false" borderSize="1" borderSizeComputationExpression="1" backgroundStyle="Liquid">
+            <labelColor xmi:type="viewpoint:RGBValues" xmi:id="_Njm-QegnEeSXpo4jtdtXdg"/>
+            <description xmi:type="style:FlatContainerStyleDescription" href="platform:/plugin/org.obeonetwork.dsl.uml2.design/description/uml2.odesign#//@ownedViewpoints[name='Design']/@ownedRepresentations[name='Activity%20Diagram']/@defaultLayer/@containerMappings[name='AD_Activity']/@subContainerMappings[name='AD_ExecutableNode']/@conditionnalStyles.1/@style"/>
+            <borderColor xmi:type="viewpoint:RGBValues" xmi:id="_Njm-QugnEeSXpo4jtdtXdg" red="224" green="133" blue="3"/>
+            <backgroundColor xmi:type="viewpoint:RGBValues" xmi:id="_Njm-Q-gnEeSXpo4jtdtXdg" red="255" green="255" blue="255"/>
+            <foregroundColor xmi:type="viewpoint:RGBValues" xmi:id="_Njm-ROgnEeSXpo4jtdtXdg" red="254" green="238" blue="214"/>
+          </ownedStyle>
+          <actualMapping xmi:type="description_1:ContainerMapping" href="platform:/plugin/org.obeonetwork.dsl.uml2.design/description/uml2.odesign#//@ownedViewpoints[name='Design']/@ownedRepresentations[name='Activity%20Diagram']/@defaultLayer/@containerMappings[name='AD_Activity']/@subContainerMappings[name='AD_ExecutableNode']"/>
+        </ownedDiagramElements>
+        <ownedDiagramElements xmi:type="diagram:DNodeContainer" xmi:id="_ghSwQOgnEeSXpo4jtdtXdg" name="BatteryisHigh" outgoingEdges="_IzwHcOgoEeSXpo4jtdtXdg" incomingEdges="_C2KusOgoEeSXpo4jtdtXdg">
+          <target xmi:type="uml:OpaqueAction" href="BatteryControl.uml#_ghPF4OgnEeSXpo4jtdtXdg"/>
+          <semanticElements xmi:type="uml:OpaqueAction" href="BatteryControl.uml#_ghPF4OgnEeSXpo4jtdtXdg"/>
+          <arrangeConstraints>KEEP_LOCATION</arrangeConstraints>
+          <arrangeConstraints>KEEP_SIZE</arrangeConstraints>
+          <arrangeConstraints>KEEP_RATIO</arrangeConstraints>
+          <ownedStyle xmi:type="diagram:FlatContainerStyle" xmi:id="_ghUlcOgnEeSXpo4jtdtXdg" labelFormat="bold" showIcon="false" borderSize="1" borderSizeComputationExpression="1" backgroundStyle="Liquid">
+            <labelColor xmi:type="viewpoint:RGBValues" xmi:id="_ghVMgOgnEeSXpo4jtdtXdg"/>
+            <description xmi:type="style:FlatContainerStyleDescription" href="platform:/plugin/org.obeonetwork.dsl.uml2.design/description/uml2.odesign#//@ownedViewpoints[name='Design']/@ownedRepresentations[name='Activity%20Diagram']/@defaultLayer/@containerMappings[name='AD_Activity']/@subContainerMappings[name='AD_ExecutableNode']/@conditionnalStyles.1/@style"/>
+            <borderColor xmi:type="viewpoint:RGBValues" xmi:id="_ghVMgegnEeSXpo4jtdtXdg" red="224" green="133" blue="3"/>
+            <backgroundColor xmi:type="viewpoint:RGBValues" xmi:id="_ghVMgugnEeSXpo4jtdtXdg" red="255" green="255" blue="255"/>
+            <foregroundColor xmi:type="viewpoint:RGBValues" xmi:id="_ghVMg-gnEeSXpo4jtdtXdg" red="254" green="238" blue="214"/>
+          </ownedStyle>
+          <actualMapping xmi:type="description_1:ContainerMapping" href="platform:/plugin/org.obeonetwork.dsl.uml2.design/description/uml2.odesign#//@ownedViewpoints[name='Design']/@ownedRepresentations[name='Activity%20Diagram']/@defaultLayer/@containerMappings[name='AD_Activity']/@subContainerMappings[name='AD_ExecutableNode']"/>
+        </ownedDiagramElements>
+        <ownedDiagramElements xmi:type="diagram:DNodeContainer" xmi:id="_qBpsMOgnEeSXpo4jtdtXdg" name="BatteryisLow" outgoingEdges="_J4QRYOgoEeSXpo4jtdtXdg" incomingEdges="_FH1PUOgoEeSXpo4jtdtXdg">
+          <target xmi:type="uml:OpaqueAction" href="BatteryControl.uml#_qBmB0OgnEeSXpo4jtdtXdg"/>
+          <semanticElements xmi:type="uml:OpaqueAction" href="BatteryControl.uml#_qBmB0OgnEeSXpo4jtdtXdg"/>
+          <arrangeConstraints>KEEP_LOCATION</arrangeConstraints>
+          <arrangeConstraints>KEEP_SIZE</arrangeConstraints>
+          <arrangeConstraints>KEEP_RATIO</arrangeConstraints>
+          <ownedStyle xmi:type="diagram:FlatContainerStyle" xmi:id="_qBq6UOgnEeSXpo4jtdtXdg" labelFormat="bold" showIcon="false" borderSize="1" borderSizeComputationExpression="1" backgroundStyle="Liquid">
+            <labelColor xmi:type="viewpoint:RGBValues" xmi:id="_qBq6UegnEeSXpo4jtdtXdg"/>
+            <description xmi:type="style:FlatContainerStyleDescription" href="platform:/plugin/org.obeonetwork.dsl.uml2.design/description/uml2.odesign#//@ownedViewpoints[name='Design']/@ownedRepresentations[name='Activity%20Diagram']/@defaultLayer/@containerMappings[name='AD_Activity']/@subContainerMappings[name='AD_ExecutableNode']/@conditionnalStyles.1/@style"/>
+            <borderColor xmi:type="viewpoint:RGBValues" xmi:id="_qBq6UugnEeSXpo4jtdtXdg" red="224" green="133" blue="3"/>
+            <backgroundColor xmi:type="viewpoint:RGBValues" xmi:id="_qBq6U-gnEeSXpo4jtdtXdg" red="255" green="255" blue="255"/>
+            <foregroundColor xmi:type="viewpoint:RGBValues" xmi:id="_qBq6VOgnEeSXpo4jtdtXdg" red="254" green="238" blue="214"/>
+          </ownedStyle>
+          <actualMapping xmi:type="description_1:ContainerMapping" href="platform:/plugin/org.obeonetwork.dsl.uml2.design/description/uml2.odesign#//@ownedViewpoints[name='Design']/@ownedRepresentations[name='Activity%20Diagram']/@defaultLayer/@containerMappings[name='AD_Activity']/@subContainerMappings[name='AD_ExecutableNode']"/>
+        </ownedDiagramElements>
+        <ownedDiagramElements xmi:type="diagram:DNodeContainer" xmi:id="_2G-2QOwMEeS2Ldq17F2vNQ" name="InitSystem" outgoingEdges="_AYcfAOwNEeS2Ldq17F2vNQ" incomingEdges="_8fOxwOwMEeS2Ldq17F2vNQ">
+          <target xmi:type="uml:OpaqueAction" href="BatteryControl.uml#_z7mj0OwMEeS2Ldq17F2vNQ"/>
+          <semanticElements xmi:type="uml:OpaqueAction" href="BatteryControl.uml#_z7mj0OwMEeS2Ldq17F2vNQ"/>
+          <arrangeConstraints>KEEP_LOCATION</arrangeConstraints>
+          <arrangeConstraints>KEEP_SIZE</arrangeConstraints>
+          <arrangeConstraints>KEEP_RATIO</arrangeConstraints>
+          <ownedStyle xmi:type="diagram:FlatContainerStyle" xmi:id="_2HAEYOwMEeS2Ldq17F2vNQ" labelFormat="bold" showIcon="false" borderSize="1" borderSizeComputationExpression="1" backgroundStyle="Liquid">
+            <labelColor xmi:type="viewpoint:RGBValues" xmi:id="_2HAEYewMEeS2Ldq17F2vNQ"/>
+            <description xmi:type="style:FlatContainerStyleDescription" href="platform:/plugin/org.obeonetwork.dsl.uml2.design/description/uml2.odesign#//@ownedViewpoints[name='Design']/@ownedRepresentations[name='Activity%20Diagram']/@defaultLayer/@containerMappings[name='AD_Activity']/@subContainerMappings[name='AD_ExecutableNode']/@conditionnalStyles.1/@style"/>
+            <borderColor xmi:type="viewpoint:RGBValues" xmi:id="_2HAEYuwMEeS2Ldq17F2vNQ" red="224" green="133" blue="3"/>
+            <backgroundColor xmi:type="viewpoint:RGBValues" xmi:id="_2HAEY-wMEeS2Ldq17F2vNQ" red="255" green="255" blue="255"/>
+            <foregroundColor xmi:type="viewpoint:RGBValues" xmi:id="_2HAEZOwMEeS2Ldq17F2vNQ" red="254" green="238" blue="214"/>
+          </ownedStyle>
+          <actualMapping xmi:type="description_1:ContainerMapping" href="platform:/plugin/org.obeonetwork.dsl.uml2.design/description/uml2.odesign#//@ownedViewpoints[name='Design']/@ownedRepresentations[name='Activity%20Diagram']/@defaultLayer/@containerMappings[name='AD_Activity']/@subContainerMappings[name='AD_ExecutableNode']"/>
+        </ownedDiagramElements>
+      </ownedDiagramElements>
+      <ownedDiagramElements xmi:type="diagram:DEdge" xmi:id="_C2KusOgoEeSXpo4jtdtXdg" name="&lt;Control Flow> flow1" sourceNode="_a2tMAOgnEeSXpo4jtdtXdg" targetNode="_ghSwQOgnEeSXpo4jtdtXdg">
+        <target xmi:type="uml:ControlFlow" href="BatteryControl.uml#_C1uCwOgoEeSXpo4jtdtXdg"/>
+        <semanticElements xmi:type="uml:ControlFlow" href="BatteryControl.uml#_C1uCwOgoEeSXpo4jtdtXdg"/>
+        <semanticElements xmi:type="uml:LiteralBoolean" href="BatteryControl.uml#_C1vQ4OgoEeSXpo4jtdtXdg"/>
+        <graphicalFilters xmi:type="diagram:HideLabelFilter" xmi:id="_oT-M8OgoEeSXpo4jtdtXdg"/>
+        <ownedStyle xmi:type="diagram:EdgeStyle" xmi:id="_C2W78OgoEeSXpo4jtdtXdg" routingStyle="manhattan">
+          <description xmi:type="style:EdgeStyleDescription" href="platform:/plugin/org.obeonetwork.dsl.uml2.design/description/uml2.odesign#//@ownedViewpoints[name='Design']/@ownedRepresentations[name='Activity%20Diagram']/@defaultLayer/@edgeMappings[name='AD_ControlFlow']/@style"/>
+          <strokeColor xmi:type="viewpoint:RGBValues" xmi:id="_C2W78egoEeSXpo4jtdtXdg" red="136" green="136" blue="136"/>
+          <centerLabelStyle xmi:type="diagram:CenterLabelStyle" xmi:id="_C2W78ugoEeSXpo4jtdtXdg" showIcon="false">
+            <labelColor xmi:type="viewpoint:RGBValues" xmi:id="_C2W78-goEeSXpo4jtdtXdg"/>
+          </centerLabelStyle>
+        </ownedStyle>
+        <actualMapping xmi:type="description_1:EdgeMapping" href="platform:/plugin/org.obeonetwork.dsl.uml2.design/description/uml2.odesign#//@ownedViewpoints[name='Design']/@ownedRepresentations[name='Activity%20Diagram']/@defaultLayer/@edgeMappings[name='AD_ControlFlow']"/>
+      </ownedDiagramElements>
+      <ownedDiagramElements xmi:type="diagram:DEdge" xmi:id="_FH1PUOgoEeSXpo4jtdtXdg" name="&lt;Control Flow> flow2" sourceNode="_a2tMAOgnEeSXpo4jtdtXdg" targetNode="_qBpsMOgnEeSXpo4jtdtXdg">
+        <target xmi:type="uml:ControlFlow" href="BatteryControl.uml#_FHyMAOgoEeSXpo4jtdtXdg"/>
+        <semanticElements xmi:type="uml:ControlFlow" href="BatteryControl.uml#_FHyMAOgoEeSXpo4jtdtXdg"/>
+        <semanticElements xmi:type="uml:LiteralBoolean" href="BatteryControl.uml#_FHyzEOgoEeSXpo4jtdtXdg"/>
+        <graphicalFilters xmi:type="diagram:HideLabelFilter" xmi:id="_m8OW4OgoEeSXpo4jtdtXdg"/>
+        <ownedStyle xmi:type="diagram:EdgeStyle" xmi:id="_FH12YOgoEeSXpo4jtdtXdg" routingStyle="manhattan">
+          <description xmi:type="style:EdgeStyleDescription" href="platform:/plugin/org.obeonetwork.dsl.uml2.design/description/uml2.odesign#//@ownedViewpoints[name='Design']/@ownedRepresentations[name='Activity%20Diagram']/@defaultLayer/@edgeMappings[name='AD_ControlFlow']/@style"/>
+          <strokeColor xmi:type="viewpoint:RGBValues" xmi:id="_FH12YegoEeSXpo4jtdtXdg" red="136" green="136" blue="136"/>
+          <centerLabelStyle xmi:type="diagram:CenterLabelStyle" xmi:id="_FH12YugoEeSXpo4jtdtXdg" showIcon="false">
+            <labelColor xmi:type="viewpoint:RGBValues" xmi:id="_FH12Y-goEeSXpo4jtdtXdg"/>
+          </centerLabelStyle>
+        </ownedStyle>
+        <actualMapping xmi:type="description_1:EdgeMapping" href="platform:/plugin/org.obeonetwork.dsl.uml2.design/description/uml2.odesign#//@ownedViewpoints[name='Design']/@ownedRepresentations[name='Activity%20Diagram']/@defaultLayer/@edgeMappings[name='AD_ControlFlow']"/>
+      </ownedDiagramElements>
+      <ownedDiagramElements xmi:type="diagram:DEdge" xmi:id="_G_zdkOgoEeSXpo4jtdtXdg" name="&lt;Control Flow> flow3" sourceNode="_0ZaKMOgnEeSXpo4jtdtXdg" targetNode="_NjIdIOgnEeSXpo4jtdtXdg">
+        <target xmi:type="uml:ControlFlow" href="BatteryControl.uml#_G_QrAOgoEeSXpo4jtdtXdg"/>
+        <semanticElements xmi:type="uml:ControlFlow" href="BatteryControl.uml#_G_QrAOgoEeSXpo4jtdtXdg"/>
+        <semanticElements xmi:type="uml:LiteralBoolean" href="BatteryControl.uml#_G_RSEOgoEeSXpo4jtdtXdg"/>
+        <graphicalFilters xmi:type="diagram:HideLabelFilter" xmi:id="_mE1b4OgoEeSXpo4jtdtXdg"/>
+        <ownedStyle xmi:type="diagram:EdgeStyle" xmi:id="_G_0EoOgoEeSXpo4jtdtXdg" routingStyle="manhattan">
+          <description xmi:type="style:EdgeStyleDescription" href="platform:/plugin/org.obeonetwork.dsl.uml2.design/description/uml2.odesign#//@ownedViewpoints[name='Design']/@ownedRepresentations[name='Activity%20Diagram']/@defaultLayer/@edgeMappings[name='AD_ControlFlow']/@style"/>
+          <strokeColor xmi:type="viewpoint:RGBValues" xmi:id="_G_0EoegoEeSXpo4jtdtXdg" red="136" green="136" blue="136"/>
+          <centerLabelStyle xmi:type="diagram:CenterLabelStyle" xmi:id="_G_0EougoEeSXpo4jtdtXdg" showIcon="false">
+            <labelColor xmi:type="viewpoint:RGBValues" xmi:id="_G_0Eo-goEeSXpo4jtdtXdg"/>
+          </centerLabelStyle>
+        </ownedStyle>
+        <actualMapping xmi:type="description_1:EdgeMapping" href="platform:/plugin/org.obeonetwork.dsl.uml2.design/description/uml2.odesign#//@ownedViewpoints[name='Design']/@ownedRepresentations[name='Activity%20Diagram']/@defaultLayer/@edgeMappings[name='AD_ControlFlow']"/>
+      </ownedDiagramElements>
+      <ownedDiagramElements xmi:type="diagram:DEdge" xmi:id="_IzwHcOgoEeSXpo4jtdtXdg" name="&lt;Control Flow> flow5" sourceNode="_ghSwQOgnEeSXpo4jtdtXdg" targetNode="_0ZaKMOgnEeSXpo4jtdtXdg">
+        <target xmi:type="uml:ControlFlow" href="BatteryControl.uml#_IzHOQOgoEeSXpo4jtdtXdg"/>
+        <semanticElements xmi:type="uml:ControlFlow" href="BatteryControl.uml#_IzHOQOgoEeSXpo4jtdtXdg"/>
+        <semanticElements xmi:type="uml:LiteralBoolean" href="BatteryControl.uml#_IzHOQegoEeSXpo4jtdtXdg"/>
+        <graphicalFilters xmi:type="diagram:HideLabelFilter" xmi:id="_lMYw8OgoEeSXpo4jtdtXdg"/>
+        <ownedStyle xmi:type="diagram:EdgeStyle" xmi:id="_Iz5RYOgoEeSXpo4jtdtXdg" routingStyle="manhattan">
+          <description xmi:type="style:EdgeStyleDescription" href="platform:/plugin/org.obeonetwork.dsl.uml2.design/description/uml2.odesign#//@ownedViewpoints[name='Design']/@ownedRepresentations[name='Activity%20Diagram']/@defaultLayer/@edgeMappings[name='AD_ControlFlow']/@style"/>
+          <strokeColor xmi:type="viewpoint:RGBValues" xmi:id="_Iz5RYegoEeSXpo4jtdtXdg" red="136" green="136" blue="136"/>
+          <centerLabelStyle xmi:type="diagram:CenterLabelStyle" xmi:id="_Iz5RYugoEeSXpo4jtdtXdg" showIcon="false">
+            <labelColor xmi:type="viewpoint:RGBValues" xmi:id="_Iz5RY-goEeSXpo4jtdtXdg"/>
+          </centerLabelStyle>
+        </ownedStyle>
+        <actualMapping xmi:type="description_1:EdgeMapping" href="platform:/plugin/org.obeonetwork.dsl.uml2.design/description/uml2.odesign#//@ownedViewpoints[name='Design']/@ownedRepresentations[name='Activity%20Diagram']/@defaultLayer/@edgeMappings[name='AD_ControlFlow']"/>
+      </ownedDiagramElements>
+      <ownedDiagramElements xmi:type="diagram:DEdge" xmi:id="_J4QRYOgoEeSXpo4jtdtXdg" name="&lt;Control Flow> flow6" sourceNode="_qBpsMOgnEeSXpo4jtdtXdg" targetNode="_0ZaKMOgnEeSXpo4jtdtXdg">
+        <target xmi:type="uml:ControlFlow" href="BatteryControl.uml#_J4I8oOgoEeSXpo4jtdtXdg"/>
+        <semanticElements xmi:type="uml:ControlFlow" href="BatteryControl.uml#_J4I8oOgoEeSXpo4jtdtXdg"/>
+        <semanticElements xmi:type="uml:LiteralBoolean" href="BatteryControl.uml#_J4JjsOgoEeSXpo4jtdtXdg"/>
+        <graphicalFilters xmi:type="diagram:HideLabelFilter" xmi:id="_kx-s4OgoEeSXpo4jtdtXdg"/>
+        <ownedStyle xmi:type="diagram:EdgeStyle" xmi:id="_J4Q4cOgoEeSXpo4jtdtXdg" routingStyle="manhattan">
+          <description xmi:type="style:EdgeStyleDescription" href="platform:/plugin/org.obeonetwork.dsl.uml2.design/description/uml2.odesign#//@ownedViewpoints[name='Design']/@ownedRepresentations[name='Activity%20Diagram']/@defaultLayer/@edgeMappings[name='AD_ControlFlow']/@style"/>
+          <strokeColor xmi:type="viewpoint:RGBValues" xmi:id="_J4Q4cegoEeSXpo4jtdtXdg" red="136" green="136" blue="136"/>
+          <centerLabelStyle xmi:type="diagram:CenterLabelStyle" xmi:id="_J4Q4cugoEeSXpo4jtdtXdg" showIcon="false">
+            <labelColor xmi:type="viewpoint:RGBValues" xmi:id="_J4Q4c-goEeSXpo4jtdtXdg"/>
+          </centerLabelStyle>
+        </ownedStyle>
+        <actualMapping xmi:type="description_1:EdgeMapping" href="platform:/plugin/org.obeonetwork.dsl.uml2.design/description/uml2.odesign#//@ownedViewpoints[name='Design']/@ownedRepresentations[name='Activity%20Diagram']/@defaultLayer/@edgeMappings[name='AD_ControlFlow']"/>
+      </ownedDiagramElements>
+      <ownedDiagramElements xmi:type="diagram:DEdge" xmi:id="_wXXMkOwCEeSZA_BCH3PzWA" name="&lt;Control Flow> flow7" sourceNode="_NjIdIOgnEeSXpo4jtdtXdg" targetNode="_a2tMAOgnEeSXpo4jtdtXdg">
+        <target xmi:type="uml:ControlFlow" href="BatteryControl.uml#_olnHgOwCEeSZA_BCH3PzWA"/>
+        <semanticElements xmi:type="uml:ControlFlow" href="BatteryControl.uml#_olnHgOwCEeSZA_BCH3PzWA"/>
+        <graphicalFilters xmi:type="diagram:HideLabelFilter" xmi:id="_yE0z8OwCEeSZA_BCH3PzWA"/>
+        <ownedStyle xmi:type="diagram:EdgeStyle" xmi:id="_wXXzoOwCEeSZA_BCH3PzWA" routingStyle="manhattan">
+          <description xmi:type="style:EdgeStyleDescription" href="platform:/plugin/org.obeonetwork.dsl.uml2.design/description/uml2.odesign#//@ownedViewpoints[name='Design']/@ownedRepresentations[name='Activity%20Diagram']/@defaultLayer/@edgeMappings[name='AD_ControlFlow']/@style"/>
+          <strokeColor xmi:type="viewpoint:RGBValues" xmi:id="_wXXzoewCEeSZA_BCH3PzWA" red="136" green="136" blue="136"/>
+          <centerLabelStyle xmi:type="diagram:CenterLabelStyle" xmi:id="_wXXzouwCEeSZA_BCH3PzWA" showIcon="false">
+            <labelColor xmi:type="viewpoint:RGBValues" xmi:id="_wXXzo-wCEeSZA_BCH3PzWA"/>
+          </centerLabelStyle>
+        </ownedStyle>
+        <actualMapping xmi:type="description_1:EdgeMapping" href="platform:/plugin/org.obeonetwork.dsl.uml2.design/description/uml2.odesign#//@ownedViewpoints[name='Design']/@ownedRepresentations[name='Activity%20Diagram']/@defaultLayer/@edgeMappings[name='AD_ControlFlow']"/>
+      </ownedDiagramElements>
+      <ownedDiagramElements xmi:type="diagram:DEdge" xmi:id="_8fOxwOwMEeS2Ldq17F2vNQ" name="&lt;Control Flow> flow0" sourceNode="_LYJzUOgnEeSXpo4jtdtXdg" targetNode="_2G-2QOwMEeS2Ldq17F2vNQ">
+        <target xmi:type="uml:ControlFlow" href="BatteryControl.uml#_31MrkOwMEeS2Ldq17F2vNQ"/>
+        <semanticElements xmi:type="uml:ControlFlow" href="BatteryControl.uml#_31MrkOwMEeS2Ldq17F2vNQ"/>
+        <graphicalFilters xmi:type="diagram:HideLabelFilter" xmi:id="_ZNQqMOwSEeS2Ldq17F2vNQ"/>
+        <ownedStyle xmi:type="diagram:EdgeStyle" xmi:id="_8fP_4OwMEeS2Ldq17F2vNQ" routingStyle="manhattan">
+          <description xmi:type="style:EdgeStyleDescription" href="platform:/plugin/org.obeonetwork.dsl.uml2.design/description/uml2.odesign#//@ownedViewpoints[name='Design']/@ownedRepresentations[name='Activity%20Diagram']/@defaultLayer/@edgeMappings[name='AD_ControlFlow']/@style"/>
+          <strokeColor xmi:type="viewpoint:RGBValues" xmi:id="_8fP_4ewMEeS2Ldq17F2vNQ" red="136" green="136" blue="136"/>
+          <centerLabelStyle xmi:type="diagram:CenterLabelStyle" xmi:id="_8fP_4uwMEeS2Ldq17F2vNQ" showIcon="false">
+            <labelColor xmi:type="viewpoint:RGBValues" xmi:id="_8fP_4-wMEeS2Ldq17F2vNQ"/>
+          </centerLabelStyle>
+        </ownedStyle>
+        <actualMapping xmi:type="description_1:EdgeMapping" href="platform:/plugin/org.obeonetwork.dsl.uml2.design/description/uml2.odesign#//@ownedViewpoints[name='Design']/@ownedRepresentations[name='Activity%20Diagram']/@defaultLayer/@edgeMappings[name='AD_ControlFlow']"/>
+      </ownedDiagramElements>
+      <ownedDiagramElements xmi:type="diagram:DEdge" xmi:id="_AYcfAOwNEeS2Ldq17F2vNQ" name="&lt;Control Flow> flow4" sourceNode="_2G-2QOwMEeS2Ldq17F2vNQ" targetNode="_0ZaKMOgnEeSXpo4jtdtXdg">
+        <target xmi:type="uml:ControlFlow" href="BatteryControl.uml#_HsF70OgoEeSXpo4jtdtXdg"/>
+        <semanticElements xmi:type="uml:ControlFlow" href="BatteryControl.uml#_HsF70OgoEeSXpo4jtdtXdg"/>
+        <semanticElements xmi:type="uml:LiteralBoolean" href="BatteryControl.uml#_HsGi4OgoEeSXpo4jtdtXdg"/>
+        <graphicalFilters xmi:type="diagram:HideLabelFilter" xmi:id="_aFjkIOwSEeS2Ldq17F2vNQ"/>
+        <ownedStyle xmi:type="diagram:EdgeStyle" xmi:id="_AYdGEOwNEeS2Ldq17F2vNQ" routingStyle="manhattan">
+          <description xmi:type="style:EdgeStyleDescription" href="platform:/plugin/org.obeonetwork.dsl.uml2.design/description/uml2.odesign#//@ownedViewpoints[name='Design']/@ownedRepresentations[name='Activity%20Diagram']/@defaultLayer/@edgeMappings[name='AD_ControlFlow']/@style"/>
+          <strokeColor xmi:type="viewpoint:RGBValues" xmi:id="_AYdGEewNEeS2Ldq17F2vNQ" red="136" green="136" blue="136"/>
+          <centerLabelStyle xmi:type="diagram:CenterLabelStyle" xmi:id="_AYdGEuwNEeS2Ldq17F2vNQ" showIcon="false">
+            <labelColor xmi:type="viewpoint:RGBValues" xmi:id="_AYdGE-wNEeS2Ldq17F2vNQ"/>
+          </centerLabelStyle>
+        </ownedStyle>
+        <actualMapping xmi:type="description_1:EdgeMapping" href="platform:/plugin/org.obeonetwork.dsl.uml2.design/description/uml2.odesign#//@ownedViewpoints[name='Design']/@ownedRepresentations[name='Activity%20Diagram']/@defaultLayer/@edgeMappings[name='AD_ControlFlow']"/>
+      </ownedDiagramElements>
+      <description xmi:type="description_1:DiagramDescription" href="platform:/plugin/org.obeonetwork.dsl.uml2.design/description/uml2.odesign#//@ownedViewpoints[name='Design']/@ownedRepresentations[name='Activity%20Diagram']"/>
+      <filterVariableHistory xmi:type="diagram:FilterVariableHistory" xmi:id="_-8CQ5-gmEeSXpo4jtdtXdg"/>
+      <activatedLayers xmi:type="description_1:Layer" href="platform:/plugin/org.obeonetwork.dsl.uml2.design/description/uml2.odesign#//@ownedViewpoints[name='Design']/@ownedRepresentations[name='Activity%20Diagram']/@defaultLayer"/>
+      <target xmi:type="uml:Activity" href="BatteryControl.uml#_2CGbwOgmEeSXpo4jtdtXdg"/>
+    </ownedRepresentations>
+    <viewpoint xmi:type="description:Viewpoint" href="platform:/plugin/org.obeonetwork.dsl.uml2.design/description/uml2.odesign#//@ownedViewpoints[name='Design']"/>
+  </ownedViews>
+</viewpoint:DAnalysis>

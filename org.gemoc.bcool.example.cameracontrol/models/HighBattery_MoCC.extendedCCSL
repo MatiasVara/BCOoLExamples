@@ -1,0 +1,82 @@
+ClockConstraintSystem HighBatteryModel {
+	imports {
+		import "platform:/plugin/fr.inria.aoste.timesquare.ccslkernel.model/ccsllibrary/kernel.ccslLib" as kernel ;
+		import "platform:/plugin/fr.inria.aoste.timesquare.ccslkernel.model/ccsllibrary/CCSL.ccslLib" as CCSL ;
+		import "platform:/resource/org.gemoc.bcool.example.cameracontrol/models/lib4RT.ccslLib" as lib4RT ;
+		import "platform:/resource/org.gemoc.bcool.example.cameracontrol/models/HighBattery.uml" as Model ;
+	}
+	entryBlock mainBlock
+	Block mainBlock {
+		Relation QuantizerCauses_waitControlToExecutenotNotComingfromControlNode [ Causes ]
+		( LeftClock -> waveletTransform_finishAction,
+		RightClock -> Quantizer_startAction )
+		Relation RunLengthCoderCauses_waitControlToExecutenotNotComingfromControlNode [ Causes ]
+		( LeftClock -> Quantizer_finishAction,
+		RightClock -> RunLengthCoder_startAction )
+		Relation TransmissionCauses_waitControlToExecutenotNotComingfromControlNode [ Causes ]
+		( LeftClock -> RunLengthCoder_finishAction,
+		RightClock -> Transmission_startAction )
+		Relation waveletTransformCauses_waitControlToExecutenotComingfrom [ Causes ]
+		( LeftClock -> InitialNode1_finishIt,
+		RightClock -> waveletTransform_startAction )
+		Relation waveletTransformAlternates_StartAlternatesWithFinish [ Alternates ]
+		( AlternatesLeftClock -> waveletTransform_startAction,
+		AlternatesRightClock -> waveletTransform_finishAction )
+		Relation QuantizerAlternates_StartAlternatesWithFinish [ Alternates ]
+		( AlternatesLeftClock -> Quantizer_startAction,
+		AlternatesRightClock -> Quantizer_finishAction )
+		Relation RunLengthCoderAlternates_StartAlternatesWithFinish [ Alternates ]
+		( AlternatesLeftClock -> RunLengthCoder_startAction,
+		AlternatesRightClock -> RunLengthCoder_finishAction )
+		Relation TransmissionAlternates_StartAlternatesWithFinish [ Alternates ]
+		( AlternatesLeftClock -> Transmission_startAction,
+		AlternatesRightClock -> Transmission_finishAction )
+		Relation doJPEG2000Causes_startCausesInit [ Causes ]
+		( LeftClock -> doJPEG2000_startActivity,
+		RightClock -> InitialNode1_startIt )
+		Relation doJPEG2000Causes_lastSingleFinalNodeStopActivity [ Causes ]
+		( LeftClock -> FinalNode1_finishIt,
+		RightClock -> doJPEG2000_finishActivity )
+		Relation InitialNode1Coincides_instantaneousExecution [ Coincides ]
+		( Clock2 -> InitialNode1_startIt,
+		Clock1 -> InitialNode1_finishIt )
+		Relation FinalNode1Coincides_instantaneousExecution [ Coincides ]
+		( Clock2 -> FinalNode1_startIt,
+		Clock1 -> FinalNode1_finishIt )
+		Relation FinalNode1Causes_waitInputToControlFromAction [ Causes ]
+		( LeftClock -> Transmission_finishAction,
+		RightClock -> FinalNode1_startIt )
+		Clock InitialNode1_startIt : clock -> evt_InitialNode1_startIt
+		( "InitialNode1" )
+		Clock FinalNode1_startIt : clock -> evt_FinalNode1_startIt
+		( "FinalNode1" )
+		Clock InitialNode1_finishIt : clock -> evt_InitialNode1_finishIt
+		( "InitialNode1" )
+		Clock FinalNode1_finishIt : clock -> evt_FinalNode1_finishIt
+		( "FinalNode1" )
+		Clock InitialNode1_temporalEvent : clock -> evt_InitialNode1_temporalEvent
+		( "InitialNode1" )
+		Clock FinalNode1_temporalEvent : clock -> evt_FinalNode1_temporalEvent
+		( "FinalNode1" )
+		Clock doJPEG2000_startActivity : clock -> evt_doJPEG2000_startActivity
+		( "HighBatteryModel::doJPEG2000" )
+		Clock doJPEG2000_finishActivity : clock -> evt_doJPEG2000_finishActivity
+		( "HighBatteryModel::doJPEG2000" )
+		Clock waveletTransform_startAction : clock -> evt_waveletTransform_startAction
+		( "waveletTransform" )
+		Clock Quantizer_startAction : clock -> evt_Quantizer_startAction
+		( "Quantizer" )
+		Clock RunLengthCoder_startAction : clock -> evt_RunLengthCoder_startAction
+		( "RunLengthCoder" )
+		Clock Transmission_startAction : clock -> evt_Transmission_startAction
+		( "Transmission" )
+		Clock waveletTransform_finishAction : clock -> evt_waveletTransform_finishAction
+		( "waveletTransform" )
+		Clock Quantizer_finishAction : clock -> evt_Quantizer_finishAction
+		( "Quantizer" )
+		Clock RunLengthCoder_finishAction : clock -> evt_RunLengthCoder_finishAction
+		( "RunLengthCoder" )
+		Clock Transmission_finishAction : clock -> evt_Transmission_finishAction
+		( "Transmission" )
+	}
+}

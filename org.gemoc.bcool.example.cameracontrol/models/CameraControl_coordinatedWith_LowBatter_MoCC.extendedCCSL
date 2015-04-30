@@ -1,0 +1,28 @@
+ClockConstraintSystem TFSMandfUMLoperatorsCoordination {
+	imports {
+		import "platform:/resource/org.gemoc.bcool.example.cameracontrol/operator/bcoollib.ccslLib" as lib_2 ;
+		import "platform:/plugin/fr.inria.aoste.timesquare.ccslkernel.model/ccsllibrary/kernel.ccslLib" as model_1_1 ;
+		import "platform:/plugin/fr.inria.aoste.timesquare.ccslkernel.model/ccsllibrary/CCSL.ccslLib" as model_1_2 ;
+		import "platform:/plugin/org.gemoc.sample.tfsm.moc.lib/ccsl/TFSMMoC.ccslLib" as model_1_3 ;
+		import "platform:/plugin/fr.inria.aoste.timesquare.ccslkernel.model/ccsllibrary/kernel.ccslLib" as model_2_1 ;
+		import "platform:/plugin/fr.inria.aoste.timesquare.ccslkernel.model/ccsllibrary/CCSL.ccslLib" as model_2_2 ;
+		import "platform:/resource/org.gemoc.bcool.example.cameracontrol/models/lib4RT.ccslLib" as model_2_3 ;
+		import "platform:/resource/org.gemoc.bcool.example.cameracontrol/models/CameraControl_MoCC.extendedCCSL" as inM1 ;
+		import "platform:/resource/org.gemoc.bcool.example.cameracontrol/models/LowBattery_MoCC.extendedCCSL" as inM2 ;
+	}
+	entryBlock mainBlock
+	Block mainBlock {
+		Expression sampleddoJPEG_startActivityms_ticks = SampledBy
+		( Sampled -> "LowBatteryModel::mainBlock::doJPEG_startActivity",
+		Sampler -> "CameraControlSystem::mainBlock::ms_ticks" )
+		Relation StateEnteringdoJPEG_startActivityBatteryLow_entering [ RendezVous ]
+		( ClockA -> "LowBatteryModel::mainBlock::doJPEG_startActivity",
+		ClockB -> "CameraControlSystem::mainBlock::BatteryLow_entering" )
+		Relation StateLeavingdoJPEG_startActivityBatteryLow_entering [ Causality ]
+		( ClockB -> "LowBatteryModel::mainBlock::doJPEG_startActivity",
+		ClockA -> "CameraControlSystem::mainBlock::BatteryLow_entering" )
+		Relation TimeinActivitydoJPEG_finishActivitysampleddoJPEG_startActivityms_ticks [ Causality ]
+		( ClockB -> "LowBatteryModel::mainBlock::doJPEG_finishActivity",
+		ClockA -> sampleddoJPEG_startActivityms_ticks )
+	}
+}
