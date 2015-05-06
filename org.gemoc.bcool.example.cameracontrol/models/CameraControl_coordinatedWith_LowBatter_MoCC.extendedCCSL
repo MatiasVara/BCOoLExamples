@@ -13,14 +13,14 @@ ClockConstraintSystem TFSMandfUMLoperatorsCoordination {
 	entryBlock mainBlock
 	Block mainBlock {
 		Expression sampleddoJPEG_startActivityms_ticks = SampledBy
-		( Sampled -> "LowBatteryModel::mainBlock::doJPEG_startActivity",
-		Sampler -> "CameraControlSystem::mainBlock::ms_ticks" )
+		( Sampler -> "LowBatteryModel::mainBlock::doJPEG_startActivity",
+		Sampled -> "CameraControlSystem::mainBlock::ms_ticks" )
 		Relation StateEnteringdoJPEG_startActivityBatteryLow_entering [ RendezVous ]
 		( ClockA -> "LowBatteryModel::mainBlock::doJPEG_startActivity",
 		ClockB -> "CameraControlSystem::mainBlock::BatteryLow_entering" )
-		Relation StateLeavingdoJPEG_startActivityBatteryLow_entering [ Causality ]
-		( ClockB -> "LowBatteryModel::mainBlock::doJPEG_startActivity",
-		ClockA -> "CameraControlSystem::mainBlock::BatteryLow_entering" )
+		Relation StateLeavingdoJPEG_finishActivityBatteryLow_leaving [ Causality ]
+		( ClockB -> "LowBatteryModel::mainBlock::doJPEG_finishActivity",
+		ClockA -> "CameraControlSystem::mainBlock::BatteryLow_leaving" )
 		Relation TimeinActivitydoJPEG_finishActivitysampleddoJPEG_startActivityms_ticks [ Causality ]
 		( ClockB -> "LowBatteryModel::mainBlock::doJPEG_finishActivity",
 		ClockA -> sampleddoJPEG_startActivityms_ticks )

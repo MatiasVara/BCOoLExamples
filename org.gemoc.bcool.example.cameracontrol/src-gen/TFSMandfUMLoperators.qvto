@@ -465,12 +465,12 @@ main() {
 		};
 		};
 			
-				 MM2_seqOfstartActivityActivityContext-> forEach (finish){ 
+				 MM2_seqOffinishActivityActivityContext-> forEach (finish){ 
 
 
 			
 			
-				 MM1_seqOfenteringStateContext-> forEach (leave){ 
+				 MM1_seqOfleavingStateContext-> forEach (leave){ 
 
 
 			
@@ -480,12 +480,12 @@ main() {
 			
 			map StateLeaving (
 						
-									inM2Clocks[name =  finish.name + '_startActivity']->first().oclAsType(TimeModel::Clock)
+									inM2Clocks[name =  finish.name + '_finishActivity']->first().oclAsType(TimeModel::Clock)
 
 			
 					,
 						
-									inM1Clocks[name =  leave.name + '_entering']->first().oclAsType(TimeModel::Clock)
+									inM1Clocks[name =  leave.name + '_leaving']->first().oclAsType(TimeModel::Clock)
 
 			
 			
