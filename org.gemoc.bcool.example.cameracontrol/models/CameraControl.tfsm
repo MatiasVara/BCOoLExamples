@@ -8,19 +8,19 @@
     <localEvents name="BatteryisHigh"/>
     <localEvents name="start"/>
     <localClock name="ms"/>
-    <ownedTransitions name="initCameratoHighBattery" source="//@tfsms.0/@ownedStates.0" target="//@tfsms.0/@ownedStates.1">
+    <ownedTransitions name="initCameratoHighBattery" source="//@tfsms.0/@ownedStates.0" target="//@tfsms.0/@ownedStates.1" action="doInit">
       <ownedGuard xsi:type="org.gemoc.sample.tfsm:EventGuard" name="guardinit" triggeringEvent="//@tfsms.0/@localEvents.2"/>
     </ownedTransitions>
-    <ownedTransitions name="HighBatterytoLowBattery" source="//@tfsms.0/@ownedStates.1" target="//@tfsms.0/@ownedStates.2">
+    <ownedTransitions name="HighBatterytoLowBattery" source="//@tfsms.0/@ownedStates.1" target="//@tfsms.0/@ownedStates.2" action="doBatteryLow">
       <ownedGuard xsi:type="org.gemoc.sample.tfsm:EventGuard" name="guardLowBattery" triggeringEvent="//@tfsms.0/@localEvents.1"/>
     </ownedTransitions>
-    <ownedTransitions name="HighBatterytoHighBattery" source="//@tfsms.0/@ownedStates.1" target="//@tfsms.0/@ownedStates.1">
+    <ownedTransitions name="HighBatterytoHighBattery" source="//@tfsms.0/@ownedStates.1" target="//@tfsms.0/@ownedStates.1" action="doHighBattery">
       <ownedGuard xsi:type="org.gemoc.sample.tfsm:TemporalGuard" name="guardHighBatterytemp" onClock="//@tfsms.0/@localClock" afterDuration="40"/>
     </ownedTransitions>
-    <ownedTransitions name="LowBatterytoLowBattery" source="//@tfsms.0/@ownedStates.2" target="//@tfsms.0/@ownedStates.2">
+    <ownedTransitions name="LowBatterytoLowBattery" source="//@tfsms.0/@ownedStates.2" target="//@tfsms.0/@ownedStates.2" action="doLowBattery">
       <ownedGuard xsi:type="org.gemoc.sample.tfsm:TemporalGuard" name="guardLowBatterytemp" onClock="//@tfsms.0/@localClock" afterDuration="40"/>
     </ownedTransitions>
-    <ownedTransitions name="LowBatterytoHighBattery" source="//@tfsms.0/@ownedStates.2" target="//@tfsms.0/@ownedStates.1">
+    <ownedTransitions name="LowBatterytoHighBattery" source="//@tfsms.0/@ownedStates.2" target="//@tfsms.0/@ownedStates.1" action="doHighBattery">
       <ownedGuard xsi:type="org.gemoc.sample.tfsm:EventGuard" name="guardLowBattery" triggeringEvent="//@tfsms.0/@localEvents.0"/>
     </ownedTransitions>
   </tfsms>

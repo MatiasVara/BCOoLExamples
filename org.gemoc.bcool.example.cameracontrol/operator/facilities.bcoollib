@@ -8,7 +8,7 @@ relationDeclarations {
 
 
 expressionDeclarations {
-	ExpressionDeclaration AfterN { } , ExpressionDeclaration SampledBy{}
+	ExpressionDeclaration SampledBy{}
 }
 
 }
