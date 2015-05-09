@@ -15,8 +15,8 @@ modeltype TimeModel uses 'http://fr.inria.aoste.timemodel';
 	
 
 transformation doTFSMandfUMLoperators_To_CCSL(
-inM2 : inMM1,
-inM1 : inMM2,
+inM1 : inMM1,
+inM2 : inMM2,
  out TimeModel);
 
 

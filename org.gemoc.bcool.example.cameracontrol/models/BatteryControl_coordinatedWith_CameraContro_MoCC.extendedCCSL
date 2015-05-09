@@ -7,10 +7,16 @@ ClockConstraintSystem TFSMandfUMLoperatorsCoordination {
 		import "platform:/plugin/fr.inria.aoste.timesquare.ccslkernel.model/ccsllibrary/kernel.ccslLib" as model_2_1 ;
 		import "platform:/plugin/fr.inria.aoste.timesquare.ccslkernel.model/ccsllibrary/CCSL.ccslLib" as model_2_2 ;
 		import "platform:/resource/org.gemoc.bcool.example.cameracontrol/models/lib4RT.ccslLib" as model_2_3 ;
-		import "platform:/resource/org.gemoc.bcool.example.cameracontrol/models/BatteryControl_MoCC.extendedCCSL" as inM1 ;
-		import "platform:/resource/org.gemoc.bcool.example.cameracontrol/models/CameraControl_MoCC.extendedCCSL" as inM2 ;
+		import "platform:/resource/org.gemoc.bcool.example.cameracontrol/models/CameraControl_MoCC.extendedCCSL" as inM1 ;
+		import "platform:/resource/org.gemoc.bcool.example.cameracontrol/models/BatteryControl_MoCC.extendedCCSL" as inM2 ;
 	}
 	entryBlock mainBlock
 	Block mainBlock {
+		Relation SyncProductBatteryisHigh_startActionBatteryisHigh_occurs [ RendezVous ]
+		( ClockB -> "BatteryControl::mainBlock::BatteryisHigh_startAction",
+		ClockA -> "CameraControlSystem::mainBlock::BatteryisHigh_occurs" )
+		Relation SyncProductBatteryisLow_startActionBatteryisLow_occurs [ RendezVous ]
+		( ClockB -> "BatteryControl::mainBlock::BatteryisLow_startAction",
+		ClockA -> "CameraControlSystem::mainBlock::BatteryisLow_occurs" )
 	}
 }
