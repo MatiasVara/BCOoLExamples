@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<launchConfiguration type="fr.inria.aoste.timesquare.launcher.core.launchConfigurationType">
+<stringAttribute key="Source" value="/org.gemoc.bcool.example.cameracontrol/models/HighBattery_MoCC.extendedCCSL"/>
+</launchConfiguration>
