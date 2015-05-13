@@ -5,8 +5,8 @@ import fr.inria.aoste.timesquare.ecl.EclQVToHelper;
 modeltype Ecore uses 'http://www.eclipse.org/emf/2002/Ecore';
 //modeltype pivot uses 'http://www.eclipse.org/ocl/3.1.0/Pivot';
 
-modeltype inMM1 uses 'http://www.gemoc.org/sample/tfsm';
-modeltype inMM2 uses 'http://www.eclipse.org/uml2/5.0.0/UML';
+	modeltype inMM1 uses 'http://www.gemoc.org/sample/tfsm';
+	modeltype inMM2 uses 'http://www.eclipse.org/uml2/5.0.0/UML';
 modeltype ocl uses 'http://www.eclipse.org/ocl/3.1.0/CompleteOCLCST';
 
 modeltype QVT uses 'http://www.eclipse.org/QVT/1.0.0/Operational';//http://www.eclipse.org/m2m/qvt/oml/1.0.0/Stdlib';//http://www.eclipse.org/qvt/1.0/ImperativeOCL'; 
@@ -17,7 +17,7 @@ modeltype TimeModel uses 'http://fr.inria.aoste.timemodel';
 transformation doTFSMandfUMLoperators_To_CCSL(
 inM1 : inMM1,
 inM2 : inMM2,
- out TimeModel);
+ inout outCCSLModel : TimeModel);
 
 
 
@@ -39,6 +39,7 @@ query retrieveinM2MoCCClocks() {
 
 property theCCSLSpec			:TimeModel::CCSLModel::ClockConstraintSystem = null;
 property theMainBlock			:TimeModel::CCSLModel::Block				 = null;
+property theSubBlock 			:TimeModel::CCSLModel::Block				 = null;
 
 property Kernel_Integer 	: TimeModel::BasicType::Type		= null;
 property Kernel_Clock_Type 	: TimeModel::BasicType::Type		= null;
@@ -358,7 +359,7 @@ query identifyUserRelations() {
 		value := self.round();
 
 		end{
-			theMainBlock.elements += result;
+			theSubBlock.elements += result;
 		}
 	}
 
@@ -367,7 +368,7 @@ query identifyUserRelations() {
 		name:= n;
 		type:= Kernel_Clock_Type;
 		end {
-			theMainBlock.elements += result;
+			theSubBlock.elements += result;
 		}
 	}
 
@@ -400,8 +401,22 @@ main() {
 			inM2.objectsOfType(inMM2::Action).getstartActionMSEofMM2();
 			inM2.objectsOfType(inMM2::Action).getfinishActionMSEofMM2();
 			inM2.objectsOfType(inMM2::MessageEvent).getcallMSEofMM2();
-	//just to create the ccsl model
-	map TFSMandfUMLoperators2CCSL();
+		
+	
+		
+		if outCCSLModel.objectsOfType(TimeModel::CCSLModel::ClockConstraintSystem)->isEmpty() then
+	 		map TFSMandfUMLoperators2CCSLMainBlock()
+		else { 
+	    		theCCSLSpec := outCCSLModel.objectsOfType(TimeModel::CCSLModel::ClockConstraintSystem)->asSequence()->first();
+	    		theMainBlock := theCCSLSpec.superBlock;
+			}endif;
+	
+		map TFSMandfUMLoperators2CCSLSubBlock();
+				
+		theMainBlock.subBlock += theSubBlock;
+		theSubBlock.container := theMainBlock;
+
+
 
 
 			
@@ -470,7 +485,7 @@ main() {
 
 			
 			
-				 MM1_seqOfleavingStateContext-> forEach (leave){ 
+				 MM1_seqOfenteringStateContext-> forEach (leave){ 
 
 
 			
@@ -485,7 +500,7 @@ main() {
 			
 					,
 						
-									inM1Clocks[name =  leave.name + '_leaving']->first().oclAsType(TimeModel::Clock)
+									inM1Clocks[name =  leave.name + '_entering']->first().oclAsType(TimeModel::Clock)
 
 			
 			
@@ -553,7 +568,7 @@ main() {
 
 			
 					,
-						theMainBlock.expressions[name = 'sampled'+sampled ]->first().oclAsType(TimeModel::CCSLModel::ClockExpressionAndRelation::Expression)
+						theSubBlock.expressions[name = 'sampled'+sampled ]->first().oclAsType(TimeModel::CCSLModel::ClockExpressionAndRelation::Expression)
 			
 			
 			);
@@ -563,7 +578,6 @@ main() {
 		};
 		};
 		};
-
 }
 
 
@@ -593,7 +607,7 @@ mapping SyncProduct (
 					};
 
 end{
-			theMainBlock.relations += result;
+			theSubBlock.relations += result;
 		}	
 			
 }
@@ -623,7 +637,7 @@ mapping StateEntering (
 					};
 
 end{
-			theMainBlock.relations += result;
+			theSubBlock.relations += result;
 		}	
 			
 }
@@ -653,7 +667,7 @@ mapping StateLeaving (
 					};
 
 end{
-			theMainBlock.relations += result;
+			theSubBlock.relations += result;
 		}	
 			
 }
@@ -678,7 +692,7 @@ end{
 						_abstract := seqOfExpressionDeclaration->select(rd | rd.name = "SampledBy")->first().oclAsType(TimeModel::CCSLModel::ClockExpressionAndRelation::ExpressionDeclaration).allSubobjectsOfKind(TimeModel::CCSLModel::ClockExpressionAndRelation::AbstractEntity)->asSequence()->at(2).oclAsType(TimeModel::CCSLModel::ClockExpressionAndRelation::AbstractEntity)
 					};
 			end{
-			theMainBlock.expressions += result;
+			theSubBlock.expressions += result;
 		}	
 	}
 
@@ -707,36 +721,59 @@ mapping TimeinActivity (
 					};
 
 end{
-			theMainBlock.relations += result;
+			theSubBlock.relations += result;
 		}	
 			
 }
 
 mapping DSEtoClock (iname: String) : TimeModel::CCSLModel::ClockExpressionAndRelation::Binding{
+	
 		if inM1Clocks[name = iname]->notEmpty() then 
 			bindable := inM1Clocks[name = iname]->first().oclAsType(TimeModel::Clock)
 		endif;
 		if inM2Clocks[name = iname]->notEmpty() then 
 			bindable := inM2Clocks[name = iname]->first().oclAsType(TimeModel::Clock)
 		endif;
+	
 	if theMainBlock.expressions[name = iname]->notEmpty() then
 		bindable := theMainBlock.expressions[name = iname]->first().oclAsType(TimeModel::CCSLModel::ClockExpressionAndRelation::Expression)
 	endif;
 
+
 	if theMainBlock.elements[name = iname]->notEmpty() then
 		bindable := theMainBlock.elements[name = iname]->first().oclAsType(TimeModel::Clock)
 	endif;
+}
 
+mapping TFSMandfUMLoperators2CCSLSubBlock() : TimeModel::CCSLModel::Block {
+	theSubBlock := result;
+	name:="";
+	
+			name:= name + getModelPath(inM1.rootObjects()->asSequence()->first().oclAsType(EObject)).substring(getModelPath(inM1.rootObjects()->asSequence()->first().oclAsType(EObject)).lastIndexOf('/')+1, getModelPath(inM1.rootObjects()->asSequence()->first().oclAsType(EObject)).lastIndexOf('.')-1);
+	
+		if outCCSLModel.objectsOfType(TimeModel::ImportStatement)->asSequence()->select(i | i.importURI = inM1MoCCPath )->isEmpty() then {
+		theCCSLSpec.imports+= object TimeModel::ImportStatement{
+			importURI := inM1MoCCPath;
+			alias := getModelPath(inM1.rootObjects()->asSequence()->first().oclAsType(EObject)).substring(getModelPath(inM1.rootObjects()->asSequence()->first().oclAsType(EObject)).lastIndexOf('/')+1, getModelPath(inM1.rootObjects()->asSequence()->first().oclAsType(EObject)).lastIndexOf('.')-1);
+			}; 
+		} endif;
 
+			name:= name + getModelPath(inM2.rootObjects()->asSequence()->first().oclAsType(EObject)).substring(getModelPath(inM2.rootObjects()->asSequence()->first().oclAsType(EObject)).lastIndexOf('/')+1, getModelPath(inM2.rootObjects()->asSequence()->first().oclAsType(EObject)).lastIndexOf('.')-1);
+	
+		if outCCSLModel.objectsOfType(TimeModel::ImportStatement)->asSequence()->select(i | i.importURI = inM2MoCCPath )->isEmpty() then {
+		theCCSLSpec.imports+= object TimeModel::ImportStatement{
+			importURI := inM2MoCCPath;
+			alias := getModelPath(inM2.rootObjects()->asSequence()->first().oclAsType(EObject)).substring(getModelPath(inM2.rootObjects()->asSequence()->first().oclAsType(EObject)).lastIndexOf('/')+1, getModelPath(inM2.rootObjects()->asSequence()->first().oclAsType(EObject)).lastIndexOf('.')-1);
+			}; 
+		} endif;
+
+	name := name + "sublock"; 
 }
 
 
 
 
-
-
-
-	mapping TFSMandfUMLoperators2CCSL() : TimeModel::CCSLModel::ClockConstraintSystem {
+	mapping TFSMandfUMLoperators2CCSLMainBlock() : TimeModel::CCSLModel::ClockConstraintSystem {
 	    theCCSLSpec := result;
 	    name := 'TFSMandfUMLoperatorsCoordination';
 	    theMainBlock :=object TimeModel::CCSLModel::Block{
@@ -774,15 +811,6 @@ mapping DSEtoClock (iname: String) : TimeModel::CCSLModel::ClockExpressionAndRel
 	imports+= object TimeModel::ImportStatement{
 			importURI := 'platform:/resource/org.gemoc.bcool.example.cameracontrol/models/lib4RT.ccslLib';
 			alias := 'model_2_3';	
-		}; 
-
-	imports+= object TimeModel::ImportStatement{
-			importURI := inM1MoCCPath;
-			alias := 'inM1';	
-		}; 
-	imports+= object TimeModel::ImportStatement{
-			importURI := inM2MoCCPath;
-			alias := 'inM2';	
 		}; 
 
 }
