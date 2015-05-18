@@ -35,8 +35,7 @@ Library extraExpressions{
 		
 		ExpressionDefinition SampledDef [SampledBy]{
 			root=Sample_result 
-			Expression Sample_result = Union
-						( Clock1 -> Sampler, Clock2 -> Sampled)	
+			Expression Sample_result = Sample(SamplingClock -> Sampler, SampledClock ->Sampled)
   		}
 		ExpressionDeclaration SampledBy(Sampler: clock,  Sampled: clock):clock
 		
