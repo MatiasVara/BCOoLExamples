@@ -604,7 +604,7 @@ main() {
 			}
 		}
 	 	mapping inMM1::ControlNode::temporalEvent2Clock() :TimeModel::Clock 
-			when {  }
+			when { (self.oclIsKindOf(DecisionNode)) }
 		{
 			name:= self.name+'_temporalEvent';
 			tickingEvent := object TimeModel::Event{
@@ -1354,7 +1354,7 @@ mapping inMM1::Package::UML2FeedBack() : FeedBack::ActionModel {
 			}
 		}
 	 	mapping inMM1::ControlNode::temporalEvent2MSE() :FeedBack::ModelSpecificEvent 
-			when {  }
+			when { (self.oclIsKindOf(DecisionNode)) }
 		{
 			name:= 'MSE_'+self.name+'_temporalEvent';
 				solverEvent := theMainBlock.elements[Clock]->select(c|c.name=self.name+'_temporalEvent')->first().oclAsType(EObject);

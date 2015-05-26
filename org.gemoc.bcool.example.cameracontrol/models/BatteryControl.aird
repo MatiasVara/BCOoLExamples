@@ -81,7 +81,7 @@
               <styles xmi:type="notation:FilteringStyle" xmi:id="_-87BsugmEeSXpo4jtdtXdg"/>
             </children>
             <styles xmi:type="notation:ShapeStyle" xmi:id="_-8jOQegmEeSXpo4jtdtXdg" fontName="Sans"/>
-            <layoutConstraint xmi:type="notation:Bounds" xmi:id="_-8jOQugmEeSXpo4jtdtXdg" x="36" y="-108" width="303" height="315"/>
+            <layoutConstraint xmi:type="notation:Bounds" xmi:id="_-8jOQugmEeSXpo4jtdtXdg" x="48" y="-84" width="303" height="315"/>
           </children>
           <styles xmi:type="notation:DiagramStyle" xmi:id="_-8WZ8ugmEeSXpo4jtdtXdg"/>
           <edges xmi:type="notation:Edge" xmi:id="_C5qHkOgoEeSXpo4jtdtXdg" type="4001" element="_C2KusOgoEeSXpo4jtdtXdg" source="_a5GYsOgnEeSXpo4jtdtXdg" target="_gitFgOgnEeSXpo4jtdtXdg">

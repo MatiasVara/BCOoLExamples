@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <org.gemoc.sample.tfsm:TimedSystem xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:org.gemoc.sample.tfsm="http://www.gemoc.org/sample/tfsm" name="CameraControlSystem">
   <tfsms name="CameraControl" initialState="//@tfsms.0/@ownedStates.0">
-    <ownedStates name="init" outgoingTransitions="//@tfsms.0/@ownedTransitions.0" onEnterAction="doInit"/>
-    <ownedStates name="BatteryHigh" outgoingTransitions="//@tfsms.0/@ownedTransitions.2 //@tfsms.0/@ownedTransitions.1" incomingTransitions="//@tfsms.0/@ownedTransitions.0 //@tfsms.0/@ownedTransitions.2 //@tfsms.0/@ownedTransitions.4" onEnterAction="doJPEG2000"/>
-    <ownedStates name="BatteryLow" outgoingTransitions="//@tfsms.0/@ownedTransitions.3 //@tfsms.0/@ownedTransitions.4" incomingTransitions="//@tfsms.0/@ownedTransitions.1 //@tfsms.0/@ownedTransitions.3" onEnterAction="doJPEG"/>
+    <ownedStates name="init" outgoingTransitions="//@tfsms.0/@ownedTransitions.0"/>
+    <ownedStates name="BatteryHigh" outgoingTransitions="//@tfsms.0/@ownedTransitions.2 //@tfsms.0/@ownedTransitions.1" incomingTransitions="//@tfsms.0/@ownedTransitions.0 //@tfsms.0/@ownedTransitions.2 //@tfsms.0/@ownedTransitions.4"/>
+    <ownedStates name="BatteryLow" outgoingTransitions="//@tfsms.0/@ownedTransitions.3 //@tfsms.0/@ownedTransitions.4" incomingTransitions="//@tfsms.0/@ownedTransitions.1 //@tfsms.0/@ownedTransitions.3"/>
     <localEvents name="BatteryisLow"/>
     <localEvents name="BatteryisHigh"/>
     <localEvents name="start"/>

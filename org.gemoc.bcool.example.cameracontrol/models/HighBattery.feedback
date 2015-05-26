@@ -12,41 +12,35 @@
   <events name="MSE_FinalNode1_finishIt">
     <solverEvent href="HighBattery_MoCC.extendedCCSL#//@subBlock.0/@elements.3"/>
   </events>
-  <events name="MSE_InitialNode1_temporalEvent">
+  <events name="MSE_doJPEG2000_startActivity">
     <solverEvent href="HighBattery_MoCC.extendedCCSL#//@subBlock.0/@elements.4"/>
   </events>
-  <events name="MSE_FinalNode1_temporalEvent">
+  <events name="MSE_doJPEG2000_finishActivity">
     <solverEvent href="HighBattery_MoCC.extendedCCSL#//@subBlock.0/@elements.5"/>
   </events>
-  <events name="MSE_doJPEG2000_startActivity">
+  <events name="MSE_Quantizer_startAction">
     <solverEvent href="HighBattery_MoCC.extendedCCSL#//@subBlock.0/@elements.6"/>
   </events>
-  <events name="MSE_doJPEG2000_finishActivity">
+  <events name="MSE_waveletTransform_startAction">
     <solverEvent href="HighBattery_MoCC.extendedCCSL#//@subBlock.0/@elements.7"/>
   </events>
-  <events name="MSE_waveletTransform_startAction">
+  <events name="MSE_RunLengthCoder_startAction">
     <solverEvent href="HighBattery_MoCC.extendedCCSL#//@subBlock.0/@elements.8"/>
   </events>
-  <events name="MSE_Quantizer_startAction">
+  <events name="MSE_Transmission_startAction">
     <solverEvent href="HighBattery_MoCC.extendedCCSL#//@subBlock.0/@elements.9"/>
   </events>
-  <events name="MSE_RunLengthCoder_startAction">
+  <events name="MSE_Quantizer_finishAction">
     <solverEvent href="HighBattery_MoCC.extendedCCSL#//@subBlock.0/@elements.10"/>
   </events>
-  <events name="MSE_Transmission_startAction">
+  <events name="MSE_waveletTransform_finishAction">
     <solverEvent href="HighBattery_MoCC.extendedCCSL#//@subBlock.0/@elements.11"/>
   </events>
-  <events name="MSE_waveletTransform_finishAction">
+  <events name="MSE_RunLengthCoder_finishAction">
     <solverEvent href="HighBattery_MoCC.extendedCCSL#//@subBlock.0/@elements.12"/>
   </events>
-  <events name="MSE_Quantizer_finishAction">
+  <events name="MSE_Transmission_finishAction">
     <solverEvent href="HighBattery_MoCC.extendedCCSL#//@subBlock.0/@elements.13"/>
   </events>
-  <events name="MSE_RunLengthCoder_finishAction">
-    <solverEvent href="HighBattery_MoCC.extendedCCSL#//@subBlock.0/@elements.14"/>
-  </events>
-  <events name="MSE_Transmission_finishAction">
-    <solverEvent href="HighBattery_MoCC.extendedCCSL#//@subBlock.0/@elements.15"/>
-  </events>
-  <importStatements importURI="platform:/1"/>
+  <importStatements importURI="platform:/3"/>
 </feedback:ActionModel>

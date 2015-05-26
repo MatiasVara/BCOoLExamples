@@ -19,12 +19,12 @@ ClockConstraintSystem HighBatteryModel {
 		Relation waveletTransformCauses_waitControlToExecutenotComingfrom [ Causes ]
 		( LeftClock -> InitialNode1_finishIt,
 		RightClock -> waveletTransform_startAction )
-		Relation waveletTransformAlternates_StartAlternatesWithFinish [ Alternates ]
-		( AlternatesLeftClock -> waveletTransform_startAction,
-		AlternatesRightClock -> waveletTransform_finishAction )
 		Relation QuantizerAlternates_StartAlternatesWithFinish [ Alternates ]
 		( AlternatesLeftClock -> Quantizer_startAction,
 		AlternatesRightClock -> Quantizer_finishAction )
+		Relation waveletTransformAlternates_StartAlternatesWithFinish [ Alternates ]
+		( AlternatesLeftClock -> waveletTransform_startAction,
+		AlternatesRightClock -> waveletTransform_finishAction )
 		Relation RunLengthCoderAlternates_StartAlternatesWithFinish [ Alternates ]
 		( AlternatesLeftClock -> RunLengthCoder_startAction,
 		AlternatesRightClock -> RunLengthCoder_finishAction )
@@ -54,26 +54,22 @@ ClockConstraintSystem HighBatteryModel {
 		( "InitialNode1" )
 		Clock FinalNode1_finishIt : clock -> evt_FinalNode1_finishIt
 		( "FinalNode1" )
-		Clock InitialNode1_temporalEvent : clock -> evt_InitialNode1_temporalEvent
-		( "InitialNode1" )
-		Clock FinalNode1_temporalEvent : clock -> evt_FinalNode1_temporalEvent
-		( "FinalNode1" )
 		Clock doJPEG2000_startActivity : clock -> evt_doJPEG2000_startActivity
 		( "HighBatteryModel::doJPEG2000" )
 		Clock doJPEG2000_finishActivity : clock -> evt_doJPEG2000_finishActivity
 		( "HighBatteryModel::doJPEG2000" )
-		Clock waveletTransform_startAction : clock -> evt_waveletTransform_startAction
-		( "waveletTransform" )
 		Clock Quantizer_startAction : clock -> evt_Quantizer_startAction
 		( "Quantizer" )
+		Clock waveletTransform_startAction : clock -> evt_waveletTransform_startAction
+		( "waveletTransform" )
 		Clock RunLengthCoder_startAction : clock -> evt_RunLengthCoder_startAction
 		( "RunLengthCoder" )
 		Clock Transmission_startAction : clock -> evt_Transmission_startAction
 		( "Transmission" )
-		Clock waveletTransform_finishAction : clock -> evt_waveletTransform_finishAction
-		( "waveletTransform" )
 		Clock Quantizer_finishAction : clock -> evt_Quantizer_finishAction
 		( "Quantizer" )
+		Clock waveletTransform_finishAction : clock -> evt_waveletTransform_finishAction
+		( "waveletTransform" )
 		Clock RunLengthCoder_finishAction : clock -> evt_RunLengthCoder_finishAction
 		( "RunLengthCoder" )
 		Clock Transmission_finishAction : clock -> evt_Transmission_finishAction

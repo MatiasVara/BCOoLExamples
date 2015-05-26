@@ -70,7 +70,7 @@
               <styles xmi:type="notation:FilteringStyle" xmi:id="_lrwjorwtEeSozIkC9kpzOA"/>
             </children>
             <styles xmi:type="notation:ShapeStyle" xmi:id="_lrRbcbwtEeSozIkC9kpzOA" fontName="Sans"/>
-            <layoutConstraint xmi:type="notation:Bounds" xmi:id="_lrRbcrwtEeSozIkC9kpzOA" width="183" height="411"/>
+            <layoutConstraint xmi:type="notation:Bounds" xmi:id="_lrRbcrwtEeSozIkC9kpzOA" x="180" width="183" height="411"/>
           </children>
           <styles xmi:type="notation:DiagramStyle" xmi:id="_lrCx8rwtEeSozIkC9kpzOA"/>
           <edges xmi:type="notation:Edge" xmi:id="_lsfjcLwtEeSozIkC9kpzOA" type="4001" element="_lqGWwLwtEeSozIkC9kpzOA" source="_lr5tlLwtEeSozIkC9kpzOA" target="_lr6UpLwtEeSozIkC9kpzOA">

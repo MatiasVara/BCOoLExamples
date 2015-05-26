@@ -18,7 +18,7 @@ package UML
 	context ControlNode
 		def : startIt : Event = self --StartEvent
 		def : finishIt : Event= self --StopEvent
-		def : temporalEvent : Event = self --GenericEvent
+		def if(self.oclIsKindOf(DecisionNode)): temporalEvent : Event = self --GenericEvent
 		
 	context Activity  
 		def: startActivity : Event = self --StartEvent
