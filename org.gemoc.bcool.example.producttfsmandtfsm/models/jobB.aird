@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<viewpoint:DAnalysis xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:description="http://www.eclipse.org/sirius/description/1.1.0" xmlns:description_1="http://www.eclipse.org/sirius/diagram/description/1.1.0" xmlns:diagram="http://www.eclipse.org/sirius/diagram/1.1.0" xmlns:notation="http://www.eclipse.org/gmf/runtime/1.0.2/notation" xmlns:org.gemoc.sample.tfsm="http://www.gemoc.org/sample/tfsm" xmlns:style="http://www.eclipse.org/sirius/diagram/description/style/1.1.0" xmlns:viewpoint="http://www.eclipse.org/sirius/1.1.0" xsi:schemaLocation="http://www.eclipse.org/sirius/description/1.1.0 http://www.eclipse.org/sirius/1.1.0#//description http://www.eclipse.org/sirius/diagram/description/1.1.0 http://www.eclipse.org/sirius/diagram/1.1.0#//description http://www.eclipse.org/sirius/diagram/description/style/1.1.0 http://www.eclipse.org/sirius/diagram/1.1.0#//description/style" xmi:id="_14wDcNrpEeSbnuofmDSfCQ" selectedViews="_2XxhwNrpEeSbnuofmDSfCQ" version="8.1.1">
-  <models xmi:type="org.gemoc.sample.tfsm:TimedSystem" href="jobB.tfsm#/"/>
+<viewpoint:DAnalysis xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:description="http://www.eclipse.org/sirius/description/1.1.0" xmlns:description_1="http://www.eclipse.org/sirius/diagram/description/1.1.0" xmlns:diagram="http://www.eclipse.org/sirius/diagram/1.1.0" xmlns:notation="http://www.eclipse.org/gmf/runtime/1.0.2/notation" xmlns:style="http://www.eclipse.org/sirius/diagram/description/style/1.1.0" xmlns:tfsmextended="http://tfsmextended" xmlns:viewpoint="http://www.eclipse.org/sirius/1.1.0" xsi:schemaLocation="http://www.eclipse.org/sirius/description/1.1.0 http://www.eclipse.org/sirius/1.1.0#//description http://www.eclipse.org/sirius/diagram/description/1.1.0 http://www.eclipse.org/sirius/diagram/1.1.0#//description http://www.eclipse.org/sirius/diagram/description/style/1.1.0 http://www.eclipse.org/sirius/diagram/1.1.0#//description/style" xmi:id="_14wDcNrpEeSbnuofmDSfCQ" selectedViews="_2XxhwNrpEeSbnuofmDSfCQ" version="8.1.1">
+  <models xmi:type="tfsmextended:TimedSystem" href="jobB.tfsm#/"/>
   <ownedViews xmi:type="viewpoint:DRepresentationContainer" xmi:id="_2XxhwNrpEeSbnuofmDSfCQ" initialized="true">
     <ownedRepresentations xmi:type="diagram:DSemanticDiagram" xmi:id="_2Y3G4NrpEeSbnuofmDSfCQ" name="TFSMB">
       <ownedAnnotationEntries xmi:type="description:AnnotationEntry" xmi:id="_2Y48ENrpEeSbnuofmDSfCQ" source="GMF_DIAGRAMS">
@@ -152,8 +152,8 @@
         </data>
       </ownedAnnotationEntries>
       <ownedDiagramElements xmi:type="diagram:DNodeContainer" xmi:id="_2Y3G4drpEeSbnuofmDSfCQ" name="TFSMB">
-        <target xmi:type="org.gemoc.sample.tfsm:TimedSystem" href="jobB.tfsm#/"/>
-        <semanticElements xmi:type="org.gemoc.sample.tfsm:TimedSystem" href="jobB.tfsm#/"/>
+        <target xmi:type="tfsmextended:TimedSystem" href="jobB.tfsm#/"/>
+        <semanticElements xmi:type="tfsmextended:TimedSystem" href="jobB.tfsm#/"/>
         <ownedStyle xmi:type="diagram:FlatContainerStyle" xmi:id="_2Y3G4trpEeSbnuofmDSfCQ" showIcon="false">
           <labelColor xmi:type="viewpoint:RGBValues" xmi:id="_2Y3G49rpEeSbnuofmDSfCQ"/>
           <description xmi:type="style:FlatContainerStyleDescription" href="platform:/plugin/org.gemoc.sample.tfsm.design/description/TFSM.odesign#//@ownedViewpoints[name='TFSM_ViewPoint']/@ownedRepresentations[name='TimedSystem']/@defaultLayer/@containerMappings[name='TimedSystem']/@style"/>
@@ -163,8 +163,8 @@
         </ownedStyle>
         <actualMapping xmi:type="description_1:ContainerMapping" href="platform:/plugin/org.gemoc.sample.tfsm.design/description/TFSM.odesign#//@ownedViewpoints[name='TFSM_ViewPoint']/@ownedRepresentations[name='TimedSystem']/@defaultLayer/@containerMappings[name='TimedSystem']"/>
         <ownedDiagramElements xmi:type="diagram:DNodeContainer" xmi:id="_2Y3G59rpEeSbnuofmDSfCQ" name="B">
-          <target xmi:type="org.gemoc.sample.tfsm:TFSM" href="jobB.tfsm#//@tfsms.0"/>
-          <semanticElements xmi:type="org.gemoc.sample.tfsm:TFSM" href="jobB.tfsm#//@tfsms.0"/>
+          <target xmi:type="tfsmextended:TFSM" href="jobB.tfsm#//@tfsms.0"/>
+          <semanticElements xmi:type="tfsmextended:TFSM" href="jobB.tfsm#//@tfsms.0"/>
           <ownedStyle xmi:type="diagram:FlatContainerStyle" xmi:id="_2Y3G6NrpEeSbnuofmDSfCQ">
             <labelColor xmi:type="viewpoint:RGBValues" xmi:id="_2Y3G6drpEeSbnuofmDSfCQ"/>
             <description xmi:type="style:FlatContainerStyleDescription" href="platform:/plugin/org.gemoc.sample.tfsm.design/description/TFSM.odesign#//@ownedViewpoints[name='TFSM_ViewPoint']/@ownedRepresentations[name='TimedSystem']/@defaultLayer/@containerMappings[name='TimedSystem']/@subContainerMappings[name='TFSM']/@style"/>
@@ -174,8 +174,8 @@
           </ownedStyle>
           <actualMapping xmi:type="description_1:ContainerMapping" href="platform:/plugin/org.gemoc.sample.tfsm.design/description/TFSM.odesign#//@ownedViewpoints[name='TFSM_ViewPoint']/@ownedRepresentations[name='TimedSystem']/@defaultLayer/@containerMappings[name='TimedSystem']/@subContainerMappings[name='TFSM']"/>
           <ownedDiagramElements xmi:type="diagram:DNode" xmi:id="_2Y3G7drpEeSbnuofmDSfCQ" name="ping" width="-1" height="-1">
-            <target xmi:type="org.gemoc.sample.tfsm:FSMEvent" href="jobB.tfsm#//@tfsms.0/@localEvents.0"/>
-            <semanticElements xmi:type="org.gemoc.sample.tfsm:FSMEvent" href="jobB.tfsm#//@tfsms.0/@localEvents.0"/>
+            <target xmi:type="tfsmextended:FSMEvent" href="jobB.tfsm#//@tfsms.0/@localEvents.0"/>
+            <semanticElements xmi:type="tfsmextended:FSMEvent" href="jobB.tfsm#//@tfsms.0/@localEvents.0"/>
             <ownedStyle xmi:type="diagram:WorkspaceImage" xmi:id="_2Y3G7trpEeSbnuofmDSfCQ" labelFormat="bold" showIcon="false" iconPath="event_small.png" workspacePath="/org.gemoc.sample.tfsm.design/icons/event_small.gif">
               <labelColor xmi:type="viewpoint:RGBValues" xmi:id="_2Y3G79rpEeSbnuofmDSfCQ"/>
               <description xmi:type="style:WorkspaceImageDescription" href="platform:/plugin/org.gemoc.sample.tfsm.design/description/TFSM.odesign#//@ownedViewpoints[name='TFSM_ViewPoint']/@ownedRepresentations[name='TimedSystem']/@defaultLayer/@containerMappings[name='TimedSystem']/@subContainerMappings[name='TFSM']/@subNodeMappings[name='FSMEvent']/@style"/>
@@ -184,8 +184,8 @@
             <actualMapping xmi:type="description_1:NodeMapping" href="platform:/plugin/org.gemoc.sample.tfsm.design/description/TFSM.odesign#//@ownedViewpoints[name='TFSM_ViewPoint']/@ownedRepresentations[name='TimedSystem']/@defaultLayer/@containerMappings[name='TimedSystem']/@subContainerMappings[name='TFSM']/@subNodeMappings[name='FSMEvent']"/>
           </ownedDiagramElements>
           <ownedDiagramElements xmi:type="diagram:DNode" xmi:id="_2Y3G8drpEeSbnuofmDSfCQ" name="pong" width="-1" height="-1">
-            <target xmi:type="org.gemoc.sample.tfsm:FSMEvent" href="jobB.tfsm#//@tfsms.0/@localEvents.1"/>
-            <semanticElements xmi:type="org.gemoc.sample.tfsm:FSMEvent" href="jobB.tfsm#//@tfsms.0/@localEvents.1"/>
+            <target xmi:type="tfsmextended:FSMEvent" href="jobB.tfsm#//@tfsms.0/@localEvents.1"/>
+            <semanticElements xmi:type="tfsmextended:FSMEvent" href="jobB.tfsm#//@tfsms.0/@localEvents.1"/>
             <ownedStyle xmi:type="diagram:WorkspaceImage" xmi:id="_2Y3G8trpEeSbnuofmDSfCQ" labelFormat="bold" showIcon="false" iconPath="event_small.png" workspacePath="/org.gemoc.sample.tfsm.design/icons/event_small.gif">
               <labelColor xmi:type="viewpoint:RGBValues" xmi:id="_2Y3G89rpEeSbnuofmDSfCQ"/>
               <description xmi:type="style:WorkspaceImageDescription" href="platform:/plugin/org.gemoc.sample.tfsm.design/description/TFSM.odesign#//@ownedViewpoints[name='TFSM_ViewPoint']/@ownedRepresentations[name='TimedSystem']/@defaultLayer/@containerMappings[name='TimedSystem']/@subContainerMappings[name='TFSM']/@subNodeMappings[name='FSMEvent']/@style"/>
@@ -194,8 +194,8 @@
             <actualMapping xmi:type="description_1:NodeMapping" href="platform:/plugin/org.gemoc.sample.tfsm.design/description/TFSM.odesign#//@ownedViewpoints[name='TFSM_ViewPoint']/@ownedRepresentations[name='TimedSystem']/@defaultLayer/@containerMappings[name='TimedSystem']/@subContainerMappings[name='TFSM']/@subNodeMappings[name='FSMEvent']"/>
           </ownedDiagramElements>
           <ownedDiagramElements xmi:type="diagram:DNode" xmi:id="_2Y3G9drpEeSbnuofmDSfCQ" name="start" width="-1" height="-1">
-            <target xmi:type="org.gemoc.sample.tfsm:FSMEvent" href="jobB.tfsm#//@tfsms.0/@localEvents.2"/>
-            <semanticElements xmi:type="org.gemoc.sample.tfsm:FSMEvent" href="jobB.tfsm#//@tfsms.0/@localEvents.2"/>
+            <target xmi:type="tfsmextended:FSMEvent" href="jobB.tfsm#//@tfsms.0/@localEvents.2"/>
+            <semanticElements xmi:type="tfsmextended:FSMEvent" href="jobB.tfsm#//@tfsms.0/@localEvents.2"/>
             <ownedStyle xmi:type="diagram:WorkspaceImage" xmi:id="_2Y3G9trpEeSbnuofmDSfCQ" labelFormat="bold" showIcon="false" iconPath="event_small.png" workspacePath="/org.gemoc.sample.tfsm.design/icons/event_small.gif">
               <labelColor xmi:type="viewpoint:RGBValues" xmi:id="_2Y3G99rpEeSbnuofmDSfCQ"/>
               <description xmi:type="style:WorkspaceImageDescription" href="platform:/plugin/org.gemoc.sample.tfsm.design/description/TFSM.odesign#//@ownedViewpoints[name='TFSM_ViewPoint']/@ownedRepresentations[name='TimedSystem']/@defaultLayer/@containerMappings[name='TimedSystem']/@subContainerMappings[name='TFSM']/@subNodeMappings[name='FSMEvent']/@style"/>
@@ -204,8 +204,8 @@
             <actualMapping xmi:type="description_1:NodeMapping" href="platform:/plugin/org.gemoc.sample.tfsm.design/description/TFSM.odesign#//@ownedViewpoints[name='TFSM_ViewPoint']/@ownedRepresentations[name='TimedSystem']/@defaultLayer/@containerMappings[name='TimedSystem']/@subContainerMappings[name='TFSM']/@subNodeMappings[name='FSMEvent']"/>
           </ownedDiagramElements>
           <ownedDiagramElements xmi:type="diagram:DNode" xmi:id="_2Y3G-drpEeSbnuofmDSfCQ" name="A" outgoingEdges="_2Y3HDNrpEeSbnuofmDSfCQ" incomingEdges="_2Y3HEdrpEeSbnuofmDSfCQ _2Y3HFtrpEeSbnuofmDSfCQ" width="3" height="3" resizeKind="NSEW">
-            <target xmi:type="org.gemoc.sample.tfsm:State" href="jobB.tfsm#//@tfsms.0/@ownedStates.0"/>
-            <semanticElements xmi:type="org.gemoc.sample.tfsm:State" href="jobB.tfsm#//@tfsms.0/@ownedStates.0"/>
+            <target xmi:type="tfsmextended:State" href="jobB.tfsm#//@tfsms.0/@ownedStates.0"/>
+            <semanticElements xmi:type="tfsmextended:State" href="jobB.tfsm#//@tfsms.0/@ownedStates.0"/>
             <ownedStyle xmi:type="diagram:Dot" xmi:id="_2Y3G-trpEeSbnuofmDSfCQ" showIcon="false" borderSize="3" borderSizeComputationExpression="3" labelPosition="node">
               <labelColor xmi:type="viewpoint:RGBValues" xmi:id="_2Y3G-9rpEeSbnuofmDSfCQ" red="39" green="76" blue="114"/>
               <description xmi:type="style:DotDescription" href="platform:/plugin/org.gemoc.sample.tfsm.design/description/TFSM.odesign#//@ownedViewpoints[name='TFSM_ViewPoint']/@ownedRepresentations[name='TFSM']/@defaultLayer/@nodeMappings[name='State']/@style"/>
@@ -215,8 +215,8 @@
             <actualMapping xmi:type="description_1:NodeMappingImport" href="platform:/plugin/org.gemoc.sample.tfsm.design/description/TFSM.odesign#//@ownedViewpoints[name='TFSM_ViewPoint']/@ownedRepresentations[name='TimedSystem']/@defaultLayer/@containerMappings[name='TimedSystem']/@subContainerMappings[name='TFSM']/@subNodeMappings[name='States']"/>
           </ownedDiagramElements>
           <ownedDiagramElements xmi:type="diagram:DNode" xmi:id="_2Y3G_trpEeSbnuofmDSfCQ" name="B" outgoingEdges="_2Y3HEdrpEeSbnuofmDSfCQ" incomingEdges="_2Y3HDNrpEeSbnuofmDSfCQ" width="3" height="3" resizeKind="NSEW">
-            <target xmi:type="org.gemoc.sample.tfsm:State" href="jobB.tfsm#//@tfsms.0/@ownedStates.1"/>
-            <semanticElements xmi:type="org.gemoc.sample.tfsm:State" href="jobB.tfsm#//@tfsms.0/@ownedStates.1"/>
+            <target xmi:type="tfsmextended:State" href="jobB.tfsm#//@tfsms.0/@ownedStates.1"/>
+            <semanticElements xmi:type="tfsmextended:State" href="jobB.tfsm#//@tfsms.0/@ownedStates.1"/>
             <ownedStyle xmi:type="diagram:Dot" xmi:id="_2Y3G_9rpEeSbnuofmDSfCQ" showIcon="false" borderSize="3" borderSizeComputationExpression="3" labelPosition="node">
               <labelColor xmi:type="viewpoint:RGBValues" xmi:id="_2Y3HANrpEeSbnuofmDSfCQ" red="39" green="76" blue="114"/>
               <description xmi:type="style:DotDescription" href="platform:/plugin/org.gemoc.sample.tfsm.design/description/TFSM.odesign#//@ownedViewpoints[name='TFSM_ViewPoint']/@ownedRepresentations[name='TFSM']/@defaultLayer/@nodeMappings[name='State']/@style"/>
@@ -226,8 +226,8 @@
             <actualMapping xmi:type="description_1:NodeMappingImport" href="platform:/plugin/org.gemoc.sample.tfsm.design/description/TFSM.odesign#//@ownedViewpoints[name='TFSM_ViewPoint']/@ownedRepresentations[name='TimedSystem']/@defaultLayer/@containerMappings[name='TimedSystem']/@subContainerMappings[name='TFSM']/@subNodeMappings[name='States']"/>
           </ownedDiagramElements>
           <ownedDiagramElements xmi:type="diagram:DNode" xmi:id="_2Y3HA9rpEeSbnuofmDSfCQ" name="init" outgoingEdges="_2Y3HFtrpEeSbnuofmDSfCQ" width="2" height="2" resizeKind="NSEW">
-            <target xmi:type="org.gemoc.sample.tfsm:State" href="jobB.tfsm#//@tfsms.0/@ownedStates.2"/>
-            <semanticElements xmi:type="org.gemoc.sample.tfsm:State" href="jobB.tfsm#//@tfsms.0/@ownedStates.2"/>
+            <target xmi:type="tfsmextended:State" href="jobB.tfsm#//@tfsms.0/@ownedStates.2"/>
+            <semanticElements xmi:type="tfsmextended:State" href="jobB.tfsm#//@tfsms.0/@ownedStates.2"/>
             <ownedStyle xmi:type="diagram:Dot" xmi:id="_2Y3HBNrpEeSbnuofmDSfCQ" showIcon="false" borderSize="3" borderSizeComputationExpression="3">
               <labelColor xmi:type="viewpoint:RGBValues" xmi:id="_2Y3HBdrpEeSbnuofmDSfCQ" red="136" green="136" blue="136"/>
               <description xmi:type="style:DotDescription" href="platform:/plugin/org.gemoc.sample.tfsm.design/description/TFSM.odesign#//@ownedViewpoints[name='TFSM_ViewPoint']/@ownedRepresentations[name='TFSM']/@defaultLayer/@nodeMappings[name='State']/@conditionnalStyles.0/@style"/>
@@ -237,8 +237,8 @@
             <actualMapping xmi:type="description_1:NodeMappingImport" href="platform:/plugin/org.gemoc.sample.tfsm.design/description/TFSM.odesign#//@ownedViewpoints[name='TFSM_ViewPoint']/@ownedRepresentations[name='TimedSystem']/@defaultLayer/@containerMappings[name='TimedSystem']/@subContainerMappings[name='TFSM']/@subNodeMappings[name='States']"/>
           </ownedDiagramElements>
           <ownedDiagramElements xmi:type="diagram:DNode" xmi:id="_2Y3HCNrpEeSbnuofmDSfCQ" name="sec" width="5" height="5" resizeKind="NSEW">
-            <target xmi:type="org.gemoc.sample.tfsm:FSMClock" href="jobB.tfsm#//@tfsms.0/@localClock"/>
-            <semanticElements xmi:type="org.gemoc.sample.tfsm:FSMClock" href="jobB.tfsm#//@tfsms.0/@localClock"/>
+            <target xmi:type="tfsmextended:FSMClock" href="jobB.tfsm#//@tfsms.0/@localClock"/>
+            <semanticElements xmi:type="tfsmextended:FSMClock" href="jobB.tfsm#//@tfsms.0/@localClock"/>
             <ownedStyle xmi:type="diagram:WorkspaceImage" xmi:id="_2Y3HCdrpEeSbnuofmDSfCQ" labelFormat="bold" showIcon="false" workspacePath="/org.gemoc.sample.tfsm.design/icons/clock_local_small.gif">
               <labelColor xmi:type="viewpoint:RGBValues" xmi:id="_2Y3HCtrpEeSbnuofmDSfCQ"/>
               <description xmi:type="style:WorkspaceImageDescription" href="platform:/plugin/org.gemoc.sample.tfsm.design/description/TFSM.odesign#//@ownedViewpoints[name='TFSM_ViewPoint']/@ownedRepresentations[name='TFSM']/@defaultLayer/@nodeMappings[name='Local%20Clock']/@style"/>
@@ -249,8 +249,8 @@
         </ownedDiagramElements>
       </ownedDiagramElements>
       <ownedDiagramElements xmi:type="diagram:DEdge" xmi:id="_2Y3HDNrpEeSbnuofmDSfCQ" name="after 1 on sec&#xA; / &#xA; &#xA;  !ping;" sourceNode="_2Y3G-drpEeSbnuofmDSfCQ" targetNode="_2Y3G_trpEeSbnuofmDSfCQ">
-        <target xmi:type="org.gemoc.sample.tfsm:Transition" href="jobB.tfsm#//@tfsms.0/@ownedTransitions.0"/>
-        <semanticElements xmi:type="org.gemoc.sample.tfsm:Transition" href="jobB.tfsm#//@tfsms.0/@ownedTransitions.0"/>
+        <target xmi:type="tfsmextended:Transition" href="jobB.tfsm#//@tfsms.0/@ownedTransitions.0"/>
+        <semanticElements xmi:type="tfsmextended:Transition" href="jobB.tfsm#//@tfsms.0/@ownedTransitions.0"/>
         <ownedStyle xmi:type="diagram:EdgeStyle" xmi:id="_2Y3HDdrpEeSbnuofmDSfCQ" size="2">
           <description xmi:type="style:EdgeStyleDescription" href="platform:/plugin/org.gemoc.sample.tfsm.design/description/TFSM.odesign#//@ownedViewpoints[name='TFSM_ViewPoint']/@ownedRepresentations[name='TFSM']/@defaultLayer/@edgeMappings[name='EventTransition']/@style"/>
           <strokeColor xmi:type="viewpoint:RGBValues" xmi:id="_2Y3HDtrpEeSbnuofmDSfCQ" red="136" green="136" blue="136"/>
@@ -261,8 +261,8 @@
         <actualMapping xmi:type="description_1:EdgeMappingImport" href="platform:/plugin/org.gemoc.sample.tfsm.design/description/TFSM.odesign#//@ownedViewpoints[name='TFSM_ViewPoint']/@ownedRepresentations[name='TimedSystem']/@defaultLayer/@edgeMappingImports[name='Transitions']"/>
       </ownedDiagramElements>
       <ownedDiagramElements xmi:type="diagram:DEdge" xmi:id="_2Y3HEdrpEeSbnuofmDSfCQ" name="when pong&#xA; / &#xA; &#xA;" sourceNode="_2Y3G_trpEeSbnuofmDSfCQ" targetNode="_2Y3G-drpEeSbnuofmDSfCQ">
-        <target xmi:type="org.gemoc.sample.tfsm:Transition" href="jobB.tfsm#//@tfsms.0/@ownedTransitions.1"/>
-        <semanticElements xmi:type="org.gemoc.sample.tfsm:Transition" href="jobB.tfsm#//@tfsms.0/@ownedTransitions.1"/>
+        <target xmi:type="tfsmextended:Transition" href="jobB.tfsm#//@tfsms.0/@ownedTransitions.1"/>
+        <semanticElements xmi:type="tfsmextended:Transition" href="jobB.tfsm#//@tfsms.0/@ownedTransitions.1"/>
         <ownedStyle xmi:type="diagram:EdgeStyle" xmi:id="_2Y3HEtrpEeSbnuofmDSfCQ" size="2">
           <description xmi:type="style:EdgeStyleDescription" href="platform:/plugin/org.gemoc.sample.tfsm.design/description/TFSM.odesign#//@ownedViewpoints[name='TFSM_ViewPoint']/@ownedRepresentations[name='TFSM']/@defaultLayer/@edgeMappings[name='EventTransition']/@style"/>
           <strokeColor xmi:type="viewpoint:RGBValues" xmi:id="_2Y3HE9rpEeSbnuofmDSfCQ" red="136" green="136" blue="136"/>
@@ -273,8 +273,8 @@
         <actualMapping xmi:type="description_1:EdgeMappingImport" href="platform:/plugin/org.gemoc.sample.tfsm.design/description/TFSM.odesign#//@ownedViewpoints[name='TFSM_ViewPoint']/@ownedRepresentations[name='TimedSystem']/@defaultLayer/@edgeMappingImports[name='Transitions']"/>
       </ownedDiagramElements>
       <ownedDiagramElements xmi:type="diagram:DEdge" xmi:id="_2Y3HFtrpEeSbnuofmDSfCQ" name="when start&#xA; / &#xA;initialize()&#xA;" sourceNode="_2Y3HA9rpEeSbnuofmDSfCQ" targetNode="_2Y3G-drpEeSbnuofmDSfCQ">
-        <target xmi:type="org.gemoc.sample.tfsm:Transition" href="jobB.tfsm#//@tfsms.0/@ownedTransitions.2"/>
-        <semanticElements xmi:type="org.gemoc.sample.tfsm:Transition" href="jobB.tfsm#//@tfsms.0/@ownedTransitions.2"/>
+        <target xmi:type="tfsmextended:Transition" href="jobB.tfsm#//@tfsms.0/@ownedTransitions.2"/>
+        <semanticElements xmi:type="tfsmextended:Transition" href="jobB.tfsm#//@tfsms.0/@ownedTransitions.2"/>
         <ownedStyle xmi:type="diagram:EdgeStyle" xmi:id="_2Y3HF9rpEeSbnuofmDSfCQ" size="2">
           <description xmi:type="style:EdgeStyleDescription" href="platform:/plugin/org.gemoc.sample.tfsm.design/description/TFSM.odesign#//@ownedViewpoints[name='TFSM_ViewPoint']/@ownedRepresentations[name='TFSM']/@defaultLayer/@edgeMappings[name='EventTransition']/@style"/>
           <strokeColor xmi:type="viewpoint:RGBValues" xmi:id="_2Y3HGNrpEeSbnuofmDSfCQ" red="136" green="136" blue="136"/>
@@ -288,7 +288,7 @@
       <filterVariableHistory xmi:type="diagram:FilterVariableHistory" xmi:id="_2Y3HG9rpEeSbnuofmDSfCQ"/>
       <activatedLayers xmi:type="description_1:Layer" href="platform:/plugin/org.gemoc.sample.tfsm.design/description/TFSM.odesign#//@ownedViewpoints[name='TFSM_ViewPoint']/@ownedRepresentations[name='TimedSystem']/@defaultLayer"/>
       <activatedLayers xmi:type="description_1:AdditionalLayer" href="platform:/plugin/org.gemoc.sample.tfsm.design/description/TFSM.odesign#//@ownedViewpoints[name='TFSM_ViewPoint']/@ownedRepresentations[name='TimedSystem']/@additionalLayers[name='Debug']"/>
-      <target xmi:type="org.gemoc.sample.tfsm:TimedSystem" href="jobB.tfsm#/"/>
+      <target xmi:type="tfsmextended:TimedSystem" href="jobB.tfsm#/"/>
     </ownedRepresentations>
     <ownedRepresentations xmi:type="diagram:DSemanticDiagram" xmi:id="_2ZaggNrpEeSbnuofmDSfCQ" name="B">
       <ownedAnnotationEntries xmi:type="description:AnnotationEntry" xmi:id="_2ZbuoNrpEeSbnuofmDSfCQ" source="GMF_DIAGRAMS">
@@ -422,8 +422,8 @@
         </data>
       </ownedAnnotationEntries>
       <ownedDiagramElements xmi:type="diagram:DNode" xmi:id="_2ZaggdrpEeSbnuofmDSfCQ" name="ping" width="-1" height="-1">
-        <target xmi:type="org.gemoc.sample.tfsm:FSMEvent" href="jobB.tfsm#//@tfsms.0/@localEvents.0"/>
-        <semanticElements xmi:type="org.gemoc.sample.tfsm:FSMEvent" href="jobB.tfsm#//@tfsms.0/@localEvents.0"/>
+        <target xmi:type="tfsmextended:FSMEvent" href="jobB.tfsm#//@tfsms.0/@localEvents.0"/>
+        <semanticElements xmi:type="tfsmextended:FSMEvent" href="jobB.tfsm#//@tfsms.0/@localEvents.0"/>
         <arrangeConstraints>KEEP_LOCATION</arrangeConstraints>
         <arrangeConstraints>KEEP_SIZE</arrangeConstraints>
         <arrangeConstraints>KEEP_RATIO</arrangeConstraints>
@@ -435,8 +435,8 @@
         <actualMapping xmi:type="description_1:NodeMapping" href="platform:/plugin/org.gemoc.sample.tfsm.design/description/TFSM.odesign#//@ownedViewpoints[name='TFSM_ViewPoint']/@ownedRepresentations[name='TFSM']/@defaultLayer/@nodeMappings[name='LocalEvents']"/>
       </ownedDiagramElements>
       <ownedDiagramElements xmi:type="diagram:DNode" xmi:id="_2ZaghdrpEeSbnuofmDSfCQ" name="pong" width="-1" height="-1">
-        <target xmi:type="org.gemoc.sample.tfsm:FSMEvent" href="jobB.tfsm#//@tfsms.0/@localEvents.1"/>
-        <semanticElements xmi:type="org.gemoc.sample.tfsm:FSMEvent" href="jobB.tfsm#//@tfsms.0/@localEvents.1"/>
+        <target xmi:type="tfsmextended:FSMEvent" href="jobB.tfsm#//@tfsms.0/@localEvents.1"/>
+        <semanticElements xmi:type="tfsmextended:FSMEvent" href="jobB.tfsm#//@tfsms.0/@localEvents.1"/>
         <arrangeConstraints>KEEP_LOCATION</arrangeConstraints>
         <arrangeConstraints>KEEP_SIZE</arrangeConstraints>
         <arrangeConstraints>KEEP_RATIO</arrangeConstraints>
@@ -448,8 +448,8 @@
         <actualMapping xmi:type="description_1:NodeMapping" href="platform:/plugin/org.gemoc.sample.tfsm.design/description/TFSM.odesign#//@ownedViewpoints[name='TFSM_ViewPoint']/@ownedRepresentations[name='TFSM']/@defaultLayer/@nodeMappings[name='LocalEvents']"/>
       </ownedDiagramElements>
       <ownedDiagramElements xmi:type="diagram:DNode" xmi:id="_2ZagidrpEeSbnuofmDSfCQ" name="start" width="-1" height="-1">
-        <target xmi:type="org.gemoc.sample.tfsm:FSMEvent" href="jobB.tfsm#//@tfsms.0/@localEvents.2"/>
-        <semanticElements xmi:type="org.gemoc.sample.tfsm:FSMEvent" href="jobB.tfsm#//@tfsms.0/@localEvents.2"/>
+        <target xmi:type="tfsmextended:FSMEvent" href="jobB.tfsm#//@tfsms.0/@localEvents.2"/>
+        <semanticElements xmi:type="tfsmextended:FSMEvent" href="jobB.tfsm#//@tfsms.0/@localEvents.2"/>
         <arrangeConstraints>KEEP_LOCATION</arrangeConstraints>
         <arrangeConstraints>KEEP_SIZE</arrangeConstraints>
         <arrangeConstraints>KEEP_RATIO</arrangeConstraints>
@@ -461,8 +461,8 @@
         <actualMapping xmi:type="description_1:NodeMapping" href="platform:/plugin/org.gemoc.sample.tfsm.design/description/TFSM.odesign#//@ownedViewpoints[name='TFSM_ViewPoint']/@ownedRepresentations[name='TFSM']/@defaultLayer/@nodeMappings[name='LocalEvents']"/>
       </ownedDiagramElements>
       <ownedDiagramElements xmi:type="diagram:DNode" xmi:id="_2ZagjdrpEeSbnuofmDSfCQ" name="sec" width="5" height="5" resizeKind="NSEW">
-        <target xmi:type="org.gemoc.sample.tfsm:FSMClock" href="jobB.tfsm#//@tfsms.0/@localClock"/>
-        <semanticElements xmi:type="org.gemoc.sample.tfsm:FSMClock" href="jobB.tfsm#//@tfsms.0/@localClock"/>
+        <target xmi:type="tfsmextended:FSMClock" href="jobB.tfsm#//@tfsms.0/@localClock"/>
+        <semanticElements xmi:type="tfsmextended:FSMClock" href="jobB.tfsm#//@tfsms.0/@localClock"/>
         <arrangeConstraints>KEEP_LOCATION</arrangeConstraints>
         <arrangeConstraints>KEEP_SIZE</arrangeConstraints>
         <arrangeConstraints>KEEP_RATIO</arrangeConstraints>
@@ -474,8 +474,8 @@
         <actualMapping xmi:type="description_1:NodeMapping" href="platform:/plugin/org.gemoc.sample.tfsm.design/description/TFSM.odesign#//@ownedViewpoints[name='TFSM_ViewPoint']/@ownedRepresentations[name='TFSM']/@defaultLayer/@nodeMappings[name='Local%20Clock']"/>
       </ownedDiagramElements>
       <ownedDiagramElements xmi:type="diagram:DNode" xmi:id="_2ZagkdrpEeSbnuofmDSfCQ" name="A" outgoingEdges="_2ZagoNrpEeSbnuofmDSfCQ" incomingEdges="_2ZagpdrpEeSbnuofmDSfCQ _2ZagqtrpEeSbnuofmDSfCQ" width="3" height="3" resizeKind="NSEW">
-        <target xmi:type="org.gemoc.sample.tfsm:State" href="jobB.tfsm#//@tfsms.0/@ownedStates.0"/>
-        <semanticElements xmi:type="org.gemoc.sample.tfsm:State" href="jobB.tfsm#//@tfsms.0/@ownedStates.0"/>
+        <target xmi:type="tfsmextended:State" href="jobB.tfsm#//@tfsms.0/@ownedStates.0"/>
+        <semanticElements xmi:type="tfsmextended:State" href="jobB.tfsm#//@tfsms.0/@ownedStates.0"/>
         <arrangeConstraints>KEEP_LOCATION</arrangeConstraints>
         <arrangeConstraints>KEEP_SIZE</arrangeConstraints>
         <arrangeConstraints>KEEP_RATIO</arrangeConstraints>
@@ -488,8 +488,8 @@
         <actualMapping xmi:type="description_1:NodeMapping" href="platform:/plugin/org.gemoc.sample.tfsm.design/description/TFSM.odesign#//@ownedViewpoints[name='TFSM_ViewPoint']/@ownedRepresentations[name='TFSM']/@defaultLayer/@nodeMappings[name='State']"/>
       </ownedDiagramElements>
       <ownedDiagramElements xmi:type="diagram:DNode" xmi:id="_2ZagltrpEeSbnuofmDSfCQ" name="B" outgoingEdges="_2ZagpdrpEeSbnuofmDSfCQ" incomingEdges="_2ZagoNrpEeSbnuofmDSfCQ" width="3" height="3" resizeKind="NSEW">
-        <target xmi:type="org.gemoc.sample.tfsm:State" href="jobB.tfsm#//@tfsms.0/@ownedStates.1"/>
-        <semanticElements xmi:type="org.gemoc.sample.tfsm:State" href="jobB.tfsm#//@tfsms.0/@ownedStates.1"/>
+        <target xmi:type="tfsmextended:State" href="jobB.tfsm#//@tfsms.0/@ownedStates.1"/>
+        <semanticElements xmi:type="tfsmextended:State" href="jobB.tfsm#//@tfsms.0/@ownedStates.1"/>
         <arrangeConstraints>KEEP_LOCATION</arrangeConstraints>
         <arrangeConstraints>KEEP_SIZE</arrangeConstraints>
         <arrangeConstraints>KEEP_RATIO</arrangeConstraints>
@@ -502,8 +502,8 @@
         <actualMapping xmi:type="description_1:NodeMapping" href="platform:/plugin/org.gemoc.sample.tfsm.design/description/TFSM.odesign#//@ownedViewpoints[name='TFSM_ViewPoint']/@ownedRepresentations[name='TFSM']/@defaultLayer/@nodeMappings[name='State']"/>
       </ownedDiagramElements>
       <ownedDiagramElements xmi:type="diagram:DNode" xmi:id="_2Zagm9rpEeSbnuofmDSfCQ" name="init" outgoingEdges="_2ZagqtrpEeSbnuofmDSfCQ" width="2" height="2" resizeKind="NSEW">
-        <target xmi:type="org.gemoc.sample.tfsm:State" href="jobB.tfsm#//@tfsms.0/@ownedStates.2"/>
-        <semanticElements xmi:type="org.gemoc.sample.tfsm:State" href="jobB.tfsm#//@tfsms.0/@ownedStates.2"/>
+        <target xmi:type="tfsmextended:State" href="jobB.tfsm#//@tfsms.0/@ownedStates.2"/>
+        <semanticElements xmi:type="tfsmextended:State" href="jobB.tfsm#//@tfsms.0/@ownedStates.2"/>
         <arrangeConstraints>KEEP_LOCATION</arrangeConstraints>
         <arrangeConstraints>KEEP_SIZE</arrangeConstraints>
         <arrangeConstraints>KEEP_RATIO</arrangeConstraints>
@@ -516,8 +516,8 @@
         <actualMapping xmi:type="description_1:NodeMapping" href="platform:/plugin/org.gemoc.sample.tfsm.design/description/TFSM.odesign#//@ownedViewpoints[name='TFSM_ViewPoint']/@ownedRepresentations[name='TFSM']/@defaultLayer/@nodeMappings[name='State']"/>
       </ownedDiagramElements>
       <ownedDiagramElements xmi:type="diagram:DEdge" xmi:id="_2ZagoNrpEeSbnuofmDSfCQ" name="after 1 on sec&#xA; / &#xA; &#xA;  !ping;" sourceNode="_2ZagkdrpEeSbnuofmDSfCQ" targetNode="_2ZagltrpEeSbnuofmDSfCQ">
-        <target xmi:type="org.gemoc.sample.tfsm:Transition" href="jobB.tfsm#//@tfsms.0/@ownedTransitions.0"/>
-        <semanticElements xmi:type="org.gemoc.sample.tfsm:Transition" href="jobB.tfsm#//@tfsms.0/@ownedTransitions.0"/>
+        <target xmi:type="tfsmextended:Transition" href="jobB.tfsm#//@tfsms.0/@ownedTransitions.0"/>
+        <semanticElements xmi:type="tfsmextended:Transition" href="jobB.tfsm#//@tfsms.0/@ownedTransitions.0"/>
         <ownedStyle xmi:type="diagram:EdgeStyle" xmi:id="_2ZagodrpEeSbnuofmDSfCQ" size="2">
           <description xmi:type="style:EdgeStyleDescription" href="platform:/plugin/org.gemoc.sample.tfsm.design/description/TFSM.odesign#//@ownedViewpoints[name='TFSM_ViewPoint']/@ownedRepresentations[name='TFSM']/@defaultLayer/@edgeMappings[name='EventTransition']/@style"/>
           <strokeColor xmi:type="viewpoint:RGBValues" xmi:id="_2ZagotrpEeSbnuofmDSfCQ" red="136" green="136" blue="136"/>
@@ -528,8 +528,8 @@
         <actualMapping xmi:type="description_1:EdgeMapping" href="platform:/plugin/org.gemoc.sample.tfsm.design/description/TFSM.odesign#//@ownedViewpoints[name='TFSM_ViewPoint']/@ownedRepresentations[name='TFSM']/@defaultLayer/@edgeMappings[name='EventTransition']"/>
       </ownedDiagramElements>
       <ownedDiagramElements xmi:type="diagram:DEdge" xmi:id="_2ZagpdrpEeSbnuofmDSfCQ" name="when pong&#xA; / &#xA; &#xA;" sourceNode="_2ZagltrpEeSbnuofmDSfCQ" targetNode="_2ZagkdrpEeSbnuofmDSfCQ">
-        <target xmi:type="org.gemoc.sample.tfsm:Transition" href="jobB.tfsm#//@tfsms.0/@ownedTransitions.1"/>
-        <semanticElements xmi:type="org.gemoc.sample.tfsm:Transition" href="jobB.tfsm#//@tfsms.0/@ownedTransitions.1"/>
+        <target xmi:type="tfsmextended:Transition" href="jobB.tfsm#//@tfsms.0/@ownedTransitions.1"/>
+        <semanticElements xmi:type="tfsmextended:Transition" href="jobB.tfsm#//@tfsms.0/@ownedTransitions.1"/>
         <ownedStyle xmi:type="diagram:EdgeStyle" xmi:id="_2ZagptrpEeSbnuofmDSfCQ" size="2">
           <description xmi:type="style:EdgeStyleDescription" href="platform:/plugin/org.gemoc.sample.tfsm.design/description/TFSM.odesign#//@ownedViewpoints[name='TFSM_ViewPoint']/@ownedRepresentations[name='TFSM']/@defaultLayer/@edgeMappings[name='EventTransition']/@style"/>
           <strokeColor xmi:type="viewpoint:RGBValues" xmi:id="_2Zagp9rpEeSbnuofmDSfCQ" red="136" green="136" blue="136"/>
@@ -540,8 +540,8 @@
         <actualMapping xmi:type="description_1:EdgeMapping" href="platform:/plugin/org.gemoc.sample.tfsm.design/description/TFSM.odesign#//@ownedViewpoints[name='TFSM_ViewPoint']/@ownedRepresentations[name='TFSM']/@defaultLayer/@edgeMappings[name='EventTransition']"/>
       </ownedDiagramElements>
       <ownedDiagramElements xmi:type="diagram:DEdge" xmi:id="_2ZagqtrpEeSbnuofmDSfCQ" name="when start&#xA; / &#xA;initialize()&#xA;" sourceNode="_2Zagm9rpEeSbnuofmDSfCQ" targetNode="_2ZagkdrpEeSbnuofmDSfCQ">
-        <target xmi:type="org.gemoc.sample.tfsm:Transition" href="jobB.tfsm#//@tfsms.0/@ownedTransitions.2"/>
-        <semanticElements xmi:type="org.gemoc.sample.tfsm:Transition" href="jobB.tfsm#//@tfsms.0/@ownedTransitions.2"/>
+        <target xmi:type="tfsmextended:Transition" href="jobB.tfsm#//@tfsms.0/@ownedTransitions.2"/>
+        <semanticElements xmi:type="tfsmextended:Transition" href="jobB.tfsm#//@tfsms.0/@ownedTransitions.2"/>
         <ownedStyle xmi:type="diagram:EdgeStyle" xmi:id="_2Zagq9rpEeSbnuofmDSfCQ" size="2">
           <description xmi:type="style:EdgeStyleDescription" href="platform:/plugin/org.gemoc.sample.tfsm.design/description/TFSM.odesign#//@ownedViewpoints[name='TFSM_ViewPoint']/@ownedRepresentations[name='TFSM']/@defaultLayer/@edgeMappings[name='EventTransition']/@style"/>
           <strokeColor xmi:type="viewpoint:RGBValues" xmi:id="_2ZagrNrpEeSbnuofmDSfCQ" red="136" green="136" blue="136"/>
@@ -555,7 +555,7 @@
       <filterVariableHistory xmi:type="diagram:FilterVariableHistory" xmi:id="_2Zagr9rpEeSbnuofmDSfCQ"/>
       <activatedLayers xmi:type="description_1:Layer" href="platform:/plugin/org.gemoc.sample.tfsm.design/description/TFSM.odesign#//@ownedViewpoints[name='TFSM_ViewPoint']/@ownedRepresentations[name='TFSM']/@defaultLayer"/>
       <activatedLayers xmi:type="description_1:AdditionalLayer" href="platform:/plugin/org.gemoc.sample.tfsm.design/description/TFSM.odesign#//@ownedViewpoints[name='TFSM_ViewPoint']/@ownedRepresentations[name='TFSM']/@additionalLayers[name='Debug']"/>
-      <target xmi:type="org.gemoc.sample.tfsm:TFSM" href="jobB.tfsm#//@tfsms.0"/>
+      <target xmi:type="tfsmextended:TFSM" href="jobB.tfsm#//@tfsms.0"/>
     </ownedRepresentations>
     <viewpoint xmi:type="description:Viewpoint" href="platform:/plugin/org.gemoc.sample.tfsm.design/description/TFSM.odesign#//@ownedViewpoints[name='TFSM_ViewPoint']"/>
   </ownedViews>
