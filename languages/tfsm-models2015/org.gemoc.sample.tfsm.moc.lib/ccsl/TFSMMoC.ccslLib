@@ -46,6 +46,30 @@ Library extraExpressions{
 		RelationDeclaration FSMEventRendezVous(FSMEventRendezVous_Clock1:clock, FSMEventRendezVous_Clock2:clock)
 		RelationDeclaration FSMEventSendReceive(FSMEventRendezVous_LeftClock:clock, FSMEventRendezVous_RightClock:clock)
 
+
+RelationDeclaration WAlternates(WAlternatesLeftClock:clock, WAlternatesRightClock:clock)
+RelationDefinition WAlternatesDef[WAlternates]{
+				//c1 <= c2
+				Relation WAlt_c1PrecedesC2[Causes]
+					(LeftClock -> WAlternatesLeftClock
+					,RightClock -> WAlternatesRightClock)
+				
+				Sequence seqOneInfinite:IntegerSequence = (one=1) 
+
+				// c1 delayedBy (1)
+				Expression WAlt_c1DelayedByOne=Defer
+					(BaseClock -> WAlternatesLeftClock,
+					DelayClock -> WAlternatesLeftClock,
+					DelayPatternExpression -> seqOneInfinite)
+				
+				
+				//c2 <= (c1 delayedBy (1))
+				Relation WAlt_c2precedesC1DelayedByOne[Causes]
+					(LeftClock -> WAlternatesRightClock,
+					RightClock -> WAlt_c1DelayedByOne)
+				
+										
+			}
 	}
 	
 	ExpressionLibrary usefullTFSMExpressions{
