@@ -76,12 +76,10 @@ ClockConstraintSystem BatteryControl {
 		( "Merge1" )
 		Clock InitialNode1_finishIt : clock -> evt_InitialNode1_finishIt
 		( "InitialNode1" )
-		Clock DecisionNode1_temporalEvent : clock -> evt_DecisionNode1_temporalEvent
-		( "DecisionNode1" )
+
 		Clock BatteryControl_startActivity : clock -> evt_BatteryControl_startActivity
 		( "BatteryControl::BatteryControl" )
-		Clock BatteryControl_finishActivity : clock -> evt_BatteryControl_finishActivity
-		( "BatteryControl::BatteryControl" )
+
 		Clock BatteryisLow_startAction : clock -> evt_BatteryisLow_startAction
 		( "BatteryisLow" )
 		Clock BatteryisHigh_startAction : clock -> evt_BatteryisHigh_startAction

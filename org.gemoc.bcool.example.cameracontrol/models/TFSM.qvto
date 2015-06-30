@@ -7,13 +7,13 @@ modeltype Ecore uses 'http://www.eclipse.org/emf/2002/Ecore';
 	modeltype inMM1 uses 'http://www.gemoc.org/sample/tfsm';
 
 
-//modeltype inMM uses 'http://tfsmextended';
+//modeltype inMM uses 'http://www.gemoc.org/sample/tfsm';
 modeltype QVT uses 'http://www.eclipse.org/QVT/1.0.0/Operational';//http://www.eclipse.org/m2m/qvt/oml/1.0.0/Stdlib';//http://www.eclipse.org/qvt/1.0/ImperativeOCL'; 
 modeltype TimeModel uses 'http://fr.inria.aoste.timemodel';
 
 modeltype FeedBack uses 'http://timesquare.inria.fr/feedback';
 
-transformation dotfsmextended_To_CCSL(in inM : inMM1, out ccsl : TimeModel, out feedback : FeedBack);
+transformation dotfsm_To_CCSL(in inM : inMM1, out ccsl : TimeModel, out feedback : FeedBack);
 property theFeedBackSpec		:FeedBack::ActionModel = null;
 property seqOfMSE :	Sequence(FeedBack::ModelSpecificEvent)    = Sequence{};
 
@@ -62,13 +62,13 @@ query identifyUserRelations() {
 
 main() {
 	identifyUserRelations();
-	inM.rootObjects()[inMM1::TimedSystem]->asSequence()->first()-> map tfsmextended2CCSL();
-	inM.rootObjects()[inMM1::TimedSystem]->asSequence()->first()-> map tfsmextended2FeedBack();
+	inM.rootObjects()[inMM1::TimedSystem]->asSequence()->first()-> map tfsm2CCSL();
+	inM.rootObjects()[inMM1::TimedSystem]->asSequence()->first()-> map tfsm2FeedBack();
 
 	}
 
 			
-	mapping inMM1::TimedSystem::tfsmextended2CCSL() : TimeModel::CCSLModel::ClockConstraintSystem {
+	mapping inMM1::TimedSystem::tfsm2CCSL() : TimeModel::CCSLModel::ClockConstraintSystem {
 	    theCCSLSpec := result;
 	    name := self.name;
 	    theMainBlock :=object TimeModel::CCSLModel::Block{
@@ -156,6 +156,13 @@ main() {
 
 		
 
+		////[ TimedSystem ]
+		getVeryAllElementsFromResourceSetOf(self.oclAsType(EObject), TimedSystem.oclAsType(EClass)).oclAsType(TimedSystem)->map start2Clock();
+		
+
+
+		
+
 		
 
 
@@ -226,6 +233,17 @@ main() {
 		
 		
 		getVeryAllElementsFromResourceSetOf(self.oclAsType(EObject), TFSM.oclAsType(EClass)).oclAsType(TFSM)->map firstOnlyOnce82firstOnlyOnce();
+		
+		
+
+		
+
+
+		
+		getVeryAllElementsFromResourceSetOf(self.oclAsType(EObject), TimedSystem.oclAsType(EClass)).oclAsType(TimedSystem)->map startTimedSystemBeforeAllStartTFSM102startTimedSystemBeforeAllStartTFSM();
+		
+		
+		getVeryAllElementsFromResourceSetOf(self.oclAsType(EObject), TimedSystem.oclAsType(EClass)).oclAsType(TimedSystem)->map firstOnlyOnce82firstOnlyOnce();
 		
 	}
 
@@ -794,6 +812,139 @@ main() {
 		}
 	}
 
+	
+	
+//Create an intermediate expression
+//create the expressions... 
+	mapping inMM1::TimedSystem::intermediate_allStartTFSM2Expression(an1 : TFSM, an2 : TFSM, nb : Integer):TimeModel::CCSLModel::ClockExpressionAndRelation::Expression
+	{ 
+		name := self.name+'intermediate_allStartTFSM'+nb.toString();
+		type := seqOfExpressionDeclaration->select(rd | rd.name = "Union")->first();
+				 
+				bindings += object TimeModel::CCSLModel::ClockExpressionAndRelation::Binding{
+		 			bindable := theMainBlock.elements[name = an1.name+'_start']->first();
+					var seqAbstract : Sequence(TimeModel::CCSLModel::ClockExpressionAndRelation::AbstractEntity) := seqOfExpressionDeclaration[name = 'Union']->first().oclAsType(TimeModel::CCSLModel::ClockExpressionAndRelation::KernelExpression::Union).allSubobjectsOfKind(TimeModel::CCSLModel::ClockExpressionAndRelation::AbstractEntity)->asSequence().oclAsType(TimeModel::CCSLModel::ClockExpressionAndRelation::AbstractEntity);
+					seqAbstract := seqAbstract->sortedBy(e | e.name); //just a way to have always the same order ?
+					_abstract := seqAbstract->at(1).oclAsType(TimeModel::CCSLModel::ClockExpressionAndRelation::AbstractEntity);
+				};
+				bindings += object TimeModel::CCSLModel::ClockExpressionAndRelation::Binding{
+					bindable := theMainBlock.elements[name = an2.name+'_start']->first();
+					var seqAbstract : Sequence(TimeModel::CCSLModel::ClockExpressionAndRelation::AbstractEntity) := seqOfExpressionDeclaration[name = 'Union']->first().oclAsType(TimeModel::CCSLModel::ClockExpressionAndRelation::KernelExpression::Union).allSubobjectsOfKind(TimeModel::CCSLModel::ClockExpressionAndRelation::AbstractEntity)->asSequence().oclAsType(TimeModel::CCSLModel::ClockExpressionAndRelation::AbstractEntity);
+					seqAbstract := seqAbstract->sortedBy(e | e.name); //just a way to have always the same order ?
+					_abstract := seqAbstract->at(2).oclAsType(TimeModel::CCSLModel::ClockExpressionAndRelation::AbstractEntity);
+				};
+		end{
+			theMainBlock.expressions += result;
+		}
+	}
+
+	mapping inMM1::TimedSystem::intermediate_allStartTFSM2Expression(expr :TimeModel::CCSLModel::ClockExpressionAndRelation::Expression , an : TFSM, nb : Integer):TimeModel::CCSLModel::ClockExpressionAndRelation::Expression
+	{
+		name := self.name+'intermediate_allStartTFSM'+nb.toString();
+		type := seqOfExpressionDeclaration->select(rd | rd.name = "Union")->first();
+				bindings += object TimeModel::CCSLModel::ClockExpressionAndRelation::Binding{
+					bindable := theMainBlock.expressions[name = expr.name]->first();
+					var seqAbstract : Sequence(TimeModel::CCSLModel::ClockExpressionAndRelation::AbstractEntity) := seqOfExpressionDeclaration[name = 'Union']->first().oclAsType(TimeModel::CCSLModel::ClockExpressionAndRelation::KernelExpression::Union).allSubobjectsOfKind(TimeModel::CCSLModel::ClockExpressionAndRelation::AbstractEntity)->asSequence().oclAsType(TimeModel::CCSLModel::ClockExpressionAndRelation::AbstractEntity);
+					seqAbstract := seqAbstract->sortedBy(e | e.name); //just a way to have always the same order ?
+					_abstract := seqAbstract->at(1).oclAsType(TimeModel::CCSLModel::ClockExpressionAndRelation::AbstractEntity);
+				};
+				bindings += object TimeModel::CCSLModel::ClockExpressionAndRelation::Binding{
+					bindable := theMainBlock.elements[name = an.name+'_start']->first();
+					
+					var seqAbstract : Sequence(TimeModel::CCSLModel::ClockExpressionAndRelation::AbstractEntity) := seqOfExpressionDeclaration[name = 'Union']->first().oclAsType(TimeModel::CCSLModel::ClockExpressionAndRelation::KernelExpression::Union).allSubobjectsOfKind(TimeModel::CCSLModel::ClockExpressionAndRelation::AbstractEntity)->asSequence().oclAsType(TimeModel::CCSLModel::ClockExpressionAndRelation::AbstractEntity);
+					seqAbstract := seqAbstract->sortedBy(e | e.name); //just a way to have always the same order ?
+					_abstract := seqAbstract->at(2).oclAsType(TimeModel::CCSLModel::ClockExpressionAndRelation::AbstractEntity);
+				};
+		end{
+			theMainBlock.expressions += result;
+		}
+	}
+	
+	mapping inMM1::TimedSystem::allStartTFSM2Expression():TimeModel::CCSLModel::ClockExpressionAndRelation::Expression
+	{
+		init{
+		var sources : Sequence(TFSM) := self.tfsms->asSequence();
+		var lastExpr : TimeModel::CCSLModel::ClockExpressionAndRelation::Expression :=null;
+		var i : Integer := 3;
+		var newExpr : TimeModel::CCSLModel::ClockExpressionAndRelation::Expression := lastExpr;
+		var size : Integer = sources->size(); 
+		if(size = 1)then{
+			result := self.map intermediate_allStartTFSM2Expression(sources->at(1),sources->at(1), 1);
+		}else{
+			lastExpr := self.map intermediate_allStartTFSM2Expression(sources->at(1),sources->at(2), 1);
+			while (i <= size){
+				newExpr := self.map intermediate_allStartTFSM2Expression(lastExpr,sources->at(i), i);
+				lastExpr := newExpr;
+				i := i + 1;
+			};
+			result := lastExpr;
+		}
+		endif;
+		}
+		
+		end{
+			theMainBlock.expressions += result;
+		}
+	}
+
+	
+	
+//Create an intermediate expression
+//create the expressions... 
+	mapping inMM1::TimedSystem::intermediate_onlyOneFirst2Expression(an1 : TimedSystem, an2 : TimedSystem, nb : Integer):TimeModel::CCSLModel::ClockExpressionAndRelation::Expression
+	{ 
+		name := self.name+'intermediate_onlyOneFirst'+nb.toString();
+		type := seqOfExpressionDeclaration->select(rd | rd.name = "OneTickAndNoMore")->first();
+				 
+				bindings += object TimeModel::CCSLModel::ClockExpressionAndRelation::Binding{
+		 			bindable := theMainBlock.elements[name = an1.name+'_start']->first();
+					_abstract := seqOfAbstractEntity[name = 'OneTickAndNoMoreClock' and container().oclAsType(TimeModel::CCSLModel::ClockExpressionAndRelation::ExpressionDeclaration).name = 'OneTickAndNoMore']->first();
+				};
+		end{
+			theMainBlock.expressions += result;
+		}
+	}
+
+	mapping inMM1::TimedSystem::intermediate_onlyOneFirst2Expression(expr :TimeModel::CCSLModel::ClockExpressionAndRelation::Expression , an : TimedSystem, nb : Integer):TimeModel::CCSLModel::ClockExpressionAndRelation::Expression
+	{
+		name := self.name+'intermediate_onlyOneFirst'+nb.toString();
+		type := seqOfExpressionDeclaration->select(rd | rd.name = "OneTickAndNoMore")->first();
+				bindings += object TimeModel::CCSLModel::ClockExpressionAndRelation::Binding{
+					bindable := theMainBlock.expressions[name = expr.name]->first();
+					_abstract := seqOfExpressionDeclaration[name = 'OneTickAndNoMore']->first().oclAsType(TimeModel::CCSLModel::ClockExpressionAndRelation::ExpressionDeclaration).allSubobjectsOfKind(TimeModel::CCSLModel::ClockExpressionAndRelation::AbstractEntity)->asSequence()->at(1).oclAsType(TimeModel::CCSLModel::ClockExpressionAndRelation::AbstractEntity);
+				};
+		end{
+			theMainBlock.expressions += result;
+		}
+	}
+	
+	mapping inMM1::TimedSystem::onlyOneFirst2Expression():TimeModel::CCSLModel::ClockExpressionAndRelation::Expression
+	{
+		init{
+		var sources : Sequence(TimedSystem) := self->asSequence();
+		var lastExpr : TimeModel::CCSLModel::ClockExpressionAndRelation::Expression :=null;
+		var i : Integer := 3;
+		var newExpr : TimeModel::CCSLModel::ClockExpressionAndRelation::Expression := lastExpr;
+		var size : Integer = sources->size(); 
+		if(size = 1)then{
+			result := self.map intermediate_onlyOneFirst2Expression(sources->at(1),sources->at(1), 1);
+		}else{
+			lastExpr := self.map intermediate_onlyOneFirst2Expression(sources->at(1),sources->at(2), 1);
+			while (i <= size){
+				newExpr := self.map intermediate_onlyOneFirst2Expression(lastExpr,sources->at(i), i);
+				lastExpr := newExpr;
+				i := i + 1;
+			};
+			result := lastExpr;
+		}
+		endif;
+		}
+		
+		end{
+			theMainBlock.expressions += result;
+		}
+	}
+
 
 
 
@@ -887,7 +1038,7 @@ main() {
  				referencedObjectRefs += self.oclAsType(EObject);
 			
 				name := 'evt_'+self.name+'_entering';
-			kind :=TimeModel::EventKind::start;
+			kind :=TimeModel::EventKind::undefined;
 						
 			};
 			type:= Kernel_Clock_Type;
@@ -904,7 +1055,7 @@ main() {
  				referencedObjectRefs += self.oclAsType(EObject);
 			
 				name := 'evt_'+self.name+'_leaving';
-			kind :=TimeModel::EventKind::finish;
+			kind :=TimeModel::EventKind::undefined;
 						
 			};
 			type:= Kernel_Clock_Type;
@@ -957,6 +1108,8 @@ main() {
 			name:= self.name+'_start';
 			tickingEvent := object TimeModel::Event{
  				referencedObjectRefs += self.oclAsType(EObject);
+				//referencedObjectRefs += self.oclAsType(EObject);
+				referencedObjectRefs += self.oclAsType(EObject).eClass().eAllOperations->select(op |op.name = "init")->first().oclAsType(EObject);
 			
 				name := 'evt_'+self.name+'_start';
 			kind :=TimeModel::EventKind::undefined;
@@ -976,6 +1129,27 @@ main() {
  				referencedObjectRefs += self.oclAsType(EObject);
 			
 				name := 'evt_'+self.name+'_stall';
+			kind :=TimeModel::EventKind::undefined;
+						
+			};
+			type:= Kernel_Clock_Type;
+
+			end{
+				theMainBlock.elements += result;
+			}
+		}
+
+//relation stuff		
+	 	mapping inMM1::TimedSystem::start2Clock() :TimeModel::Clock 
+			when {  }
+		{
+			name:= self.name+'_start';
+			tickingEvent := object TimeModel::Event{
+ 				referencedObjectRefs += self.oclAsType(EObject);
+				//referencedObjectRefs += self.oclAsType(EObject);
+				referencedObjectRefs += self.oclAsType(EObject).eClass().eAllOperations->select(op |op.name = "init")->first().oclAsType(EObject);
+			
+				name := 'evt_'+self.name+'_start';
 			kind :=TimeModel::EventKind::undefined;
 						
 			};
@@ -1386,6 +1560,41 @@ main() {
 		}
 		
 
+//relation stuff		
+	
+		mapping inMM1::TimedSystem::startTimedSystemBeforeAllStartTFSM102startTimedSystemBeforeAllStartTFSM(): TimeModel::CCSLModel::ClockExpressionAndRelation::Relation
+		{
+		 	name := self.name+"Precedes_startTimedSystemBeforeAllStartTFSM";
+			type := seqOfRelationDeclaration->select(rd | rd.name = "Precedes")->first();
+				bindings += object TimeModel::CCSLModel::ClockExpressionAndRelation::Binding{
+					bindable := theMainBlock.elements[name = self.name+'_start']->first();
+					_abstract := seqOfRelationDeclaration[name = 'Precedes']->first().oclAsType(TimeModel::CCSLModel::ClockExpressionAndRelation::KernelRelation::KernelRelationDeclaration).leftEntity;
+				};
+				bindings += object TimeModel::CCSLModel::ClockExpressionAndRelation::Binding{
+							bindable := self -> map allStartTFSM2Expression()->asSequence()->first();
+					_abstract := seqOfRelationDeclaration[name = 'Precedes']->first().oclAsType(TimeModel::CCSLModel::ClockExpressionAndRelation::KernelRelation::KernelRelationDeclaration).rightEntity;
+				};
+		
+		theMainBlock.relations += result;
+		}
+		
+	
+		mapping inMM1::TimedSystem::firstOnlyOnce82firstOnlyOnce(): TimeModel::CCSLModel::ClockExpressionAndRelation::Relation
+		{
+		 	name := self.name+"Coincides_firstOnlyOnce";
+			type := seqOfRelationDeclaration->select(rd | rd.name = "Coincides")->first();
+				bindings += object TimeModel::CCSLModel::ClockExpressionAndRelation::Binding{
+					bindable := theMainBlock.elements[name = self.name+'_start']->first();
+					_abstract := seqOfRelationDeclaration[name = 'Coincides']->first().oclAsType(TimeModel::CCSLModel::ClockExpressionAndRelation::KernelRelation::KernelRelationDeclaration).leftEntity;
+				};
+				bindings += object TimeModel::CCSLModel::ClockExpressionAndRelation::Binding{
+							bindable := self -> map onlyOneFirst2Expression()->asSequence()->first();
+					_abstract := seqOfRelationDeclaration[name = 'Coincides']->first().oclAsType(TimeModel::CCSLModel::ClockExpressionAndRelation::KernelRelation::KernelRelationDeclaration).rightEntity;
+				};
+		
+		theMainBlock.relations += result;
+		}
+		
 
 
 
@@ -1406,7 +1615,8 @@ main() {
 
 
 
-mapping inMM1::TimedSystem::tfsmextended2FeedBack() : FeedBack::ActionModel {
+
+mapping inMM1::TimedSystem::tfsm2FeedBack() : FeedBack::ActionModel {
 	    theFeedBackSpec := result;
 		importStatements+= object FeedBack::ImportStatement{
 			importURI := getModelPath(ccsl.objectsOfType(Clock)->asSequence()->first().oclAsType(EObject));
@@ -1459,6 +1669,19 @@ mapping inMM1::TimedSystem::tfsmextended2FeedBack() : FeedBack::ActionModel {
 
 	inM.rootObjects().allSubobjects()->including(self)[ TFSM ]->map start2MSE();
 	inM.rootObjects().allSubobjects()->including(self)[ TFSM ]->map stall2MSE();
+
+
+
+
+		
+
+	inM.rootObjects().allSubobjects()->including(self)[ TimedSystem ]->map start2MSE();
+
+
+
+
+		
+
 
 
 
@@ -1595,6 +1818,8 @@ mapping inMM1::TimedSystem::tfsmextended2FeedBack() : FeedBack::ActionModel {
 			when {  }
 		{
 			name:= 'MSE_'+self.name+'_start';
+				caller := self.oclAsType(EObject);
+				action := self.oclAsType(EObject).eClass().eAllOperations->select(op |op.name = "init")->first();
 				solverEvent := theMainBlock.elements[Clock]->select(c|c.name=self.name+'_start')->first().oclAsType(EObject);
 				
 			end{
@@ -1607,6 +1832,19 @@ mapping inMM1::TimedSystem::tfsmextended2FeedBack() : FeedBack::ActionModel {
 		{
 			name:= 'MSE_'+self.name+'_stall';
 				solverEvent := theMainBlock.elements[Clock]->select(c|c.name=self.name+'_stall')->first().oclAsType(EObject);
+				
+			end{
+				theFeedBackSpec.events += result;
+				seqOfMSE += result
+			}
+		}
+	 	mapping inMM1::TimedSystem::start2MSE() :FeedBack::ModelSpecificEvent 
+			when {  }
+		{
+			name:= 'MSE_'+self.name+'_start';
+				caller := self.oclAsType(EObject);
+				action := self.oclAsType(EObject).eClass().eAllOperations->select(op |op.name = "init")->first();
+				solverEvent := theMainBlock.elements[Clock]->select(c|c.name=self.name+'_start')->first().oclAsType(EObject);
 				
 			end{
 				theFeedBackSpec.events += result;

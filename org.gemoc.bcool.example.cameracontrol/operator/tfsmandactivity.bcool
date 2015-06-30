@@ -22,7 +22,7 @@ Operator  StateEntering (start : activity::startActivity , enter : tfsm::enterin
 	CoordinationRule: facilities.RendezVous(start, enter)
 end operator; 
 
-Operator  StateLeaving (finish : activity::finishActivity , leave : tfsm::entering)
+Operator  StateLeaving (finish : activity::finishActivity , leave : tfsm::leaving)
 	MatchingCorrespondance: when  finish.name = leave.onEnterAction ;
 	CoordinationRule: facilities.Causality(finish,leave)
 end operator; 

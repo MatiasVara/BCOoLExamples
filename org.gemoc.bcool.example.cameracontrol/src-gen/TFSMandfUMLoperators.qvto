@@ -21,14 +21,16 @@ inM2 : inMM2,
 
 
 
-property inM1MoCCPath : String = getModelPath(inM1.rootObjects()->asSequence()->first().oclAsType(EObject)).substring(1, getModelPath(inM1.rootObjects()->asSequence()->first().oclAsType(EObject)).lastIndexOf('.')-1)+'_MoCC.extendedCCSL';
+configuration property inM1MoCCPath : String;
+//property inM1MoCCPath : String = getModelPath(inM1.rootObjects()->asSequence()->first().oclAsType(EObject)).substring(1, getModelPath(inM1.rootObjects()->asSequence()->first().oclAsType(EObject)).lastIndexOf('.')-1)+'_MoCC.extendedCCSL';
 property inM1Clocks	:	Sequence(TimeModel::Clock) = Sequence{};
 query retrieveinM1MoCCClocks() {
 	inM1Clocks += getLibObjects(inM1MoCCPath)[TimeModel::Clock];
 	
 	return;
 }
-property inM2MoCCPath : String = getModelPath(inM2.rootObjects()->asSequence()->first().oclAsType(EObject)).substring(1, getModelPath(inM2.rootObjects()->asSequence()->first().oclAsType(EObject)).lastIndexOf('.')-1)+'_MoCC.extendedCCSL';
+configuration property inM2MoCCPath : String;
+//property inM2MoCCPath : String = getModelPath(inM2.rootObjects()->asSequence()->first().oclAsType(EObject)).substring(1, getModelPath(inM2.rootObjects()->asSequence()->first().oclAsType(EObject)).lastIndexOf('.')-1)+'_MoCC.extendedCCSL';
 property inM2Clocks	:	Sequence(TimeModel::Clock) = Sequence{};
 query retrieveinM2MoCCClocks() {
 	inM2Clocks += getLibObjects(inM2MoCCPath)[TimeModel::Clock];
@@ -485,7 +487,7 @@ main() {
 
 			
 			
-				 MM1_seqOfenteringStateContext-> forEach (leave){ 
+				 MM1_seqOfleavingStateContext-> forEach (leave){ 
 
 
 			
@@ -500,7 +502,7 @@ main() {
 			
 					,
 						
-									inM1Clocks[name =  leave.name + '_entering']->first().oclAsType(TimeModel::Clock)
+									inM1Clocks[name =  leave.name + '_leaving']->first().oclAsType(TimeModel::Clock)
 
 			
 			
@@ -726,24 +728,6 @@ end{
 			
 }
 
-mapping DSEtoClock (iname: String) : TimeModel::CCSLModel::ClockExpressionAndRelation::Binding{
-	
-		if inM1Clocks[name = iname]->notEmpty() then 
-			bindable := inM1Clocks[name = iname]->first().oclAsType(TimeModel::Clock)
-		endif;
-		if inM2Clocks[name = iname]->notEmpty() then 
-			bindable := inM2Clocks[name = iname]->first().oclAsType(TimeModel::Clock)
-		endif;
-	
-	if theMainBlock.expressions[name = iname]->notEmpty() then
-		bindable := theMainBlock.expressions[name = iname]->first().oclAsType(TimeModel::CCSLModel::ClockExpressionAndRelation::Expression)
-	endif;
-
-
-	if theMainBlock.elements[name = iname]->notEmpty() then
-		bindable := theMainBlock.elements[name = iname]->first().oclAsType(TimeModel::Clock)
-	endif;
-}
 
 mapping TFSMandfUMLoperators2CCSLSubBlock() : TimeModel::CCSLModel::Block {
 	theSubBlock := result;
