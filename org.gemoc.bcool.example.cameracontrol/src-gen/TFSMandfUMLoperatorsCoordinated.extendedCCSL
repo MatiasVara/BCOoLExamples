@@ -25,19 +25,19 @@ ClockConstraintSystem TFSMandfUMLoperatorsCoordination {
 		}
 		Block CameraControlBatteryControlsublock {
 			Relation SyncProductBatteryisHigh_startActionBatteryisHigh_occurs [ RendezVous ]
-			( ClockB -> "BatteryControl::mainBlock::BatteryisHigh_startAction",
-			ClockA -> "CameraControlSystem::mainBlock::BatteryisHigh_occurs" )
+			( ClockA -> "BatteryControl::mainBlock::BatteryisHigh_startAction",
+			ClockB -> "CameraControlSystem::mainBlock::BatteryisHigh_occurs" )
 			Relation SyncProductBatteryisLow_startActionBatteryisLow_occurs [ RendezVous ]
-			( ClockB -> "BatteryControl::mainBlock::BatteryisLow_startAction",
-			ClockA -> "CameraControlSystem::mainBlock::BatteryisLow_occurs" )
+			( ClockA -> "BatteryControl::mainBlock::BatteryisLow_startAction",
+			ClockB -> "CameraControlSystem::mainBlock::BatteryisLow_occurs" )
 		}
 		Block CameraControlHighBatterysublock {
 			Expression sampleddoJPEG2000_startActivityms_ticks = SampledBy
-			( Sampled -> "HighBatteryModel::mainBlock::doJPEG2000_startActivity",
-			Sampler -> "CameraControlSystem::mainBlock::ms_ticks" )
+			( Sampler -> "HighBatteryModel::mainBlock::doJPEG2000_startActivity",
+			Sampled -> "CameraControlSystem::mainBlock::ms_ticks" )
 			Relation StateEnteringdoJPEG2000_startActivityBatteryHigh_entering [ RendezVous ]
-			( ClockB -> "HighBatteryModel::mainBlock::doJPEG2000_startActivity",
-			ClockA -> "CameraControlSystem::mainBlock::BatteryHigh_entering" )
+			( ClockA -> "HighBatteryModel::mainBlock::doJPEG2000_startActivity",
+			ClockB -> "CameraControlSystem::mainBlock::BatteryHigh_entering" )
 			Relation StateLeavingdoJPEG2000_finishActivityBatteryHigh_leaving [ Causality ]
 			( ClockA -> "HighBatteryModel::mainBlock::doJPEG2000_finishActivity",
 			ClockB -> "CameraControlSystem::mainBlock::BatteryHigh_leaving" )
@@ -47,11 +47,11 @@ ClockConstraintSystem TFSMandfUMLoperatorsCoordination {
 		}
 		Block CameraControlLowBatterysublock {
 			Expression sampleddoJPEG_startActivityms_ticks = SampledBy
-			( Sampled -> "LowBatteryModel::mainBlock::doJPEG_startActivity",
-			Sampler -> "CameraControlSystem::mainBlock::ms_ticks" )
+			( Sampler -> "LowBatteryModel::mainBlock::doJPEG_startActivity",
+			Sampled -> "CameraControlSystem::mainBlock::ms_ticks" )
 			Relation StateEnteringdoJPEG_startActivityBatteryLow_entering [ RendezVous ]
-			( ClockB -> "LowBatteryModel::mainBlock::doJPEG_startActivity",
-			ClockA -> "CameraControlSystem::mainBlock::BatteryLow_entering" )
+			( ClockA -> "LowBatteryModel::mainBlock::doJPEG_startActivity",
+			ClockB -> "CameraControlSystem::mainBlock::BatteryLow_entering" )
 			Relation StateLeavingdoJPEG_finishActivityBatteryLow_leaving [ Causality ]
 			( ClockA -> "LowBatteryModel::mainBlock::doJPEG_finishActivity",
 			ClockB -> "CameraControlSystem::mainBlock::BatteryLow_leaving" )
