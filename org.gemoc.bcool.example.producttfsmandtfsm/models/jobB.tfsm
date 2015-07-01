@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<tfsmextended:TimedSystem xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:tfsmextended="http://tfsmextended" name="TFSMB">
+<tfsmextended:TimedSystem xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:tfsmextended="http://www.gemoc.org/sample/tfsm" name="TFSMB">
   <tfsms name="B" initialState="//@tfsms.0/@ownedStates.2">
     <ownedStates name="A" outgoingTransitions="//@tfsms.0/@ownedTransitions.0" incomingTransitions="//@tfsms.0/@ownedTransitions.1 //@tfsms.0/@ownedTransitions.2"/>
     <ownedStates name="B" outgoingTransitions="//@tfsms.0/@ownedTransitions.1" incomingTransitions="//@tfsms.0/@ownedTransitions.0"/>
