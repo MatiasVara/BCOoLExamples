@@ -135,8 +135,6 @@ ClockConstraintSystem TFSMA {
 		: finish
 		Clock A_start : clock -> evt_A_start
 		( "A" )
-		Clock A_stall : clock -> evt_A_stall
-		( "A" )
 		Integer t2_1after3seconds_afterDuration : int = 3
 	}
 }

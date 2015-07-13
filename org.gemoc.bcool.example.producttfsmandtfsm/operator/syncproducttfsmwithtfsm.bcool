@@ -7,9 +7,9 @@ ImportLib "platform:/resource/org.gemoc.bcool.example.producttfsmandtfsm/library
 ImportInterface "platform:/plugin/org.gemoc.sample.tfsm.eclmoc2as/ecl/TFSM.ecl" as i_tfsm1// left
 ImportInterface "platform:/plugin/org.gemoc.sample.tfsm.eclmoc2as/ecl/TFSM.ecl" as i_tfsm2 // left
 
-Spec test 
+Spec SyncProduct 
 
 Operator  MatchingandCoordinationSharedEvents (dse1 : i_tfsm1::occurs , dse2 : i_tfsm2::occurs)
 		MatchingCorrespondance: when  dse1.name = dse2.name;
-		CoordinationRule: facilities.RendezVous (dse1,dse2) 
+		CoordinationRule: facilities.RendezVous(dse1,dse2) 
 end operator;

@@ -2,8 +2,8 @@ BCoolLibrary facilities{
 
 
 relationDeclarations { 
-	RelationDeclaration RendezVous { }
-
+	RelationDeclaration RendezVous { },
+	RelationDeclaration Causality { }
 }
 
 
