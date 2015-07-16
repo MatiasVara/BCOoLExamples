@@ -555,24 +555,24 @@ main() {
 				var sampled : String;
 				sampled := 
 				
-								 startAct.name+'_startActivity'
+								 local.name+'_ticks'
 
 						+
-								 local.name+'_ticks'
+								 startAct.name+'_startActivity'
 
 				;
 
 			map sampled (
 
 						
-									inM2Clocks[name =  startAct.name + '_startActivity']->first().oclAsType(TimeModel::Clock)
+									inM1Clocks[name =  local.name + '_ticks']->first().oclAsType(TimeModel::Clock)
 
 				
 
 						 
 						,
 						
-									inM1Clocks[name =  local.name + '_ticks']->first().oclAsType(TimeModel::Clock)
+									inM2Clocks[name =  startAct.name + '_startActivity']->first().oclAsType(TimeModel::Clock)
 
 				
 
@@ -698,25 +698,25 @@ end{
 			
 }
 	mapping sampled (
-							startAct:TimeModel::CCSLModel::ClockExpressionAndRelation::BindableEntity
-					,
 							local:TimeModel::CCSLModel::ClockExpressionAndRelation::BindableEntity
+					,
+							startAct:TimeModel::CCSLModel::ClockExpressionAndRelation::BindableEntity
 		) : TimeModel::CCSLModel::ClockExpressionAndRelation::Expression {
 
 		name := 'sampled';
 			
-					name := name + startAct.name;
 					name := name + local.name;
+					name := name + startAct.name;
 		
 		var seqAbstract : OrderedSet(Stdlib::Element) := seqOfExpressionDeclaration->select(rd | rd.name = "SampledBy")->first().oclAsType(TimeModel::CCSLModel::ClockExpressionAndRelation::ExpressionDeclaration).parameters;
 
 		type := seqOfExpressionDeclaration->select(rd | rd.name = "SampledBy")->first();
 					bindings += object TimeModel::CCSLModel::ClockExpressionAndRelation::Binding{
-					bindable := startAct;
+					bindable := local;
 						_abstract := seqAbstract->at(1).oclAsType(TimeModel::CCSLModel::ClockExpressionAndRelation::AbstractEntity)
 					};
 					bindings += object TimeModel::CCSLModel::ClockExpressionAndRelation::Binding{
-					bindable := local;
+					bindable := startAct;
 						_abstract := seqAbstract->at(2).oclAsType(TimeModel::CCSLModel::ClockExpressionAndRelation::AbstractEntity)
 					};
 			end{
@@ -815,10 +815,11 @@ mapping TFSMandfUMLoperators2CCSLSubBlock() : TimeModel::CCSLModel::Block {
 
 
 
-				imports+= object TimeModel::ImportStatement{
-				importURI := 'platform:/plugin/org.gemoc.sample.tfsm.moc.lib/ccsl/TFSMMoC.ccslLib';
-				alias := 'model_1_3';	
+			imports+= object TimeModel::ImportStatement{
+			importURI := 'platform:/plugin/org.gemoc.sample.tfsm.moc.lib/ccsl/TFSMMoC.ccslLib';
+			alias := 'model_1_3';	
 		}; 
+
 
 
 			imports+= object TimeModel::ImportStatement{

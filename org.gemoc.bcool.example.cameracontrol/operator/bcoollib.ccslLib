@@ -35,9 +35,9 @@ Library extraExpressions{
 		
 		ExpressionDefinition SampledDef [SampledBy]{
 			root=Sample_result 
-			Expression Sample_result = Sample(SamplingClock -> Sampler, SampledClock ->Sampled)
+			Expression Sample_result = SampledOn(SampledOnTrigger -> Trigger, SampledOnSampledClock ->Sampled)
   		}
-		ExpressionDeclaration SampledBy(Sampler: clock,  Sampled: clock):clock
+		ExpressionDeclaration SampledBy(Trigger: clock,  Sampled: clock):clock
 		
 		
 	}	

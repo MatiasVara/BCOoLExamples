@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<viewpoint:DAnalysis xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:description="http://www.eclipse.org/sirius/description/1.1.0" xmlns:description_1="http://www.eclipse.org/sirius/diagram/description/1.1.0" xmlns:diagram="http://www.eclipse.org/sirius/diagram/1.1.0" xmlns:notation="http://www.eclipse.org/gmf/runtime/1.0.2/notation" xmlns:style="http://www.eclipse.org/sirius/diagram/description/style/1.1.0" xmlns:uml="http://www.eclipse.org/uml2/5.0.0/UML" xmlns:viewpoint="http://www.eclipse.org/sirius/1.1.0" xsi:schemaLocation="http://www.eclipse.org/sirius/description/1.1.0 http://www.eclipse.org/sirius/1.1.0#//description http://www.eclipse.org/sirius/diagram/description/1.1.0 http://www.eclipse.org/sirius/diagram/1.1.0#//description http://www.eclipse.org/sirius/diagram/description/style/1.1.0 http://www.eclipse.org/sirius/diagram/1.1.0#//description/style" xmi:id="_hpJp0LwtEeSozIkC9kpzOA" selectedViews="_jjQmELwtEeSozIkC9kpzOA" version="8.1.1">
+<viewpoint:DAnalysis xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:description="http://www.eclipse.org/sirius/description/1.1.0" xmlns:description_1="http://www.eclipse.org/sirius/diagram/description/1.1.0" xmlns:diagram="http://www.eclipse.org/sirius/diagram/1.1.0" xmlns:notation="http://www.eclipse.org/gmf/runtime/1.0.2/notation" xmlns:style="http://www.eclipse.org/sirius/diagram/description/style/1.1.0" xmlns:uml="http://www.eclipse.org/uml2/5.0.0/UML" xmlns:viewpoint="http://www.eclipse.org/sirius/1.1.0" xsi:schemaLocation="http://www.eclipse.org/sirius/description/1.1.0 http://www.eclipse.org/sirius/1.1.0#//description http://www.eclipse.org/sirius/diagram/description/1.1.0 http://www.eclipse.org/sirius/diagram/1.1.0#//description http://www.eclipse.org/sirius/diagram/description/style/1.1.0 http://www.eclipse.org/sirius/diagram/1.1.0#//description/style" xmi:id="_hpJp0LwtEeSozIkC9kpzOA" selectedViews="_jjQmELwtEeSozIkC9kpzOA _SWNkICluEeWZUeKP19glfg" version="8.1.1">
   <models xmi:type="uml:Model" href="LowBattery.uml#_4uSaYLwiEeSMQuAD2oZAdg"/>
   <ownedViews xmi:type="viewpoint:DRepresentationContainer" xmi:id="_jjQmELwtEeSozIkC9kpzOA" initialized="true">
     <ownedRepresentations xmi:type="diagram:DSemanticDiagram" xmi:id="_lqFvsLwtEeSozIkC9kpzOA" name="LowBattery Activity Diagram">
@@ -229,7 +229,7 @@
           </ownedStyle>
           <actualMapping xmi:type="description_1:ContainerMapping" href="platform:/plugin/org.obeonetwork.dsl.uml2.design/description/uml2.odesign#//@ownedViewpoints[name='Design']/@ownedRepresentations[name='Activity%20Diagram']/@defaultLayer/@containerMappings[name='AD_Activity']/@subContainerMappings[name='AD_ExecutableNode']"/>
         </ownedDiagramElements>
-        <ownedDiagramElements xmi:type="diagram:DNode" xmi:id="_lqFvz7wtEeSozIkC9kpzOA" incomingEdges="_lqGWwLwtEeSozIkC9kpzOA" width="3" height="3" resizeKind="NSEW">
+        <ownedDiagramElements xmi:type="diagram:DNode" xmi:id="_lqFvz7wtEeSozIkC9kpzOA" name="FinalNode1" incomingEdges="_lqGWwLwtEeSozIkC9kpzOA" width="3" height="3" resizeKind="NSEW">
           <target xmi:type="uml:ActivityFinalNode" href="LowBattery.uml#_HLg48LwjEeSMQuAD2oZAdg"/>
           <semanticElements xmi:type="uml:ActivityFinalNode" href="LowBattery.uml#_HLg48LwjEeSMQuAD2oZAdg"/>
           <arrangeConstraints>KEEP_LOCATION</arrangeConstraints>
@@ -242,7 +242,7 @@
           </ownedStyle>
           <actualMapping xmi:type="description_1:NodeMapping" href="platform:/plugin/org.obeonetwork.dsl.uml2.design/description/uml2.odesign#//@ownedViewpoints[name='Design']/@ownedRepresentations[name='Activity%20Diagram']/@defaultLayer/@containerMappings[name='AD_Activity']/@subNodeMappings[name='AD_ControlNode']"/>
         </ownedDiagramElements>
-        <ownedDiagramElements xmi:type="diagram:DNode" xmi:id="_lqFv07wtEeSozIkC9kpzOA" outgoingEdges="_lqGWxbwtEeSozIkC9kpzOA" width="3" height="3" resizeKind="NSEW">
+        <ownedDiagramElements xmi:type="diagram:DNode" xmi:id="_lqFv07wtEeSozIkC9kpzOA" name="InitialNode1" outgoingEdges="_lqGWxbwtEeSozIkC9kpzOA" width="3" height="3" resizeKind="NSEW">
           <target xmi:type="uml:InitialNode" href="LowBattery.uml#_SSa78LwjEeSMQuAD2oZAdg"/>
           <semanticElements xmi:type="uml:InitialNode" href="LowBattery.uml#_SSa78LwjEeSMQuAD2oZAdg"/>
           <arrangeConstraints>KEEP_LOCATION</arrangeConstraints>
@@ -256,7 +256,7 @@
           <actualMapping xmi:type="description_1:NodeMapping" href="platform:/plugin/org.obeonetwork.dsl.uml2.design/description/uml2.odesign#//@ownedViewpoints[name='Design']/@ownedRepresentations[name='Activity%20Diagram']/@defaultLayer/@containerMappings[name='AD_Activity']/@subNodeMappings[name='AD_ControlNode']"/>
         </ownedDiagramElements>
       </ownedDiagramElements>
-      <ownedDiagramElements xmi:type="diagram:DEdge" xmi:id="_lqGWwLwtEeSozIkC9kpzOA" name="&lt;Control Flow> flow2" sourceNode="_lqFvybwtEeSozIkC9kpzOA" targetNode="_lqFvz7wtEeSozIkC9kpzOA">
+      <ownedDiagramElements xmi:type="diagram:DEdge" xmi:id="_lqGWwLwtEeSozIkC9kpzOA" name=" flow2" sourceNode="_lqFvybwtEeSozIkC9kpzOA" targetNode="_lqFvz7wtEeSozIkC9kpzOA">
         <target xmi:type="uml:ControlFlow" href="LowBattery.uml#_zv3GoLwkEeSMQuAD2oZAdg"/>
         <semanticElements xmi:type="uml:ControlFlow" href="LowBattery.uml#_zv3GoLwkEeSMQuAD2oZAdg"/>
         <graphicalFilters xmi:type="diagram:HideLabelFilter" xmi:id="_evYDgLwxEeS41YmRwibU2g"/>
@@ -269,7 +269,7 @@
         </ownedStyle>
         <actualMapping xmi:type="description_1:EdgeMapping" href="platform:/plugin/org.obeonetwork.dsl.uml2.design/description/uml2.odesign#//@ownedViewpoints[name='Design']/@ownedRepresentations[name='Activity%20Diagram']/@defaultLayer/@edgeMappings[name='AD_ControlFlow']"/>
       </ownedDiagramElements>
-      <ownedDiagramElements xmi:type="diagram:DEdge" xmi:id="_lqGWxbwtEeSozIkC9kpzOA" name="&lt;Control Flow> flow1" sourceNode="_lqFv07wtEeSozIkC9kpzOA" targetNode="_lqFvt7wtEeSozIkC9kpzOA">
+      <ownedDiagramElements xmi:type="diagram:DEdge" xmi:id="_lqGWxbwtEeSozIkC9kpzOA" name=" flow1" sourceNode="_lqFv07wtEeSozIkC9kpzOA" targetNode="_lqFvt7wtEeSozIkC9kpzOA">
         <target xmi:type="uml:ControlFlow" href="LowBattery.uml#_3_koULwkEeSMQuAD2oZAdg"/>
         <semanticElements xmi:type="uml:ControlFlow" href="LowBattery.uml#_3_koULwkEeSMQuAD2oZAdg"/>
         <graphicalFilters xmi:type="diagram:HideLabelFilter" xmi:id="_fg3K0LwxEeS41YmRwibU2g"/>
@@ -282,7 +282,7 @@
         </ownedStyle>
         <actualMapping xmi:type="description_1:EdgeMapping" href="platform:/plugin/org.obeonetwork.dsl.uml2.design/description/uml2.odesign#//@ownedViewpoints[name='Design']/@ownedRepresentations[name='Activity%20Diagram']/@defaultLayer/@edgeMappings[name='AD_ControlFlow']"/>
       </ownedDiagramElements>
-      <ownedDiagramElements xmi:type="diagram:DEdge" xmi:id="_lqGWyrwtEeSozIkC9kpzOA" name="&lt;Control Flow> flow3" sourceNode="_lqFvt7wtEeSozIkC9kpzOA" targetNode="_lqFvvbwtEeSozIkC9kpzOA">
+      <ownedDiagramElements xmi:type="diagram:DEdge" xmi:id="_lqGWyrwtEeSozIkC9kpzOA" name=" flow3" sourceNode="_lqFvt7wtEeSozIkC9kpzOA" targetNode="_lqFvvbwtEeSozIkC9kpzOA">
         <target xmi:type="uml:ControlFlow" href="LowBattery.uml#_Ex4V0LwoEeSMQuAD2oZAdg"/>
         <semanticElements xmi:type="uml:ControlFlow" href="LowBattery.uml#_Ex4V0LwoEeSMQuAD2oZAdg"/>
         <graphicalFilters xmi:type="diagram:HideLabelFilter" xmi:id="_fVJqELwxEeS41YmRwibU2g"/>
@@ -295,7 +295,7 @@
         </ownedStyle>
         <actualMapping xmi:type="description_1:EdgeMapping" href="platform:/plugin/org.obeonetwork.dsl.uml2.design/description/uml2.odesign#//@ownedViewpoints[name='Design']/@ownedRepresentations[name='Activity%20Diagram']/@defaultLayer/@edgeMappings[name='AD_ControlFlow']"/>
       </ownedDiagramElements>
-      <ownedDiagramElements xmi:type="diagram:DEdge" xmi:id="_lqGWz7wtEeSozIkC9kpzOA" name="&lt;Control Flow> flow4" sourceNode="_lqFvvbwtEeSozIkC9kpzOA" targetNode="_lqFvw7wtEeSozIkC9kpzOA">
+      <ownedDiagramElements xmi:type="diagram:DEdge" xmi:id="_lqGWz7wtEeSozIkC9kpzOA" name=" flow4" sourceNode="_lqFvvbwtEeSozIkC9kpzOA" targetNode="_lqFvw7wtEeSozIkC9kpzOA">
         <target xmi:type="uml:ControlFlow" href="LowBattery.uml#_4jai8LwpEeSMQuAD2oZAdg"/>
         <semanticElements xmi:type="uml:ControlFlow" href="LowBattery.uml#_4jai8LwpEeSMQuAD2oZAdg"/>
         <graphicalFilters xmi:type="diagram:HideLabelFilter" xmi:id="_fHWeoLwxEeS41YmRwibU2g"/>
@@ -308,7 +308,7 @@
         </ownedStyle>
         <actualMapping xmi:type="description_1:EdgeMapping" href="platform:/plugin/org.obeonetwork.dsl.uml2.design/description/uml2.odesign#//@ownedViewpoints[name='Design']/@ownedRepresentations[name='Activity%20Diagram']/@defaultLayer/@edgeMappings[name='AD_ControlFlow']"/>
       </ownedDiagramElements>
-      <ownedDiagramElements xmi:type="diagram:DEdge" xmi:id="_lqGW1LwtEeSozIkC9kpzOA" name="&lt;Control Flow> flow5" sourceNode="_lqFvw7wtEeSozIkC9kpzOA" targetNode="_lqFvybwtEeSozIkC9kpzOA">
+      <ownedDiagramElements xmi:type="diagram:DEdge" xmi:id="_lqGW1LwtEeSozIkC9kpzOA" name=" flow5" sourceNode="_lqFvw7wtEeSozIkC9kpzOA" targetNode="_lqFvybwtEeSozIkC9kpzOA">
         <target xmi:type="uml:ControlFlow" href="LowBattery.uml#_9KolsLwpEeSMQuAD2oZAdg"/>
         <semanticElements xmi:type="uml:ControlFlow" href="LowBattery.uml#_9KolsLwpEeSMQuAD2oZAdg"/>
         <graphicalFilters xmi:type="diagram:HideLabelFilter" xmi:id="_e7XRELwxEeS41YmRwibU2g"/>
@@ -328,5 +328,8 @@
       <target xmi:type="uml:Activity" href="LowBattery.uml#_9qUPgLwiEeSMQuAD2oZAdg"/>
     </ownedRepresentations>
     <viewpoint xmi:type="description:Viewpoint" href="platform:/plugin/org.obeonetwork.dsl.uml2.design/description/uml2.odesign#//@ownedViewpoints[name='Design']"/>
+  </ownedViews>
+  <ownedViews xmi:type="viewpoint:DRepresentationContainer" xmi:id="_SWNkICluEeWZUeKP19glfg" initialized="true">
+    <viewpoint xmi:type="description:Viewpoint" href="platform:/plugin/org.obeonetwork.dsl.uml2.design/description/uml2.odesign#//@ownedViewpoints[name='Reused']"/>
   </ownedViews>
 </viewpoint:DAnalysis>

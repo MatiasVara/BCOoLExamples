@@ -9,7 +9,7 @@ ImportInterface "platform:/resource/org.gemoc.bcool.example.cameracontrol/models
 Spec test 
 
 // This operator implements the syncronized product between tfsm and activities
-Operator  SyncProduct (action : activity::startAction , fsmevent : tfsm::occurs)
+Operator  SyncProduct (action : activity::startAction, fsmevent : tfsm::occurs)
 	MatchingCorrespondance: when  action.name = fsmevent.name ;
 	CoordinationRule: facilities.RendezVous(action, fsmevent)
 end operator; 
@@ -31,7 +31,7 @@ end operator;
 Operator  TimeinActivity (startAct : activity::startActivity, finishAct : activity::finishActivity , entered : tfsm::entering, local : tfsm::ticks)
 	MatchingCorrespondance: when  (startAct.name = finishAct.name) and (entered.onEnterAction = startAct.name) and (local.name = entered.owningFSM.localClock.name);
 	CoordinationRule: 
-		Local Event sampled = facilities.SampledBy (startAct,local);
+		Local Event sampled = facilities.SampledBy (local, startAct);
 	facilities.Causality(finishAct,sampled)
 end operator; 
 
