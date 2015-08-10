@@ -1,16 +1,17 @@
 ClockConstraintSystem TFSMandfUMLoperatorsCoordination {
 	imports {
-		import "../operator/bcoollib.ccslLib" as lib_2 ;
+		import "platform:/resource/org.gemoc.bcool.example.cameracontrol/operator/bcoollib.ccslLib" as lib_2 ;
 		import "platform:/plugin/fr.inria.aoste.timesquare.ccslkernel.model/ccsllibrary/kernel.ccslLib" as model_1_1 ;
 		import "platform:/plugin/fr.inria.aoste.timesquare.ccslkernel.model/ccsllibrary/CCSL.ccslLib" as model_1_2 ;
 		import "platform:/plugin/org.gemoc.sample.tfsm.moc.lib/ccsl/TFSMMoC.ccslLib" as model_1_3 ;
+		import "platform:/plugin/org.gemoc.sample.tfsm.moc.lib/ccsl/TFSMMoCC.moccml" as model_1_4 ;
 		import "platform:/plugin/fr.inria.aoste.timesquare.ccslkernel.model/ccsllibrary/kernel.ccslLib" as model_2_1 ;
 		import "platform:/plugin/fr.inria.aoste.timesquare.ccslkernel.model/ccsllibrary/CCSL.ccslLib" as model_2_2 ;
 		import "platform:/resource/org.gemoc.bcool.example.cameracontrol/models/lib4RT.ccslLib" as model_2_3 ;
-		import "platform:/resource/org.gemoc.bcool.example.cameracontrol/models/CameraControl_MoCC.extendedCCSL" as
-		CameraControl ;
 		import "platform:/resource/org.gemoc.bcool.example.cameracontrol/models/BatteryControl_MoCC.extendedCCSL" as
 		BatteryControl ;
+		import "platform:/resource/org.gemoc.bcool.example.cameracontrol/models/CameraControl_MoCC.extendedCCSL" as
+		CameraControl ;
 		import "platform:/resource/org.gemoc.bcool.example.cameracontrol/models/HighBattery_MoCC.extendedCCSL" as HighBattery
 		;
 		import "platform:/resource/org.gemoc.bcool.example.cameracontrol/models/LowBattery_MoCC.extendedCCSL" as LowBattery ;
