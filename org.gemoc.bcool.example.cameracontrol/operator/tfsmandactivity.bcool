@@ -3,7 +3,7 @@ TFSMandfUMLoperators
 ImportLib "platform:/resource/org.gemoc.bcool.example.cameracontrol/operator/facilities.bcoollib"
 ImportLib "platform:/resource/org.gemoc.bcool.example.cameracontrol/operator/bcoollib.ccslLib"
 
-ImportInterface "platform:/plugin/org.gemoc.sample.tfsm.eclmoc2as/ecl/TFSM-local.ecl" as tfsm
+ImportInterface "platform:/plugin/org.gemoc.sample.tfsm.eclmoc2as/ecl/TFSM.ecl" as tfsm
 ImportInterface "platform:/resource/org.gemoc.bcool.example.cameracontrol/models/activitySemantics.ecl" as activity
 
 Spec test 
@@ -18,18 +18,18 @@ end operator;
 // The next two operators implements the hierarchical coordination of TFSM and Activity
 //
 Operator  StateEntering (start : activity::startActivity , enter : tfsm::entering)
-	MatchingCorrespondance: when  start.name = enter.onEnterAction ;
+	MatchingCorrespondance: when  start.name = enter.onEnter ;
 	CoordinationRule: facilities.RendezVous(start, enter)
 end operator; 
 
 Operator  StateLeaving (finish : activity::finishActivity , leave : tfsm::leaving)
-	MatchingCorrespondance: when  finish.name = leave.onEnterAction ;
+	MatchingCorrespondance: when  finish.name = leave.onEnter ;
 	CoordinationRule: facilities.Causality(finish,leave)
 end operator; 
 
 // This operator implements the coordination of time between an Activity and a TFSM
 Operator  TimeinActivity (startAct : activity::startActivity, finishAct : activity::finishActivity , entered : tfsm::entering, local : tfsm::ticks)
-	MatchingCorrespondance: when  (startAct.name = finishAct.name) and (entered.onEnterAction = startAct.name) and (local.name = entered.owningFSM.localClock.name);
+	MatchingCorrespondance: when  (startAct.name = finishAct.name) and (entered.onEnter = startAct.name) and (local.name = entered.owningFSM.localClock.name);
 	CoordinationRule: 
 		Local Event sampled = facilities.SampledBy (local, startAct);
 	facilities.Causality(finishAct,sampled)
