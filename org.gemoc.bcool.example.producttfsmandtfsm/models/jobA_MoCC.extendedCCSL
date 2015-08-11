@@ -3,6 +3,8 @@ ClockConstraintSystem TFSMA {
 		import "platform:/plugin/fr.inria.aoste.timesquare.ccslkernel.model/ccsllibrary/kernel.ccslLib" as kernel ;
 		import "platform:/plugin/fr.inria.aoste.timesquare.ccslkernel.model/ccsllibrary/CCSL.ccslLib" as CCSL ;
 		import "platform:/plugin/org.gemoc.sample.tfsm.moc.lib/ccsl/TFSMMoC.ccslLib" as TFSMMoC ;
+		import "platform:/plugin/org.gemoc.sample.tfsm.moc.lib/ccsl/TFSMMoCC.moccml" as TFSMMoCC ;
+		import "platform:/resource/org.gemoc.bcool.example.producttfsmandtfsm/models/jobA.tfsm" as TimedSystem ;
 		import "platform:/resource/org.gemoc.bcool.example.producttfsmandtfsm/models/jobA.tfsm" as TimedSystem ;
 	}
 	entryBlock mainBlock
@@ -20,23 +22,58 @@ ClockConstraintSystem TFSMA {
 		( DelayForClockToDelay -> S2_entering,
 		DelayForClockForCounting -> sec_ticks,
 		DelayForDelay -> t2_1after3seconds_afterDuration )
-		Expression S2intermediate_allFiredoutgoingTransition1 = Union
-		( Clock1 -> t2_1_fire,
-		Clock2 -> t2_1_fire )
 		Expression S1intermediate_allFiredoutgoingTransition1 = Union
 		( Clock1 -> t1_2_fire,
 		Clock2 -> t1_2_fire )
+		Expression S2intermediate_allFiredoutgoingTransition1 = Union
+		( Clock1 -> t2_1_fire,
+		Clock2 -> t2_1_fire )
 		Expression initintermediate_allFiredoutgoingTransition1 = Union
 		( Clock1 -> tinit_fire,
+		Clock2 -> tinit_fire )
+		Expression S1intermediate_allInputTransition1 = Union
+		( Clock1 -> t2_1_fire,
 		Clock2 -> tinit_fire )
 		Expression S2intermediate_allInputTransition1 = Union
 		( Clock1 -> t1_2_fire,
 		Clock2 -> t1_2_fire )
-		Expression S1intermediate_allInputTransition1 = Union
+		Expression S1intermediate_allInputTransition21 = Union
 		( Clock1 -> t2_1_fire,
 		Clock2 -> tinit_fire )
+		Expression S1intermediate_allEvents1 = Union
+		( Clock1 -> ping_occurs,
+		Clock2 -> pong_occurs )
+		Expression S1intermediate_allEvents3 = Union
+		( Clock1 -> S1intermediate_allEvents1,
+		Clock2 -> init_occurs )
+		Expression S1_Union_eventsOrTime = Union
+		( Clock1 -> sec_ticks,
+		Clock2 -> S1intermediate_allEvents3 )
+		Expression S1_SampledOn_allInputsSampledOneventsOrTime = SampledOn
+		( SampledOnSampledClock -> S1intermediate_allInputTransition21,
+		SampledOnTrigger -> S1_Union_eventsOrTime )
+		Expression S2intermediate_allInputTransition21 = Union
+		( Clock1 -> t1_2_fire,
+		Clock2 -> t1_2_fire )
+		Expression S2intermediate_allEvents1 = Union
+		( Clock1 -> ping_occurs,
+		Clock2 -> pong_occurs )
+		Expression S2intermediate_allEvents3 = Union
+		( Clock1 -> S2intermediate_allEvents1,
+		Clock2 -> init_occurs )
+		Expression S2_Union_eventsOrTime = Union
+		( Clock1 -> sec_ticks,
+		Clock2 -> S2intermediate_allEvents3 )
+		Expression S2_SampledOn_allInputsSampledOneventsOrTime = SampledOn
+		( SampledOnSampledClock -> S2intermediate_allInputTransition21,
+		SampledOnTrigger -> S2_Union_eventsOrTime )
 		Expression Aintermediate_onlyOneFirst1 = OneTickAndNoMore
 		( OneTickAndNoMoreClock -> A_start )
+		Expression TFSMAintermediate_allStartTFSM1 = Union
+		( Clock1 -> A_start,
+		Clock2 -> A_start )
+		Expression TFSMAintermediate_onlyOneFirst1 = OneTickAndNoMore
+		( OneTickAndNoMoreClock -> TFSMA_start )
 		Relation pongFSMEventSendReceive_occursWhenSolicitate [ FSMEventSendReceive ]
 		( FSMEventRendezVous_LeftClock -> pongintermediate_AllTriggeringOccurrences1,
 		FSMEventRendezVous_RightClock -> pong_occurs )
@@ -49,30 +86,36 @@ ClockConstraintSystem TFSMA {
 		Relation t2_1Coincides_fireWhenTemporalGuardHoldsOneTransition [ Coincides ]
 		( Clock2 -> t2_1_DelayFor_delayIsExpired_wrt_StateEntering,
 		Clock1 -> t2_1_fire )
-		Relation S2Alternates_enterOnceBeforeToLeave [ Alternates ]
-		( AlternatesLeftClock -> S2_entering,
-		AlternatesRightClock -> S2_leaving )
-		Relation S1Alternates_enterOnceBeforeToLeave [ Alternates ]
-		( AlternatesLeftClock -> S1_entering,
-		AlternatesRightClock -> S1_leaving )
-		Relation initAlternates_enterOnceBeforeToLeave [ Alternates ]
-		( AlternatesLeftClock -> init_entering,
-		AlternatesRightClock -> init_leaving )
-		Relation S2Coincides_firingATransitionAlternatesWithLeavingState [ Coincides ]
-		( Clock2 -> S2intermediate_allFiredoutgoingTransition1,
-		Clock1 -> S2_leaving )
+		Relation S1WeakAlternates_enterOnceBeforeToLeave [ WeakAlternates ]
+		( WeakAlternatesLeftClock -> S1_entering,
+		WeakAlternatesRightClock -> S1_leaving )
+		Relation S2WeakAlternates_enterOnceBeforeToLeave [ WeakAlternates ]
+		( WeakAlternatesLeftClock -> S2_entering,
+		WeakAlternatesRightClock -> S2_leaving )
+		Relation initWeakAlternates_enterOnceBeforeToLeave [ WeakAlternates ]
+		( WeakAlternatesLeftClock -> init_entering,
+		WeakAlternatesRightClock -> init_leaving )
 		Relation S1Coincides_firingATransitionAlternatesWithLeavingState [ Coincides ]
 		( Clock2 -> S1intermediate_allFiredoutgoingTransition1,
 		Clock1 -> S1_leaving )
+		Relation S2Coincides_firingATransitionAlternatesWithLeavingState [ Coincides ]
+		( Clock2 -> S2intermediate_allFiredoutgoingTransition1,
+		Clock1 -> S2_leaving )
 		Relation initCoincides_firingATransitionAlternatesWithLeavingState [ Coincides ]
 		( Clock2 -> initintermediate_allFiredoutgoingTransition1,
 		Clock1 -> init_leaving )
-		Relation S2Causes_stateEntering [ Causes ]
-		( LeftClock -> S2intermediate_allInputTransition1,
-		RightClock -> S2_entering )
-		Relation S1Causes_stateEntering [ Causes ]
-		( LeftClock -> S1intermediate_allInputTransition1,
-		RightClock -> S1_entering )
+		Relation S1Alternates_stateEntering1 [ Alternates ]
+		( AlternatesLeftClock -> S1intermediate_allInputTransition1,
+		AlternatesRightClock -> S1_entering )
+		Relation S2Alternates_stateEntering1 [ Alternates ]
+		( AlternatesLeftClock -> S2intermediate_allInputTransition1,
+		AlternatesRightClock -> S2_entering )
+		Relation S1Alternates_stateEntering2 [ Alternates ]
+		( AlternatesLeftClock -> S1_entering,
+		AlternatesRightClock -> S1_SampledOn_allInputsSampledOneventsOrTime )
+		Relation S2Alternates_stateEntering2 [ Alternates ]
+		( AlternatesLeftClock -> S2_entering,
+		AlternatesRightClock -> S2_SampledOn_allInputsSampledOneventsOrTime )
 		Relation Aintermediate_oneStateAtATime1_2 [ Exclusion ]
 		( Clock1 -> S1_entering,
 		Clock2 -> S2_entering )
@@ -97,6 +140,12 @@ ClockConstraintSystem TFSMA {
 		Relation ACoincides_firstOnlyOnce [ Coincides ]
 		( Clock2 -> A_start,
 		Clock1 -> Aintermediate_onlyOneFirst1 )
+		Relation TFSMAPrecedes_startTimedSystemBeforeAllStartTFSM [ Precedes ]
+		( LeftClock -> TFSMA_start,
+		RightClock -> TFSMAintermediate_allStartTFSM1 )
+		Relation TFSMACoincides_firstOnlyOnce [ Coincides ]
+		( Clock2 -> TFSMA_start,
+		Clock1 -> TFSMAintermediate_onlyOneFirst1 )
 		Clock sec_ticks : clock -> evt_sec_ticks
 		( "sec",
 		"sec::ticks()" )
@@ -110,31 +159,35 @@ ClockConstraintSystem TFSMA {
 		( "tinit",
 		"tinit::fire()" )
 		Clock pong_occurs : clock -> evt_pong_occurs
-		( "pong" )
+		( "pong",
+		"pong::occurs()" )
 		Clock ping_occurs : clock -> evt_ping_occurs
-		( "ping" )
+		( "ping",
+		"ping::occurs()" )
 		Clock init_occurs : clock -> evt_init_occurs
-		( "init" )
-		Clock S2_entering : clock -> evt_S2_entering
-		( "S2" )
-		: start
+		( "init",
+		"init::occurs()" )
 		Clock S1_entering : clock -> evt_S1_entering
-		( "S1" )
-		: start
+		( "S1",
+		"S1::onEnter()" )
+		Clock S2_entering : clock -> evt_S2_entering
+		( "S2",
+		"S2::onEnter()" )
 		Clock init_entering : clock -> evt_init_entering
-		( "init" )
-		: start
-		Clock S2_leaving : clock -> evt_S2_leaving
-		( "S2" )
-		: finish
+		( "init",
+		"init::onEnter()" )
 		Clock S1_leaving : clock -> evt_S1_leaving
 		( "S1" )
-		: finish
+		Clock S2_leaving : clock -> evt_S2_leaving
+		( "S2" )
 		Clock init_leaving : clock -> evt_init_leaving
 		( "init" )
-		: finish
 		Clock A_start : clock -> evt_A_start
-		( "A" )
+		( "A",
+		"A::init()" )
+		Clock TFSMA_start : clock -> evt_TFSMA_start
+		( "TFSMA",
+		"TFSMA::init()" )
 		Integer t2_1after3seconds_afterDuration : int = 3
 	}
 }

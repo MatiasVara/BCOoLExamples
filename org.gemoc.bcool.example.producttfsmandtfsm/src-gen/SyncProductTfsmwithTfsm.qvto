@@ -170,19 +170,6 @@ property seqOfExpressionDeclaration :	Sequence(TimeModel::CCSLModel::ClockExpres
 
 
 
-		property MM1_seqOfstallTFSMContext :	Sequence(inMM1::TFSM) = Sequence{};
-		property MM1_seqOfstallTFSMReferedElement :	Sequence(EObject) = Sequence{};
-
-			query inMM1::TFSM::getstallMSEofMM1() {
-			MM1_seqOfstallTFSMContext += self.oclAsType(inMM1::TFSM);
-			//warning here, at the end it will be an eoperation..., i.e. a DSA
-			MM1_seqOfstallTFSMReferedElement += self.oclAsType(EObject); //before: evt.ownedType.oclAsType(EventType).referedElement
-			return;
-			}
-	
-
-
-
 		property MM1_seqOfstartTimedSystemContext :	Sequence(inMM1::TimedSystem) = Sequence{};
 		property MM1_seqOfstartTimedSystemReferedElement :	Sequence(EObject) = Sequence{};
 
@@ -313,19 +300,6 @@ property seqOfExpressionDeclaration :	Sequence(TimeModel::CCSLModel::ClockExpres
 
 
 
-		property MM2_seqOfstallTFSMContext :	Sequence(inMM2::TFSM) = Sequence{};
-		property MM2_seqOfstallTFSMReferedElement :	Sequence(EObject) = Sequence{};
-
-			query inMM2::TFSM::getstallMSEofMM2() {
-			MM2_seqOfstallTFSMContext += self.oclAsType(inMM2::TFSM);
-			//warning here, at the end it will be an eoperation..., i.e. a DSA
-			MM2_seqOfstallTFSMReferedElement += self.oclAsType(EObject); //before: evt.ownedType.oclAsType(EventType).referedElement
-			return;
-			}
-	
-
-
-
 		property MM2_seqOfstartTimedSystemContext :	Sequence(inMM2::TimedSystem) = Sequence{};
 		property MM2_seqOfstartTimedSystemReferedElement :	Sequence(EObject) = Sequence{};
 
@@ -364,6 +338,13 @@ query identifyUserRelations() {
 
 		
 		
+				seqOfRelationDeclaration		+= getLibObjects("platform:/plugin/org.gemoc.sample.tfsm.moc.lib/ccsl/TFSMMoCC.moccml")[TimeModel::CCSLModel::ClockExpressionAndRelation::RelationDeclaration];
+				seqOfAbstractEntity				+= getLibObjects("platform:/plugin/org.gemoc.sample.tfsm.moc.lib/ccsl/TFSMMoCC.moccml")[TimeModel::CCSLModel::ClockExpressionAndRelation::AbstractEntity];
+				seqOfExpressionDeclaration		+= getLibObjects("platform:/plugin/org.gemoc.sample.tfsm.moc.lib/ccsl/TFSMMoCC.moccml")[TimeModel::CCSLModel::ClockExpressionAndRelation::ExpressionDeclaration];
+				kernelTypes 					+= getLibObjects("platform:/plugin/org.gemoc.sample.tfsm.moc.lib/ccsl/TFSMMoCC.moccml")[TimeModel::BasicType::Type];
+
+		
+		
 				seqOfRelationDeclaration		+= getLibObjects("platform:/plugin/fr.inria.aoste.timesquare.ccslkernel.model/ccsllibrary/kernel.ccslLib")[TimeModel::CCSLModel::ClockExpressionAndRelation::RelationDeclaration];
 				seqOfAbstractEntity				+= getLibObjects("platform:/plugin/fr.inria.aoste.timesquare.ccslkernel.model/ccsllibrary/kernel.ccslLib")[TimeModel::CCSLModel::ClockExpressionAndRelation::AbstractEntity];
 				seqOfExpressionDeclaration		+= getLibObjects("platform:/plugin/fr.inria.aoste.timesquare.ccslkernel.model/ccsllibrary/kernel.ccslLib")[TimeModel::CCSLModel::ClockExpressionAndRelation::ExpressionDeclaration];
@@ -382,6 +363,13 @@ query identifyUserRelations() {
 				seqOfAbstractEntity				+= getLibObjects("platform:/plugin/org.gemoc.sample.tfsm.moc.lib/ccsl/TFSMMoC.ccslLib")[TimeModel::CCSLModel::ClockExpressionAndRelation::AbstractEntity];
 				seqOfExpressionDeclaration		+= getLibObjects("platform:/plugin/org.gemoc.sample.tfsm.moc.lib/ccsl/TFSMMoC.ccslLib")[TimeModel::CCSLModel::ClockExpressionAndRelation::ExpressionDeclaration];
 				kernelTypes 					+= getLibObjects("platform:/plugin/org.gemoc.sample.tfsm.moc.lib/ccsl/TFSMMoC.ccslLib")[TimeModel::BasicType::Type];
+
+		
+		
+				seqOfRelationDeclaration		+= getLibObjects("platform:/plugin/org.gemoc.sample.tfsm.moc.lib/ccsl/TFSMMoCC.moccml")[TimeModel::CCSLModel::ClockExpressionAndRelation::RelationDeclaration];
+				seqOfAbstractEntity				+= getLibObjects("platform:/plugin/org.gemoc.sample.tfsm.moc.lib/ccsl/TFSMMoCC.moccml")[TimeModel::CCSLModel::ClockExpressionAndRelation::AbstractEntity];
+				seqOfExpressionDeclaration		+= getLibObjects("platform:/plugin/org.gemoc.sample.tfsm.moc.lib/ccsl/TFSMMoCC.moccml")[TimeModel::CCSLModel::ClockExpressionAndRelation::ExpressionDeclaration];
+				kernelTypes 					+= getLibObjects("platform:/plugin/org.gemoc.sample.tfsm.moc.lib/ccsl/TFSMMoCC.moccml")[TimeModel::BasicType::Type];
 
 		
 
@@ -436,7 +424,6 @@ main() {
 			inM1.objectsOfType(inMM1::EvaluateGuard).getevaluatedTrueMSEofMM1();
 			inM1.objectsOfType(inMM1::EvaluateGuard).getevaluatedFalseMSEofMM1();
 			inM1.objectsOfType(inMM1::TFSM).getstartMSEofMM1();
-			inM1.objectsOfType(inMM1::TFSM).getstallMSEofMM1();
 			inM1.objectsOfType(inMM1::TimedSystem).getstartMSEofMM1();
 			inM2.objectsOfType(inMM2::FSMClock).getticksMSEofMM2();
 			inM2.objectsOfType(inMM2::Transition).getfireMSEofMM2();
@@ -447,7 +434,6 @@ main() {
 			inM2.objectsOfType(inMM2::EvaluateGuard).getevaluatedTrueMSEofMM2();
 			inM2.objectsOfType(inMM2::EvaluateGuard).getevaluatedFalseMSEofMM2();
 			inM2.objectsOfType(inMM2::TFSM).getstartMSEofMM2();
-			inM2.objectsOfType(inMM2::TFSM).getstallMSEofMM2();
 			inM2.objectsOfType(inMM2::TimedSystem).getstartMSEofMM2();
 		
 	
@@ -598,6 +584,12 @@ mapping SyncProductTfsmwithTfsm2CCSLSubBlock() : TimeModel::CCSLModel::Block {
 		}; 
 
 
+				imports+= object TimeModel::ImportStatement{
+				importURI := 'platform:/plugin/org.gemoc.sample.tfsm.moc.lib/ccsl/TFSMMoCC.moccml';
+				alias := 'model_1_4';	
+		}; 
+
+
 			imports+= object TimeModel::ImportStatement{
 			importURI := 'platform:/plugin/fr.inria.aoste.timesquare.ccslkernel.model/ccsllibrary/kernel.ccslLib';
 			alias := 'model_2_1';	
@@ -615,6 +607,12 @@ mapping SyncProductTfsmwithTfsm2CCSLSubBlock() : TimeModel::CCSLModel::Block {
 				imports+= object TimeModel::ImportStatement{
 				importURI := 'platform:/plugin/org.gemoc.sample.tfsm.moc.lib/ccsl/TFSMMoC.ccslLib';
 				alias := 'model_2_3';	
+		}; 
+
+
+				imports+= object TimeModel::ImportStatement{
+				importURI := 'platform:/plugin/org.gemoc.sample.tfsm.moc.lib/ccsl/TFSMMoCC.moccml';
+				alias := 'model_2_4';	
 		}; 
 
 

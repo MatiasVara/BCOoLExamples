@@ -1,12 +1,14 @@
 ClockConstraintSystem SyncProductTfsmwithTfsmCoordination {
 	imports {
-		import "platform:/resource/org.gemoc.bcool.example.producttfsmandtfsm/library/bcoollib.ccslLib" as lib_1 ;
+		import "../library/bcoollib.ccslLib" as lib_1 ;
 		import "platform:/plugin/fr.inria.aoste.timesquare.ccslkernel.model/ccsllibrary/kernel.ccslLib" as model_1_1 ;
 		import "platform:/plugin/fr.inria.aoste.timesquare.ccslkernel.model/ccsllibrary/CCSL.ccslLib" as model_1_2 ;
 		import "platform:/plugin/org.gemoc.sample.tfsm.moc.lib/ccsl/TFSMMoC.ccslLib" as model_1_3 ;
+		import "platform:/plugin/org.gemoc.sample.tfsm.moc.lib/ccsl/TFSMMoCC.moccml" as model_1_4 ;
 		import "platform:/plugin/fr.inria.aoste.timesquare.ccslkernel.model/ccsllibrary/kernel.ccslLib" as model_2_1 ;
 		import "platform:/plugin/fr.inria.aoste.timesquare.ccslkernel.model/ccsllibrary/CCSL.ccslLib" as model_2_2 ;
 		import "platform:/plugin/org.gemoc.sample.tfsm.moc.lib/ccsl/TFSMMoC.ccslLib" as model_2_3 ;
+		import "platform:/plugin/org.gemoc.sample.tfsm.moc.lib/ccsl/TFSMMoCC.moccml" as model_2_4 ;
 		import "platform:/resource/org.gemoc.bcool.example.producttfsmandtfsm/models/jobA_MoCC.extendedCCSL" as jobA ;
 		import "platform:/resource/org.gemoc.bcool.example.producttfsmandtfsm/models/jobB_MoCC.extendedCCSL" as jobB ;
 	}

@@ -293,39 +293,6 @@
     <ownedRepresentations xmi:type="diagram:DSemanticDiagram" xmi:id="_EhlTQClFEeWTyeaRU3tJpQ" name="B">
       <ownedAnnotationEntries xmi:type="description:AnnotationEntry" xmi:id="_EhmhYClFEeWTyeaRU3tJpQ" source="GMF_DIAGRAMS">
         <data xmi:type="notation:Diagram" xmi:id="_EhmhYSlFEeWTyeaRU3tJpQ" type="Sirius" element="_EhlTQClFEeWTyeaRU3tJpQ" measurementUnit="Pixel">
-          <children xmi:type="notation:Node" xmi:id="_EhmhYylFEeWTyeaRU3tJpQ" type="2001" element="_EhlTQSlFEeWTyeaRU3tJpQ">
-            <children xmi:type="notation:Node" xmi:id="_EhmhZilFEeWTyeaRU3tJpQ" type="5002">
-              <layoutConstraint xmi:type="notation:Location" xmi:id="_EhmhZylFEeWTyeaRU3tJpQ" x="20"/>
-            </children>
-            <children xmi:type="notation:Node" xmi:id="_EhpksilFEeWTyeaRU3tJpQ" type="3005" element="_EhlTQilFEeWTyeaRU3tJpQ">
-              <styles xmi:type="notation:ShapeStyle" xmi:id="_EhpksylFEeWTyeaRU3tJpQ" fontName="Noto Sans"/>
-              <layoutConstraint xmi:type="notation:Bounds" xmi:id="_EhpktClFEeWTyeaRU3tJpQ"/>
-            </children>
-            <styles xmi:type="notation:ShapeStyle" xmi:id="_EhmhZClFEeWTyeaRU3tJpQ" fontName="Noto Sans" fontHeight="8" bold="true"/>
-            <layoutConstraint xmi:type="notation:Bounds" xmi:id="_EhmhZSlFEeWTyeaRU3tJpQ" width="19" height="27"/>
-          </children>
-          <children xmi:type="notation:Node" xmi:id="_EhnIcClFEeWTyeaRU3tJpQ" type="2001" element="_EhlTRSlFEeWTyeaRU3tJpQ">
-            <children xmi:type="notation:Node" xmi:id="_EhnIcylFEeWTyeaRU3tJpQ" type="5002">
-              <layoutConstraint xmi:type="notation:Location" xmi:id="_EhnIdClFEeWTyeaRU3tJpQ" x="20"/>
-            </children>
-            <children xmi:type="notation:Node" xmi:id="_EhpktSlFEeWTyeaRU3tJpQ" type="3005" element="_EhlTRilFEeWTyeaRU3tJpQ">
-              <styles xmi:type="notation:ShapeStyle" xmi:id="_EhpktilFEeWTyeaRU3tJpQ" fontName="Noto Sans"/>
-              <layoutConstraint xmi:type="notation:Bounds" xmi:id="_EhpktylFEeWTyeaRU3tJpQ"/>
-            </children>
-            <styles xmi:type="notation:ShapeStyle" xmi:id="_EhnIcSlFEeWTyeaRU3tJpQ" fontName="Noto Sans" fontHeight="8" bold="true"/>
-            <layoutConstraint xmi:type="notation:Bounds" xmi:id="_EhnIcilFEeWTyeaRU3tJpQ" x="84" width="19" height="27"/>
-          </children>
-          <children xmi:type="notation:Node" xmi:id="_EhnvgClFEeWTyeaRU3tJpQ" type="2001" element="_EhlTSSlFEeWTyeaRU3tJpQ">
-            <children xmi:type="notation:Node" xmi:id="_EhnvgylFEeWTyeaRU3tJpQ" type="5002">
-              <layoutConstraint xmi:type="notation:Location" xmi:id="_EhnvhClFEeWTyeaRU3tJpQ" x="20"/>
-            </children>
-            <children xmi:type="notation:Node" xmi:id="_EhqLwClFEeWTyeaRU3tJpQ" type="3005" element="_EhlTSilFEeWTyeaRU3tJpQ">
-              <styles xmi:type="notation:ShapeStyle" xmi:id="_EhqLwSlFEeWTyeaRU3tJpQ" fontName="Noto Sans"/>
-              <layoutConstraint xmi:type="notation:Bounds" xmi:id="_EhqLwilFEeWTyeaRU3tJpQ"/>
-            </children>
-            <styles xmi:type="notation:ShapeStyle" xmi:id="_EhnvgSlFEeWTyeaRU3tJpQ" fontName="Noto Sans" fontHeight="8" bold="true"/>
-            <layoutConstraint xmi:type="notation:Bounds" xmi:id="_EhnvgilFEeWTyeaRU3tJpQ" x="156" width="19" height="27"/>
-          </children>
           <children xmi:type="notation:Node" xmi:id="_EhnvhSlFEeWTyeaRU3tJpQ" type="2001" element="_EhlTTSlFEeWTyeaRU3tJpQ">
             <children xmi:type="notation:Node" xmi:id="_EhoWkClFEeWTyeaRU3tJpQ" type="5002">
               <layoutConstraint xmi:type="notation:Location" xmi:id="_EhoWkSlFEeWTyeaRU3tJpQ" y="-21"/>
@@ -421,36 +388,6 @@
           </edges>
         </data>
       </ownedAnnotationEntries>
-      <ownedDiagramElements xmi:type="diagram:DNode" xmi:id="_EhlTQSlFEeWTyeaRU3tJpQ" name="ping" width="-1" height="-1">
-        <target xmi:type="org.gemoc.sample.tfsm:FSMEvent" href="jobB.tfsm#//@tfsms.0/@localEvents.0"/>
-        <semanticElements xmi:type="org.gemoc.sample.tfsm:FSMEvent" href="jobB.tfsm#//@tfsms.0/@localEvents.0"/>
-        <ownedStyle xmi:type="diagram:WorkspaceImage" xmi:id="_EhlTQilFEeWTyeaRU3tJpQ" labelFormat="bold" showIcon="false" iconPath="event_small.png" workspacePath="/org.gemoc.sample.tfsm.design/icons/event_small.gif">
-          <labelColor xmi:type="viewpoint:RGBValues" xmi:id="_EhlTQylFEeWTyeaRU3tJpQ"/>
-          <description xmi:type="style:WorkspaceImageDescription" href="platform:/plugin/org.gemoc.sample.tfsm.design/description/TFSM.odesign#//@ownedViewpoints[name='TFSM_ViewPoint']/@ownedRepresentations[name='TFSM']/@defaultLayer/@nodeMappings[name='LocalEvents']/@style"/>
-          <borderColor xmi:type="viewpoint:RGBValues" xmi:id="_EhlTRClFEeWTyeaRU3tJpQ"/>
-        </ownedStyle>
-        <actualMapping xmi:type="description_1:NodeMapping" href="platform:/plugin/org.gemoc.sample.tfsm.design/description/TFSM.odesign#//@ownedViewpoints[name='TFSM_ViewPoint']/@ownedRepresentations[name='TFSM']/@defaultLayer/@nodeMappings[name='LocalEvents']"/>
-      </ownedDiagramElements>
-      <ownedDiagramElements xmi:type="diagram:DNode" xmi:id="_EhlTRSlFEeWTyeaRU3tJpQ" name="pong" width="-1" height="-1">
-        <target xmi:type="org.gemoc.sample.tfsm:FSMEvent" href="jobB.tfsm#//@tfsms.0/@localEvents.1"/>
-        <semanticElements xmi:type="org.gemoc.sample.tfsm:FSMEvent" href="jobB.tfsm#//@tfsms.0/@localEvents.1"/>
-        <ownedStyle xmi:type="diagram:WorkspaceImage" xmi:id="_EhlTRilFEeWTyeaRU3tJpQ" labelFormat="bold" showIcon="false" iconPath="event_small.png" workspacePath="/org.gemoc.sample.tfsm.design/icons/event_small.gif">
-          <labelColor xmi:type="viewpoint:RGBValues" xmi:id="_EhlTRylFEeWTyeaRU3tJpQ"/>
-          <description xmi:type="style:WorkspaceImageDescription" href="platform:/plugin/org.gemoc.sample.tfsm.design/description/TFSM.odesign#//@ownedViewpoints[name='TFSM_ViewPoint']/@ownedRepresentations[name='TFSM']/@defaultLayer/@nodeMappings[name='LocalEvents']/@style"/>
-          <borderColor xmi:type="viewpoint:RGBValues" xmi:id="_EhlTSClFEeWTyeaRU3tJpQ"/>
-        </ownedStyle>
-        <actualMapping xmi:type="description_1:NodeMapping" href="platform:/plugin/org.gemoc.sample.tfsm.design/description/TFSM.odesign#//@ownedViewpoints[name='TFSM_ViewPoint']/@ownedRepresentations[name='TFSM']/@defaultLayer/@nodeMappings[name='LocalEvents']"/>
-      </ownedDiagramElements>
-      <ownedDiagramElements xmi:type="diagram:DNode" xmi:id="_EhlTSSlFEeWTyeaRU3tJpQ" name="start" width="-1" height="-1">
-        <target xmi:type="org.gemoc.sample.tfsm:FSMEvent" href="jobB.tfsm#//@tfsms.0/@localEvents.2"/>
-        <semanticElements xmi:type="org.gemoc.sample.tfsm:FSMEvent" href="jobB.tfsm#//@tfsms.0/@localEvents.2"/>
-        <ownedStyle xmi:type="diagram:WorkspaceImage" xmi:id="_EhlTSilFEeWTyeaRU3tJpQ" labelFormat="bold" showIcon="false" iconPath="event_small.png" workspacePath="/org.gemoc.sample.tfsm.design/icons/event_small.gif">
-          <labelColor xmi:type="viewpoint:RGBValues" xmi:id="_EhlTSylFEeWTyeaRU3tJpQ"/>
-          <description xmi:type="style:WorkspaceImageDescription" href="platform:/plugin/org.gemoc.sample.tfsm.design/description/TFSM.odesign#//@ownedViewpoints[name='TFSM_ViewPoint']/@ownedRepresentations[name='TFSM']/@defaultLayer/@nodeMappings[name='LocalEvents']/@style"/>
-          <borderColor xmi:type="viewpoint:RGBValues" xmi:id="_EhlTTClFEeWTyeaRU3tJpQ"/>
-        </ownedStyle>
-        <actualMapping xmi:type="description_1:NodeMapping" href="platform:/plugin/org.gemoc.sample.tfsm.design/description/TFSM.odesign#//@ownedViewpoints[name='TFSM_ViewPoint']/@ownedRepresentations[name='TFSM']/@defaultLayer/@nodeMappings[name='LocalEvents']"/>
-      </ownedDiagramElements>
       <ownedDiagramElements xmi:type="diagram:DNode" xmi:id="_EhlTTSlFEeWTyeaRU3tJpQ" name="sec" width="5" height="5" resizeKind="NSEW">
         <target xmi:type="org.gemoc.sample.tfsm:FSMClock" href="jobB.tfsm#//@tfsms.0/@localClock"/>
         <semanticElements xmi:type="org.gemoc.sample.tfsm:FSMClock" href="jobB.tfsm#//@tfsms.0/@localClock"/>
