@@ -13,3 +13,8 @@ Operator  MatchingandCoordinationSharedEvents (dse1 : i_tfsm1::occurs , dse2 : i
 		MatchingCorrespondance: when  dse1.name = dse2.name;
 		CoordinationRule: facilities.RendezVous(dse1,dse2) 
 end operator;
+
+Operator MatchingandCoordinationofTicks (dse3 : i_tfsm1::ticks, dse4 : i_tfsm2:: ticks)
+		MatchingCorrespondance: when dse3.name = dse4.name;
+		CoordinationRule: facilities.RendezVous (dse3, dse4)
+end operator;

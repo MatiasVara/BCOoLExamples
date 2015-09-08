@@ -12,46 +12,31 @@ ClockConstraintSystem TFSMA {
 		Expression pongintermediate_AllTriggeringOccurrences1 = Union
 		( Clock1 -> t2_1_fire,
 		Clock2 -> t2_1_fire )
-		Expression t1_2_SampledOn_eventOccursAfterOrWhileStateEntering = SampledOn
-		( SampledOnSampledClock -> S1_entering,
-		SampledOnTrigger -> ping_occurs )
 		Expression tinit_SampledOn_eventOccursAfterOrWhileStateEntering = SampledOn
 		( SampledOnSampledClock -> init_entering,
 		SampledOnTrigger -> init_occurs )
+		Expression t1_2_SampledOn_eventOccursAfterOrWhileStateEntering = SampledOn
+		( SampledOnSampledClock -> S1_entering,
+		SampledOnTrigger -> ping_occurs )
 		Expression t2_1_DelayFor_delayIsExpired_wrt_StateEntering = DelayFor
 		( DelayForClockToDelay -> S2_entering,
 		DelayForClockForCounting -> sec_ticks,
 		DelayForDelay -> t2_1after3seconds_afterDuration )
-		Expression S1intermediate_allFiredoutgoingTransition1 = Union
-		( Clock1 -> t1_2_fire,
-		Clock2 -> t1_2_fire )
-		Expression S2intermediate_allFiredoutgoingTransition1 = Union
-		( Clock1 -> t2_1_fire,
-		Clock2 -> t2_1_fire )
 		Expression initintermediate_allFiredoutgoingTransition1 = Union
 		( Clock1 -> tinit_fire,
 		Clock2 -> tinit_fire )
-		Expression S1intermediate_allInputTransition1 = Union
+		Expression S2intermediate_allFiredoutgoingTransition1 = Union
 		( Clock1 -> t2_1_fire,
-		Clock2 -> tinit_fire )
+		Clock2 -> t2_1_fire )
+		Expression S1intermediate_allFiredoutgoingTransition1 = Union
+		( Clock1 -> t1_2_fire,
+		Clock2 -> t1_2_fire )
 		Expression S2intermediate_allInputTransition1 = Union
 		( Clock1 -> t1_2_fire,
 		Clock2 -> t1_2_fire )
-		Expression S1intermediate_allInputTransition21 = Union
+		Expression S1intermediate_allInputTransition1 = Union
 		( Clock1 -> t2_1_fire,
 		Clock2 -> tinit_fire )
-		Expression S1intermediate_allEvents1 = Union
-		( Clock1 -> ping_occurs,
-		Clock2 -> pong_occurs )
-		Expression S1intermediate_allEvents3 = Union
-		( Clock1 -> S1intermediate_allEvents1,
-		Clock2 -> init_occurs )
-		Expression S1_Union_eventsOrTime = Union
-		( Clock1 -> sec_ticks,
-		Clock2 -> S1intermediate_allEvents3 )
-		Expression S1_SampledOn_allInputsSampledOneventsOrTime = SampledOn
-		( SampledOnSampledClock -> S1intermediate_allInputTransition21,
-		SampledOnTrigger -> S1_Union_eventsOrTime )
 		Expression S2intermediate_allInputTransition21 = Union
 		( Clock1 -> t1_2_fire,
 		Clock2 -> t1_2_fire )
@@ -67,6 +52,21 @@ ClockConstraintSystem TFSMA {
 		Expression S2_SampledOn_allInputsSampledOneventsOrTime = SampledOn
 		( SampledOnSampledClock -> S2intermediate_allInputTransition21,
 		SampledOnTrigger -> S2_Union_eventsOrTime )
+		Expression S1intermediate_allInputTransition21 = Union
+		( Clock1 -> t2_1_fire,
+		Clock2 -> tinit_fire )
+		Expression S1intermediate_allEvents1 = Union
+		( Clock1 -> ping_occurs,
+		Clock2 -> pong_occurs )
+		Expression S1intermediate_allEvents3 = Union
+		( Clock1 -> S1intermediate_allEvents1,
+		Clock2 -> init_occurs )
+		Expression S1_Union_eventsOrTime = Union
+		( Clock1 -> sec_ticks,
+		Clock2 -> S1intermediate_allEvents3 )
+		Expression S1_SampledOn_allInputsSampledOneventsOrTime = SampledOn
+		( SampledOnSampledClock -> S1intermediate_allInputTransition21,
+		SampledOnTrigger -> S1_Union_eventsOrTime )
 		Expression Aintermediate_onlyOneFirst1 = OneTickAndNoMore
 		( OneTickAndNoMoreClock -> A_start )
 		Expression TFSMAintermediate_allStartTFSM1 = Union
@@ -77,45 +77,45 @@ ClockConstraintSystem TFSMA {
 		Relation pongFSMEventSendReceive_occursWhenSolicitate [ FSMEventSendReceive ]
 		( FSMEventRendezVous_LeftClock -> pongintermediate_AllTriggeringOccurrences1,
 		FSMEventRendezVous_RightClock -> pong_occurs )
-		Relation t1_2Coincides_fireWhenEventOccursOneTransition [ Coincides ]
-		( Clock2 -> t1_2_SampledOn_eventOccursAfterOrWhileStateEntering,
-		Clock1 -> t1_2_fire )
 		Relation tinitCoincides_fireWhenEventOccursOneTransition [ Coincides ]
 		( Clock2 -> tinit_SampledOn_eventOccursAfterOrWhileStateEntering,
 		Clock1 -> tinit_fire )
+		Relation t1_2Coincides_fireWhenEventOccursOneTransition [ Coincides ]
+		( Clock2 -> t1_2_SampledOn_eventOccursAfterOrWhileStateEntering,
+		Clock1 -> t1_2_fire )
 		Relation t2_1Coincides_fireWhenTemporalGuardHoldsOneTransition [ Coincides ]
 		( Clock2 -> t2_1_DelayFor_delayIsExpired_wrt_StateEntering,
 		Clock1 -> t2_1_fire )
-		Relation S1WeakAlternates_enterOnceBeforeToLeave [ WeakAlternates ]
-		( WeakAlternatesLeftClock -> S1_entering,
-		WeakAlternatesRightClock -> S1_leaving )
-		Relation S2WeakAlternates_enterOnceBeforeToLeave [ WeakAlternates ]
-		( WeakAlternatesLeftClock -> S2_entering,
-		WeakAlternatesRightClock -> S2_leaving )
 		Relation initWeakAlternates_enterOnceBeforeToLeave [ WeakAlternates ]
 		( WeakAlternatesLeftClock -> init_entering,
 		WeakAlternatesRightClock -> init_leaving )
-		Relation S1Coincides_firingATransitionAlternatesWithLeavingState [ Coincides ]
-		( Clock2 -> S1intermediate_allFiredoutgoingTransition1,
-		Clock1 -> S1_leaving )
-		Relation S2Coincides_firingATransitionAlternatesWithLeavingState [ Coincides ]
-		( Clock2 -> S2intermediate_allFiredoutgoingTransition1,
-		Clock1 -> S2_leaving )
+		Relation S2WeakAlternates_enterOnceBeforeToLeave [ WeakAlternates ]
+		( WeakAlternatesLeftClock -> S2_entering,
+		WeakAlternatesRightClock -> S2_leaving )
+		Relation S1WeakAlternates_enterOnceBeforeToLeave [ WeakAlternates ]
+		( WeakAlternatesLeftClock -> S1_entering,
+		WeakAlternatesRightClock -> S1_leaving )
 		Relation initCoincides_firingATransitionAlternatesWithLeavingState [ Coincides ]
 		( Clock2 -> initintermediate_allFiredoutgoingTransition1,
 		Clock1 -> init_leaving )
-		Relation S1Alternates_stateEntering1 [ Alternates ]
-		( AlternatesLeftClock -> S1intermediate_allInputTransition1,
-		AlternatesRightClock -> S1_entering )
+		Relation S2Coincides_firingATransitionAlternatesWithLeavingState [ Coincides ]
+		( Clock2 -> S2intermediate_allFiredoutgoingTransition1,
+		Clock1 -> S2_leaving )
+		Relation S1Coincides_firingATransitionAlternatesWithLeavingState [ Coincides ]
+		( Clock2 -> S1intermediate_allFiredoutgoingTransition1,
+		Clock1 -> S1_leaving )
 		Relation S2Alternates_stateEntering1 [ Alternates ]
 		( AlternatesLeftClock -> S2intermediate_allInputTransition1,
 		AlternatesRightClock -> S2_entering )
-		Relation S1Alternates_stateEntering2 [ Alternates ]
-		( AlternatesLeftClock -> S1_entering,
-		AlternatesRightClock -> S1_SampledOn_allInputsSampledOneventsOrTime )
+		Relation S1Alternates_stateEntering1 [ Alternates ]
+		( AlternatesLeftClock -> S1intermediate_allInputTransition1,
+		AlternatesRightClock -> S1_entering )
 		Relation S2Alternates_stateEntering2 [ Alternates ]
 		( AlternatesLeftClock -> S2_entering,
 		AlternatesRightClock -> S2_SampledOn_allInputsSampledOneventsOrTime )
+		Relation S1Alternates_stateEntering2 [ Alternates ]
+		( AlternatesLeftClock -> S1_entering,
+		AlternatesRightClock -> S1_SampledOn_allInputsSampledOneventsOrTime )
 		Relation Aintermediate_oneStateAtATime1_2 [ Exclusion ]
 		( Clock1 -> S1_entering,
 		Clock2 -> S2_entering )
@@ -149,39 +149,39 @@ ClockConstraintSystem TFSMA {
 		Clock sec_ticks : clock -> evt_sec_ticks
 		( "sec",
 		"sec::ticks()" )
+		Clock tinit_fire : clock -> evt_tinit_fire
+		( "tinit",
+		"tinit::fire()" )
 		Clock t1_2_fire : clock -> evt_t1_2_fire
 		( "t1_2",
 		"t1_2::fire()" )
 		Clock t2_1_fire : clock -> evt_t2_1_fire
 		( "t2_1",
 		"t2_1::fire()" )
-		Clock tinit_fire : clock -> evt_tinit_fire
-		( "tinit",
-		"tinit::fire()" )
 		Clock pong_occurs : clock -> evt_pong_occurs
 		( "pong",
 		"pong::occurs()" )
-		Clock ping_occurs : clock -> evt_ping_occurs
-		( "ping",
-		"ping::occurs()" )
 		Clock init_occurs : clock -> evt_init_occurs
 		( "init",
 		"init::occurs()" )
-		Clock S1_entering : clock -> evt_S1_entering
-		( "S1",
-		"S1::onEnter()" )
-		Clock S2_entering : clock -> evt_S2_entering
-		( "S2",
-		"S2::onEnter()" )
+		Clock ping_occurs : clock -> evt_ping_occurs
+		( "ping",
+		"ping::occurs()" )
 		Clock init_entering : clock -> evt_init_entering
 		( "init",
 		"init::onEnter()" )
-		Clock S1_leaving : clock -> evt_S1_leaving
-		( "S1" )
-		Clock S2_leaving : clock -> evt_S2_leaving
-		( "S2" )
+		Clock S2_entering : clock -> evt_S2_entering
+		( "S2",
+		"S2::onEnter()" )
+		Clock S1_entering : clock -> evt_S1_entering
+		( "S1",
+		"S1::onEnter()" )
 		Clock init_leaving : clock -> evt_init_leaving
 		( "init" )
+		Clock S2_leaving : clock -> evt_S2_leaving
+		( "S2" )
+		Clock S1_leaving : clock -> evt_S1_leaving
+		( "S1" )
 		Clock A_start : clock -> evt_A_start
 		( "A",
 		"A::init()" )

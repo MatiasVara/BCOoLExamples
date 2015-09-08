@@ -17,5 +17,5 @@
   <globalClocks name="sec"/>
   <globalEvents name="ping" sollicitingTransitions="//@tfsms.0/@ownedTransitions.0"/>
   <globalEvents name="pong"/>
-  <globalEvents name="start"/>
+  <globalEvents name="init"/>
 </org.gemoc.sample.tfsm:TimedSystem>

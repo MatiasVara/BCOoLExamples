@@ -5,18 +5,18 @@
     <action href="http://www.gemoc.org/sample/tfsm#//FSMClock/ticks"/>
     <solverEvent href="jobA_MoCC.extendedCCSL#//@subBlock.0/@elements.0"/>
   </events>
-  <events name="MSE_t1_2_fire">
-    <caller href="jobA.tfsm#//@tfsms.0/@ownedTransitions.0"/>
+  <events name="MSE_tinit_fire">
+    <caller href="jobA.tfsm#//@tfsms.0/@ownedTransitions.2"/>
     <action href="http://www.gemoc.org/sample/tfsm#//Transition/fire"/>
     <solverEvent href="jobA_MoCC.extendedCCSL#//@subBlock.0/@elements.1"/>
   </events>
-  <events name="MSE_t2_1_fire">
-    <caller href="jobA.tfsm#//@tfsms.0/@ownedTransitions.1"/>
+  <events name="MSE_t1_2_fire">
+    <caller href="jobA.tfsm#//@tfsms.0/@ownedTransitions.0"/>
     <action href="http://www.gemoc.org/sample/tfsm#//Transition/fire"/>
     <solverEvent href="jobA_MoCC.extendedCCSL#//@subBlock.0/@elements.2"/>
   </events>
-  <events name="MSE_tinit_fire">
-    <caller href="jobA.tfsm#//@tfsms.0/@ownedTransitions.2"/>
+  <events name="MSE_t2_1_fire">
+    <caller href="jobA.tfsm#//@tfsms.0/@ownedTransitions.1"/>
     <action href="http://www.gemoc.org/sample/tfsm#//Transition/fire"/>
     <solverEvent href="jobA_MoCC.extendedCCSL#//@subBlock.0/@elements.3"/>
   </events>
@@ -25,18 +25,18 @@
     <action href="http://www.gemoc.org/sample/tfsm#//FSMEvent/occurs"/>
     <solverEvent href="jobA_MoCC.extendedCCSL#//@subBlock.0/@elements.4"/>
   </events>
-  <events name="MSE_ping_occurs">
-    <caller href="jobA.tfsm#//@globalEvents.0"/>
-    <action href="http://www.gemoc.org/sample/tfsm#//FSMEvent/occurs"/>
-    <solverEvent href="jobA_MoCC.extendedCCSL#//@subBlock.0/@elements.5"/>
-  </events>
   <events name="MSE_init_occurs">
     <caller href="jobA.tfsm#//@globalEvents.2"/>
     <action href="http://www.gemoc.org/sample/tfsm#//FSMEvent/occurs"/>
+    <solverEvent href="jobA_MoCC.extendedCCSL#//@subBlock.0/@elements.5"/>
+  </events>
+  <events name="MSE_ping_occurs">
+    <caller href="jobA.tfsm#//@globalEvents.0"/>
+    <action href="http://www.gemoc.org/sample/tfsm#//FSMEvent/occurs"/>
     <solverEvent href="jobA_MoCC.extendedCCSL#//@subBlock.0/@elements.6"/>
   </events>
-  <events name="MSE_S1_entering">
-    <caller href="jobA.tfsm#//@tfsms.0/@ownedStates.0"/>
+  <events name="MSE_init_entering">
+    <caller href="jobA.tfsm#//@tfsms.0/@ownedStates.2"/>
     <action href="http://www.gemoc.org/sample/tfsm#//State/onEnter"/>
     <solverEvent href="jobA_MoCC.extendedCCSL#//@subBlock.0/@elements.7"/>
   </events>
@@ -45,18 +45,18 @@
     <action href="http://www.gemoc.org/sample/tfsm#//State/onEnter"/>
     <solverEvent href="jobA_MoCC.extendedCCSL#//@subBlock.0/@elements.8"/>
   </events>
-  <events name="MSE_init_entering">
-    <caller href="jobA.tfsm#//@tfsms.0/@ownedStates.2"/>
+  <events name="MSE_S1_entering">
+    <caller href="jobA.tfsm#//@tfsms.0/@ownedStates.0"/>
     <action href="http://www.gemoc.org/sample/tfsm#//State/onEnter"/>
     <solverEvent href="jobA_MoCC.extendedCCSL#//@subBlock.0/@elements.9"/>
   </events>
-  <events name="MSE_S1_leaving">
+  <events name="MSE_init_leaving">
     <solverEvent href="jobA_MoCC.extendedCCSL#//@subBlock.0/@elements.10"/>
   </events>
   <events name="MSE_S2_leaving">
     <solverEvent href="jobA_MoCC.extendedCCSL#//@subBlock.0/@elements.11"/>
   </events>
-  <events name="MSE_init_leaving">
+  <events name="MSE_S1_leaving">
     <solverEvent href="jobA_MoCC.extendedCCSL#//@subBlock.0/@elements.12"/>
   </events>
   <events name="MSE_A_start">
@@ -69,5 +69,5 @@
     <action href="http://www.gemoc.org/sample/tfsm#//TimedSystem/init"/>
     <solverEvent href="jobA_MoCC.extendedCCSL#//@subBlock.0/@elements.14"/>
   </events>
-  <importStatements importURI="platform:/13"/>
+  <importStatements importURI="platform:/2"/>
 </feedback:ActionModel>

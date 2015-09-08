@@ -483,6 +483,36 @@ main() {
 
 		};
 		};
+			
+				 MM1_seqOfticksFSMClockContext-> forEach (dse3){ 
+
+
+			
+			
+				 MM2_seqOfticksFSMClockContext-> forEach (dse4){ 
+
+
+			
+
+		if (dse3.name=dse4.name) then {
+		
+			
+			map MatchingandCoordinationofTicks (
+						
+									inM1Clocks[name =  dse3.name + '_ticks']->first().oclAsType(TimeModel::Clock)
+
+			
+					,
+						
+									inM2Clocks[name =  dse4.name + '_ticks']->first().oclAsType(TimeModel::Clock)
+
+			
+			
+			);
+		} endif;
+
+		};
+		};
 }
 
 
@@ -510,6 +540,38 @@ mapping MatchingandCoordinationSharedEvents (
 					};
 					bindings += object TimeModel::CCSLModel::ClockExpressionAndRelation::Binding{
 						bindable := dse2;
+						_abstract := seqAbstract->at(2).oclAsType(TimeModel::CCSLModel::ClockExpressionAndRelation::AbstractEntity);
+					};
+
+end{
+			theSubBlock.relations += result;
+		}	
+			
+}
+
+
+
+
+mapping MatchingandCoordinationofTicks (
+				dse3:TimeModel::CCSLModel::ClockExpressionAndRelation::BindableEntity
+					,
+				dse4:TimeModel::CCSLModel::ClockExpressionAndRelation::BindableEntity
+	) :TimeModel::CCSLModel::ClockExpressionAndRelation::Relation {
+			
+			name := 'MatchingandCoordinationofTicks';
+					name := name + dse3.name;
+					name := name + dse4.name;
+	
+			var seqAbstract : OrderedSet(Stdlib::Element) := seqOfRelationDeclaration->select(rd | rd.name = "RendezVous")->first().oclAsType(TimeModel::CCSLModel::ClockExpressionAndRelation::RelationDeclaration).parameters;
+			
+			type := seqOfRelationDeclaration->select(rd | rd.name = "RendezVous")->first();
+			
+					bindings += object TimeModel::CCSLModel::ClockExpressionAndRelation::Binding{
+						bindable := dse3;
+						_abstract := seqAbstract->at(1).oclAsType(TimeModel::CCSLModel::ClockExpressionAndRelation::AbstractEntity);
+					};
+					bindings += object TimeModel::CCSLModel::ClockExpressionAndRelation::Binding{
+						bindable := dse4;
 						_abstract := seqAbstract->at(2).oclAsType(TimeModel::CCSLModel::ClockExpressionAndRelation::AbstractEntity);
 					};
 

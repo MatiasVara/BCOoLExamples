@@ -21,6 +21,12 @@ ClockConstraintSystem SyncProductTfsmwithTfsmCoordination {
 			Relation MatchingandCoordinationSharedEventspong_occurspong_occurs [ RendezVous ]
 			( ClockA -> "TFSMA::mainBlock::pong_occurs",
 			ClockB -> "TFSMB::mainBlock::pong_occurs" )
+			Relation MatchingandCoordinationSharedEventsinit_occursinit_occurs [ RendezVous ]
+			( ClockA -> "TFSMA::mainBlock::init_occurs",
+			ClockB -> "TFSMB::mainBlock::init_occurs" )
+			Relation MatchingandCoordinationofTickssec_tickssec_ticks [ RendezVous ]
+			( ClockA -> "TFSMA::mainBlock::sec_ticks",
+			ClockB -> "TFSMB::mainBlock::sec_ticks" )
 		}
 	}
 }
