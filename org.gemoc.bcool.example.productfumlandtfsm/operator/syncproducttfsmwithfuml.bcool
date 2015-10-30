@@ -8,7 +8,7 @@ ImportInterface "platform:/plugin/org.gemoc.sample.tfsm.eclmoc2as/ecl/TFSM.ecl" 
 
 Spec test 
 
-Operator  MatchingandCoordinationSharedEvents (dse1 : ad::executeIt , dse2 : tfsm::occurs)
+Operator  SyncFSMEventsAndActions (dse1 : tfsm::occurs, dse2 : ad::executeIt)
 MatchingCorrespondance: when  dse1.name = dse2.name ;
 		CoordinationRule:
 			facilities.RendezVous(dse1, dse2)

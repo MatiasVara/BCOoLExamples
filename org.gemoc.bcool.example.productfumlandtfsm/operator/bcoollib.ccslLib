@@ -1,4 +1,3 @@
-
 Library extraExpressions{ 
 	imports{ 
 		import "platform:/plugin/fr.inria.aoste.timesquare.ccslkernel.model/ccsllibrary/kernel.ccslLib" as kernel;
@@ -11,12 +10,12 @@ Library extraExpressions{
 	
 	RelationLibrary bcoolrelations{
 		RelationDefinition RendezVousDef[RendezVous]{ 
-			Relation RendezVousrelat[Coincides]( Clock1->ClockA, Clock2->ClockB)
+			Relation RendezVousrelat[Coincides ( Clock1->ClockA, Clock2->ClockB)
 		}
 		
 		
 		RelationDefinition CausalityDef[Causality]{ 
-			Relation Causalityrelat[Causes]( LeftClock->ClockA, RightClock->ClockB)
+			Relation Causalityrelat[Causes ( LeftClock->ClockA, RightClock->ClockB)
 		}
 		
 		RelationDeclaration RendezVous (ClockA:clock, ClockB:clock)
@@ -30,14 +29,11 @@ Library extraExpressions{
 			Expression filterN_result = Periodic
 						( PeriodicBaseClock->WaitingClock, PeriodicPeriod -> WaitingValue, PeriodicOffset -> four)	
   		}
-		ExpressionDeclaration AfterN(WaitingClock: clock,  WaitingValue: int):clock
-		
-		
 		ExpressionDefinition SampledDef [SampledBy]{
 			root=Sample_result 
 			Expression Sample_result = SampledOn(SampledOnTrigger -> Trigger, SampledOnSampledClock ->Sampled)
   		}
-		ExpressionDeclaration SampledBy(Trigger: clock,  Sampled: clock):clock
+		ExpressionDeclaration AfterN(WaitingClock: clock,  WaitingValue: int):clock ExpressionDeclaration SampledBy(Trigger: clock,  Sampled: clock):clock
 		
 		
 	}	
