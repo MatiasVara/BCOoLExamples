@@ -1,0 +1,17 @@
+activity doJPEG {
+	nodes {
+		initial initialNode out (edge1),
+		action fourierTranform in (edge1) out (edge2),
+		action Quantizer in (edge2) out (edge3),
+		action RunLengthCoder in (edge3) out (edge4),
+		action Transmission in (edge4) out (edge5),
+		final finalNode in (edge5)
+	}
+	edges {
+		flow edge1 from initialNode to  fourierTranform,
+		flow edge2 from  fourierTranform to Quantizer,
+		flow edge3 from  Quantizer to RunLengthCoder,
+		flow edge4 from  RunLengthCoder to Transmission,
+		flow edge5 from  Transmission to finalNode 
+	}
+}
