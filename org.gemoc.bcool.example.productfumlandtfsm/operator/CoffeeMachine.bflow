@@ -1,6 +1,6 @@
 BCOoLFlow CoffeeMachine
 {
-	BCOoL Specification: "platform:/resource/org.gemoc.bcool.example.productfumlandtfsm/syncproducttfsmwithfuml.bcool" ;
+	BCOoL Specification: "platform:/resource/org.gemoc.bcool.example.productfumlandtfsm/operator/syncproducttfsmwithfuml.bcool" ;
 	
 	// Resulting time model
 	Output: "platform:/resource/org.gemoc.bcool.example.productfumlandtfsm/gemoc-gen/ad.launchtfsm.launch.timemodel";
