@@ -1,37 +1,32 @@
 TFSMandfUMLoperators
 
 ImportLib "platform:/resource/org.gemoc.bcool.example.cameracontrol/operator/facilities.bcoollib"
-ImportLib "platform:/resource/org.gemoc.bcool.example.cameracontrol/operator/bcoollib.ccslLib"
+ImportLib "platform:/resource/org.gemoc.bcool.example.cameracontrol/operator/facilities.moccml"
 
 ImportInterface "platform:/plugin/org.gemoc.sample.tfsm.eclmoc2as/ecl/TFSM.ecl" as tfsm
-ImportInterface "platform:/resource/org.gemoc.bcool.example.cameracontrol/models/activitySemantics.ecl" as activity
-
+ImportInterface "platform:/plugin/org.modelexecution.operationalsemantics.ad.concurrent.ecl/model/ActivitiyDiagramV2.ecl" as ad
 Spec test 
 
 // This operator implements the syncronized product between tfsm and activities
-Operator  SyncProduct (action : activity::startAction, fsmevent : tfsm::occurs)
-	MatchingCorrespondance: when  action.name = fsmevent.name ;
-	CoordinationRule: facilities.RendezVous(action, fsmevent)
+Operator  SyncProduct (signal : ad::signalOccurs, fsmevent : tfsm::occurs)
+	MatchingCorrespondance: when  signal.name = fsmevent.name ;
+	CoordinationRule: facilities.RendezVous(signal, fsmevent)
 end operator; 
 
 //
-// The next two operators implements the hierarchical coordination of TFSM and Activity
+// The next operator implements the hierarchical coordination of TFSM and Activity
 //
-Operator  StateEntering (start : activity::startActivity , enter : tfsm::entering)
-	MatchingCorrespondance: when  start.name = enter.onEnterAction ;
-	CoordinationRule: facilities.RendezVous(start, enter)
-end operator; 
+Operator  StartActivityWhenEnter (activityStart : ad::startActivity , activityStop : ad::finishActivity, enterState : tfsm::entering, leaveState : tfsm::leaving)
+MatchingCorrespondance: when ((activityStart.name = activityStop.name ) and (enterState.name = leaveState.name) and (activityStart.name = enterState.OnEnterAction));
+CoordinationRule: 
+ facilities.LoopFromStartToFinishNonPeemptive (enterState, leaveState, activityStart, activityStop)
+end operator;
 
-Operator  StateLeaving (finish : activity::finishActivity , leave : tfsm::leaving)
-	MatchingCorrespondance: when  finish.name = leave.onEnterAction ;
-	CoordinationRule: facilities.Causality(finish,leave)
-end operator; 
 
 // This operator implements the coordination of time between an Activity and a TFSM
-Operator  TimeinActivity (startAct : activity::startActivity, finishAct : activity::finishActivity , entered : tfsm::entering, local : tfsm::ticks)
-	MatchingCorrespondance: when  (startAct.name = finishAct.name) and (entered.onEnterAction = startAct.name) and (local.name = entered.owningFSM.localClock.name);
-	CoordinationRule: 
-		Local Event sampled = facilities.SampledBy (local, startAct);
-	facilities.Causality(finishAct,sampled)
-end operator; 
+Operator  AtomicActivity (activityStart2 : ad::startActivity , activityStop2 : ad::finishActivity, timeTicks : tfsm::ticks)
+MatchingCorrespondance: when (activityStart2.name = activityStop2.name );
+CoordinationRule: 
+	facilities.AtomicExec (timeTicks, activityStart2, activityStop2)
+end operator;
 

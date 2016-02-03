@@ -1,0 +1,39 @@
+BCOoLFlow CameraFlow
+{
+	
+	import "platform:/resource/org.gemoc.bcool.example.cameracontrol/operator/tfsmandactivity.bcool"; 
+	BCOoL Specification: "platform:/resource/org.gemoc.bcool.example.cameracontrol/operator/tfsmandactivity.bcool" ;
+
+	// Resulting time model
+	Output: "platform:/resource/org.gemoc.bcool.example.cameracontrol/src-gen/Coordination.timemodel";
+	
+	// Models to apply the specification
+	Model CameraControl ( "platform:/resource/org.gemoc.bcool.example.cameracontrol/gemoc-gen/CameraControl.timemodel",
+						  "platform:/resource/org.gemoc.bcool.example.cameracontrol/models/tfsm_model/CameraControl.tfsm");
+	
+	Model BatteryControl ("platform:/resource/org.gemoc.bcool.example.cameracontrol/gemoc-gen/BatterySensor.timemodel",
+		"platform:/resource/org.gemoc.bcool.example.cameracontrol/models/activity_model/BatterySensor.ad"
+	);					  
+	
+	Model JPEG2000algorithm ("platform:/resource/org.gemoc.bcool.example.cameracontrol/gemoc-gen/JPEG2000algorithm.timemodel",
+							 "platform:/resource/org.gemoc.bcool.example.cameracontrol/models/activity_model/JPEG2000algorithm.ad"
+	);
+	
+	Model JPEGalgorithm ("platform:/resource/org.gemoc.bcool.example.cameracontrol/gemoc-gen/JPEGalgorithm.timemodel",
+							 "platform:/resource/org.gemoc.bcool.example.cameracontrol/models/activity_model/JPEGalgorithm.ad"
+	);
+	
+	Flow 
+		// First the sync prouct between CameraControl and BatteryControl
+		applies "SyncProduct" between (BatteryControl, CameraControl) ;
+		
+		// Second the coordination between the activities and the cameraControl
+		applies "StartActivityWhenEnter" between (CameraControl, JPEG2000algorithm);
+		applies "AtomicActivity" between (CameraControl, JPEG2000algorithm);
+		
+		applies "StartActivityWhenEnter" between (CameraControl, JPEGalgorithm);
+		applies "AtomicActivity" between (CameraControl, JPEGalgorithm);
+	
+	end Flow;
+	
+}

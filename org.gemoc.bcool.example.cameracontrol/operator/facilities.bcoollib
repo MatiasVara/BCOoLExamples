@@ -4,6 +4,8 @@ BCoolLibrary facilities{
 relationDeclarations { 
 	RelationDeclaration RendezVous {}
     , RelationDeclaration Causality {}
+        , RelationDeclaration AtomicExec{}
+    , RelationDeclaration LoopFromStartToFinishNonPeemptive{}
 }
 
 
