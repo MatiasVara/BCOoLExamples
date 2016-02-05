@@ -19,7 +19,7 @@ end operator;
 Operator  StartActivityWhenEnter (activityStart : ad::startActivity , activityStop : ad::finishActivity, enterState : tfsm::entering, leaveState : tfsm::leaving)
 MatchingCorrespondance: when ((activityStart.name = activityStop.name ) and (enterState.name = leaveState.name) and (activityStart.name = enterState.OnEnterAction));
 CoordinationRule: 
- facilities.LoopFromStartToFinishNonPeemptive (enterState, leaveState, activityStart, activityStop)
+ facilities.ExecuteActivityNonPeemptive (enterState, leaveState, activityStart, activityStop)
 end operator;
 
 

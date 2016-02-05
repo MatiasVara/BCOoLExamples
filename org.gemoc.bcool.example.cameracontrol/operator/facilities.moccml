@@ -74,50 +74,45 @@ AutomataConstraintLibrary ModeAutomataCoordination{
 		}
 		
 
-		AutomataRelationDefinition AtomicExecDef[AtomicExec]{
-			init: initState0
+	//	AutomataRelationDefinition AtomicExecDef[AtomicExec]{
+	//		init: initState0
+//
+	//		from initState0 to canTick : initState0TocanTick
+	//		-> ( )
 
-			from initState0 to canTick : initState0TocanTick
-			-> ( )
+	//		from canTick to cannotTick : canTicktocannotTick
+	//		-> ( when startAct)
 
-			from canTick to cannotTick : canTicktocannotTick
-			-> ( when startAct)
-
-			from cannotTick  to canTick : cannotTicktocanTick
-			-> ( when finishAct)
+	//		from cannotTick  to canTick : cannotTicktocanTick
+	//		-> ( when finishAct)
 			
 			
-			from canTick to canTick: canTicktocanTick
-			-> ( when ticks)
+	//		from canTick to canTick: canTicktocanTick
+	//		-> ( when ticks)
 			
 			
 
-			State initState0( out : initState0TocanTick )
+	//		State initState0( out : initState0TocanTick )
 
-			State canTick ( in : cannotTicktocanTick,
-			canTicktocanTick out : canTicktocannotTick, canTicktocanTick )
+	//		State canTick ( in : cannotTicktocanTick,
+	//		canTicktocanTick out : canTicktocannotTick, canTicktocanTick )
 
-			State cannotTick ( in : canTicktocannotTick 
-				out :  cannotTicktocanTick)
-		}
-		
-		
-		
-		//RelationDefinition AtomicExecDef[AtomicExec]{ 
-		//	Expression sampledbyTime = SampledBy (Sampled -> startAct, Trigger-> ticks)
-		//	Relation ticksAfterActivityFinishes[Causality (  ClockLeft-> finishAct ,ClockRight-> sampledbyTime  )	
+	//		State cannotTick ( in : canTicktocannotTick 
+	//			out :  cannotTicktocanTick)
 	//	}
+		
+		
+		
+		RelationDefinition AtomicExecDef[AtomicExec]{ 
+			Expression sampledbyTime = SampledBy (Sampled -> startAct, Trigger-> ticks)
+			Relation ticksAfterActivityFinishes[Causality (  ClockLeft-> finishAct ,ClockRight-> sampledbyTime  )	
+		}
 		
 		
 		RelationDeclaration RendezVous (ClockA:clock, ClockB:clock) 
 		RelationDeclaration Causality (ClockLeft:clock, ClockRight:clock)
 		RelationDeclaration RendezVouswithGlobalClock (startAction: clock , occurs: clock, globalClock: clock )
-	RelationDeclaration ExecuteActivityNonPeemptive(
-		modeEnter:clock,
-		modeLeave:clock,
-		startActivity:clock,
-		finishActivity:clock
-		)
+	RelationDeclaration ExecuteActivityNonPeemptive(modeEnter:clock, modeLeave:clock, startActivity:clock, finishActivity:clock)
 		//RelationDeclaration LoopFromStartToFinishNonPeemptive(
 		//	modeEnter:clock,
 		//	modeLeave:clock,

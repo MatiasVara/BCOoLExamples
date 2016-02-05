@@ -5,7 +5,7 @@ relationDeclarations {
 	RelationDeclaration RendezVous {}
     , RelationDeclaration Causality {}
         , RelationDeclaration AtomicExec{}
-    , RelationDeclaration LoopFromStartToFinishNonPeemptive{}
+    , RelationDeclaration ExecuteActivityNonPeemptive{}
 }
 
 

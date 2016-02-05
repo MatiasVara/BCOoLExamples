@@ -113,13 +113,13 @@
           </children>
           <styles xmi:type="notation:DiagramStyle" xmi:id="_FgcJkvPOEeS82YSFh6ZTlA"/>
           <edges xmi:type="notation:Edge" xmi:id="_FiW1IPPOEeS82YSFh6ZTlA" type="4001" element="_FfThI_POEeS82YSFh6ZTlA" source="_Fh2e0PPOEeS82YSFh6ZTlA" target="_Fh3s8PPOEeS82YSFh6ZTlA">
-            <children xmi:type="notation:Node" xmi:id="_FiYqUPPOEeS82YSFh6ZTlA" type="6001">
+            <children xmi:type="notation:Node" xmi:id="_FiYqUPPOEeS82YSFh6ZTlA" visible="false" type="6001">
               <layoutConstraint xmi:type="notation:Bounds" xmi:id="_FiYqUfPOEeS82YSFh6ZTlA" x="-3" y="-28"/>
             </children>
-            <children xmi:type="notation:Node" xmi:id="_FiZRYPPOEeS82YSFh6ZTlA" type="6002">
+            <children xmi:type="notation:Node" xmi:id="_FiZRYPPOEeS82YSFh6ZTlA" visible="false" type="6002">
               <layoutConstraint xmi:type="notation:Bounds" xmi:id="_FiZRYfPOEeS82YSFh6ZTlA" y="10"/>
             </children>
-            <children xmi:type="notation:Node" xmi:id="_FiZ4cPPOEeS82YSFh6ZTlA" type="6003">
+            <children xmi:type="notation:Node" xmi:id="_FiZ4cPPOEeS82YSFh6ZTlA" visible="false" type="6003">
               <layoutConstraint xmi:type="notation:Bounds" xmi:id="_FiZ4cfPOEeS82YSFh6ZTlA" y="10"/>
             </children>
             <styles xmi:type="notation:ConnectorStyle" xmi:id="_FiW1IfPOEeS82YSFh6ZTlA"/>
@@ -340,9 +340,10 @@
           <actualMapping xmi:type="description_1:NodeMapping" href="platform:/plugin/org.gemoc.sample.tfsm.design/description/TFSM.odesign#//@ownedViewpoints[name='TFSM_ViewPoint']/@ownedRepresentations[name='TimedSystem']/@defaultLayer/@containerMappings[name='TimedSystem']/@subNodeMappings[name='Event']"/>
         </ownedDiagramElements>
       </ownedDiagramElements>
-      <ownedDiagramElements xmi:type="diagram:DEdge" xmi:id="_FfThI_POEeS82YSFh6ZTlA" name="when start&#xA; / &#xA;doInit&#xA;" sourceNode="_FfS6KfPOEeS82YSFh6ZTlA" targetNode="_FfS6LvPOEeS82YSFh6ZTlA">
+      <ownedDiagramElements xmi:type="diagram:DEdge" xmi:id="_FfThI_POEeS82YSFh6ZTlA" name="&#xA; / &#xA;doInit&#xA;" sourceNode="_FfS6KfPOEeS82YSFh6ZTlA" targetNode="_FfS6LvPOEeS82YSFh6ZTlA">
         <target xmi:type="org.gemoc.sample.tfsm:Transition" href="CameraControl.tfsm#//@tfsms.0/@ownedTransitions.0"/>
         <semanticElements xmi:type="org.gemoc.sample.tfsm:Transition" href="CameraControl.tfsm#//@tfsms.0/@ownedTransitions.0"/>
+        <graphicalFilters xmi:type="diagram:HideLabelFilter" xmi:id="_1J-CcMtKEeW5IOfMGlqe1g"/>
         <ownedStyle xmi:type="diagram:EdgeStyle" xmi:id="_FfThJPPOEeS82YSFh6ZTlA" targetArrow="InputFillClosedArrow" size="2">
           <description xmi:type="style:EdgeStyleDescription" href="platform:/plugin/org.gemoc.sample.tfsm.design/description/TFSM.odesign#//@ownedViewpoints[name='TFSM_ViewPoint']/@ownedRepresentations[name='TFSM']/@defaultLayer/@edgeMappings[name='EventTransition']/@style"/>
           <strokeColor xmi:type="viewpoint:RGBValues" xmi:id="_FfThJfPOEeS82YSFh6ZTlA" red="136" green="136" blue="136"/>
@@ -352,7 +353,7 @@
         </ownedStyle>
         <actualMapping xmi:type="description_1:EdgeMappingImport" href="platform:/plugin/org.gemoc.sample.tfsm.design/description/TFSM.odesign#//@ownedViewpoints[name='TFSM_ViewPoint']/@ownedRepresentations[name='TimedSystem']/@defaultLayer/@edgeMappingImports[name='Transitions']"/>
       </ownedDiagramElements>
-      <ownedDiagramElements xmi:type="diagram:DEdge" xmi:id="_FfThKPPOEeS82YSFh6ZTlA" name="when BatteryisHigh&#xA; / &#xA;doJPEGEncoder&#xA;" sourceNode="_FfS6LvPOEeS82YSFh6ZTlA" targetNode="_FfS6M_POEeS82YSFh6ZTlA">
+      <ownedDiagramElements xmi:type="diagram:DEdge" xmi:id="_FfThKPPOEeS82YSFh6ZTlA" name="when BatteryisLow&#xA; / &#xA;doJPEGEncoder&#xA;" sourceNode="_FfS6LvPOEeS82YSFh6ZTlA" targetNode="_FfS6M_POEeS82YSFh6ZTlA">
         <target xmi:type="org.gemoc.sample.tfsm:Transition" href="CameraControl.tfsm#//@tfsms.0/@ownedTransitions.1"/>
         <semanticElements xmi:type="org.gemoc.sample.tfsm:Transition" href="CameraControl.tfsm#//@tfsms.0/@ownedTransitions.1"/>
         <ownedStyle xmi:type="diagram:EdgeStyle" xmi:id="_FfThKfPOEeS82YSFh6ZTlA" targetArrow="InputFillClosedArrow" size="2">
@@ -364,7 +365,7 @@
         </ownedStyle>
         <actualMapping xmi:type="description_1:EdgeMappingImport" href="platform:/plugin/org.gemoc.sample.tfsm.design/description/TFSM.odesign#//@ownedViewpoints[name='TFSM_ViewPoint']/@ownedRepresentations[name='TimedSystem']/@defaultLayer/@edgeMappingImports[name='Transitions']"/>
       </ownedDiagramElements>
-      <ownedDiagramElements xmi:type="diagram:DEdge" xmi:id="_vUy4AHi6EeWFSPbRxV7oqQ" name="when BatteryisLow&#xA; / &#xA;doJPEG2000Encoder&#xA;" sourceNode="_FfS6M_POEeS82YSFh6ZTlA" targetNode="_FfS6LvPOEeS82YSFh6ZTlA">
+      <ownedDiagramElements xmi:type="diagram:DEdge" xmi:id="_vUy4AHi6EeWFSPbRxV7oqQ" name="when BatteryisHigh&#xA; / &#xA;doJPEG2000Encoder&#xA;" sourceNode="_FfS6M_POEeS82YSFh6ZTlA" targetNode="_FfS6LvPOEeS82YSFh6ZTlA">
         <target xmi:type="org.gemoc.sample.tfsm:Transition" href="CameraControl.tfsm#//@tfsms.0/@ownedTransitions.2"/>
         <semanticElements xmi:type="org.gemoc.sample.tfsm:Transition" href="CameraControl.tfsm#//@tfsms.0/@ownedTransitions.2"/>
         <ownedStyle xmi:type="diagram:EdgeStyle" xmi:id="_vUzfEHi6EeWFSPbRxV7oqQ" targetArrow="InputFillClosedArrow" size="2">
@@ -596,7 +597,7 @@
         </ownedStyle>
         <actualMapping xmi:type="description_1:NodeMapping" href="platform:/plugin/org.gemoc.sample.tfsm.design/description/TFSM.odesign#//@ownedViewpoints[name='TFSM_ViewPoint']/@ownedRepresentations[name='TFSM']/@defaultLayer/@nodeMappings[name='State']"/>
       </ownedDiagramElements>
-      <ownedDiagramElements xmi:type="diagram:DEdge" xmi:id="_ztSDkB5XEeW3dd12yOhHKw" name="when start&#xA; / &#xA;doInit&#xA;" sourceNode="_ztNLEB5XEeW3dd12yOhHKw" targetNode="_ztOZMB5XEeW3dd12yOhHKw">
+      <ownedDiagramElements xmi:type="diagram:DEdge" xmi:id="_ztSDkB5XEeW3dd12yOhHKw" name="&#xA; / &#xA;doInit&#xA;" sourceNode="_ztNLEB5XEeW3dd12yOhHKw" targetNode="_ztOZMB5XEeW3dd12yOhHKw">
         <target xmi:type="org.gemoc.sample.tfsm:Transition" href="CameraControl.tfsm#//@tfsms.0/@ownedTransitions.0"/>
         <semanticElements xmi:type="org.gemoc.sample.tfsm:Transition" href="CameraControl.tfsm#//@tfsms.0/@ownedTransitions.0"/>
         <ownedStyle xmi:type="diagram:EdgeStyle" xmi:id="_ztSqoB5XEeW3dd12yOhHKw" targetArrow="InputFillClosedArrow" size="2">
@@ -608,7 +609,7 @@
         </ownedStyle>
         <actualMapping xmi:type="description_1:EdgeMapping" href="platform:/plugin/org.gemoc.sample.tfsm.design/description/TFSM.odesign#//@ownedViewpoints[name='TFSM_ViewPoint']/@ownedRepresentations[name='TFSM']/@defaultLayer/@edgeMappings[name='EventTransition']"/>
       </ownedDiagramElements>
-      <ownedDiagramElements xmi:type="diagram:DEdge" xmi:id="_ztTRsB5XEeW3dd12yOhHKw" name="when BatteryisHigh&#xA; / &#xA;doJPEGEncoder&#xA;" sourceNode="_ztOZMB5XEeW3dd12yOhHKw" targetNode="_ztPARB5XEeW3dd12yOhHKw">
+      <ownedDiagramElements xmi:type="diagram:DEdge" xmi:id="_ztTRsB5XEeW3dd12yOhHKw" name="when BatteryisLow&#xA; / &#xA;doJPEGEncoder&#xA;" sourceNode="_ztOZMB5XEeW3dd12yOhHKw" targetNode="_ztPARB5XEeW3dd12yOhHKw">
         <target xmi:type="org.gemoc.sample.tfsm:Transition" href="CameraControl.tfsm#//@tfsms.0/@ownedTransitions.1"/>
         <semanticElements xmi:type="org.gemoc.sample.tfsm:Transition" href="CameraControl.tfsm#//@tfsms.0/@ownedTransitions.1"/>
         <ownedStyle xmi:type="diagram:EdgeStyle" xmi:id="_ztTRsR5XEeW3dd12yOhHKw" targetArrow="InputFillClosedArrow" size="2">
@@ -620,7 +621,7 @@
         </ownedStyle>
         <actualMapping xmi:type="description_1:EdgeMapping" href="platform:/plugin/org.gemoc.sample.tfsm.design/description/TFSM.odesign#//@ownedViewpoints[name='TFSM_ViewPoint']/@ownedRepresentations[name='TFSM']/@defaultLayer/@edgeMappings[name='EventTransition']"/>
       </ownedDiagramElements>
-      <ownedDiagramElements xmi:type="diagram:DEdge" xmi:id="_vZSWcHi6EeWFSPbRxV7oqQ" name="when BatteryisLow&#xA; / &#xA;doJPEG2000Encoder&#xA;" sourceNode="_ztPARB5XEeW3dd12yOhHKw" targetNode="_ztOZMB5XEeW3dd12yOhHKw">
+      <ownedDiagramElements xmi:type="diagram:DEdge" xmi:id="_vZSWcHi6EeWFSPbRxV7oqQ" name="when BatteryisHigh&#xA; / &#xA;doJPEG2000Encoder&#xA;" sourceNode="_ztPARB5XEeW3dd12yOhHKw" targetNode="_ztOZMB5XEeW3dd12yOhHKw">
         <target xmi:type="org.gemoc.sample.tfsm:Transition" href="CameraControl.tfsm#//@tfsms.0/@ownedTransitions.2"/>
         <semanticElements xmi:type="org.gemoc.sample.tfsm:Transition" href="CameraControl.tfsm#//@tfsms.0/@ownedTransitions.2"/>
         <ownedStyle xmi:type="diagram:EdgeStyle" xmi:id="_vZSWcXi6EeWFSPbRxV7oqQ" targetArrow="InputFillClosedArrow" size="2">
