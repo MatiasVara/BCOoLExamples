@@ -1,30 +1,30 @@
-TFSMandfUMLoperators
+TFSMandActivity
 
 ImportLib "platform:/resource/org.gemoc.bcool.example.cameracontrol/operator/facilities.bcoollib"
 ImportLib "platform:/resource/org.gemoc.bcool.example.cameracontrol/operator/facilities.moccml"
 
 ImportInterface "platform:/plugin/org.gemoc.sample.tfsm.eclmoc2as/ecl/TFSM.ecl" as tfsm
-ImportInterface "platform:/plugin/org.modelexecution.operationalsemantics.ad.concurrent.ecl/model/ActivitiyDiagramV2.ecl" as ad
+ImportInterface "platform:/plugin/org.modelexecution.operationalsemantics.ad.concurrent.ecl/model/ActivitiyDiagramV2.ecl" as activity
 Spec test 
 
 // This operator implements the syncronized product between tfsm and activities
-Operator  SyncProduct (signal : ad::signalOccurs, fsmevent : tfsm::occurs)
+Operator  SyncFSMEventsAndSignals (signal : activity::signalOccurs, fsmevent : tfsm::occurs)
 	MatchingCorrespondance: when  signal.name = fsmevent.name ;
 	CoordinationRule: facilities.RendezVous(signal, fsmevent)
 end operator; 
 
 //
-// The next operator implements the hierarchical coordination of TFSM and Activity
+// The next operator implements the hierarchical coordination between a TFSM and an Activity models
 //
-Operator  StartActivityWhenEnter (activityStart : ad::startActivity , activityStop : ad::finishActivity, enterState : tfsm::entering, leaveState : tfsm::leaving)
+Operator  StartActivityWhenEnter (activityStart : activity::startActivity , activityStop : activity::finishActivity, enterState : tfsm::entering, leaveState : tfsm::leaving)
 MatchingCorrespondance: when ((activityStart.name = activityStop.name ) and (enterState.name = leaveState.name) and (activityStart.name = enterState.OnEnterAction));
 CoordinationRule: 
  facilities.ExecuteActivityNonPeemptive (enterState, leaveState, activityStart, activityStop)
 end operator;
 
 
-// This operator implements the coordination of time between an Activity and a TFSM
-Operator  AtomicActivity (activityStart2 : ad::startActivity , activityStop2 : ad::finishActivity, timeTicks : tfsm::ticks)
+// This operator implements the coordination of the time between a TFSM and an Activity models
+Operator  AtomicActivity (activityStart2 : activity::startActivity , activityStop2 : activity::finishActivity, timeTicks : tfsm::ticks)
 MatchingCorrespondance: when (activityStart2.name = activityStop2.name );
 CoordinationRule: 
 	facilities.AtomicExec (timeTicks, activityStart2, activityStop2)
