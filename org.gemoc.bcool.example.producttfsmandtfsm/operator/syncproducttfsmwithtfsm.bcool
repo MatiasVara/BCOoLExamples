@@ -5,7 +5,7 @@ ImportLib "platform:/resource/org.gemoc.bcool.example.producttfsmandtfsm/library
 
 
 ImportInterface "platform:/plugin/org.gemoc.sample.tfsm.eclmoc2as/ecl/TFSM.ecl" as i_tfsm1// left
-ImportInterface "platform:/plugin/org.gemoc.sample.tfsm.eclmoc2as/ecl/TFSM.ecl" as i_tfsm2 // left
+ImportInterface "platform:/plugin/org.gemoc.sample.tfsm.eclmoc2as/ecl/TFSM.ecl" as i_tfsm2
 
 Spec SyncProduct 
 

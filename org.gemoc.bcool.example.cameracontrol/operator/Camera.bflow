@@ -22,7 +22,7 @@ BCOoLFlow CameraFlow
 	Model JPEGalgorithm ("platform:/resource/org.gemoc.bcool.example.cameracontrol/gemoc-gen/JPEGalgorithm.timemodel",
 							 "platform:/resource/org.gemoc.bcool.example.cameracontrol/models/activity_model/JPEGalgorithm.ad"
 	);
-
+	
 	Flow 
 		// First the sync prouct between CameraControl and BatteryControl
 		applies "SyncFSMEventsAndSignals" between (CameraControl, BatteryControl) ;

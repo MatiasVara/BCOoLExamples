@@ -5,7 +5,6 @@ ImportLib "platform:/resource/org.gemoc.bcool.example.cameracontrol/operator/fac
 
 ImportInterface "platform:/plugin/org.gemoc.sample.tfsm.eclmoc2as/ecl/TFSM.ecl" as tfsm
 ImportInterface "platform:/plugin/org.modelexecution.operationalsemantics.ad.concurrent.ecl/model/ActivitiyDiagramV2.ecl" as activity
-Spec test 
 
 // This operator implements the syncronized product between tfsm and activities
 Operator  SyncFSMEventsAndSignals (signal : activity::signalOccurs, fsmevent : tfsm::occurs)

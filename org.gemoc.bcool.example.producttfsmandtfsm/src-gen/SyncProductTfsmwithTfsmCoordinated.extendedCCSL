@@ -1,6 +1,6 @@
 ClockConstraintSystem SyncProductTfsmwithTfsmCoordination {
 	imports {
-		import "../library/bcoollib.ccslLib" as lib_1 ;
+		import "platform:/resource/org.gemoc.bcool.example.producttfsmandtfsm/library/bcoollib.ccslLib" as lib_1 ;
 		import "platform:/plugin/fr.inria.aoste.timesquare.ccslkernel.model/ccsllibrary/kernel.ccslLib" as model_1_1 ;
 		import "platform:/plugin/fr.inria.aoste.timesquare.ccslkernel.model/ccsllibrary/CCSL.ccslLib" as model_1_2 ;
 		import "platform:/plugin/org.gemoc.sample.tfsm.moc.lib/ccsl/TFSMMoC.ccslLib" as model_1_3 ;

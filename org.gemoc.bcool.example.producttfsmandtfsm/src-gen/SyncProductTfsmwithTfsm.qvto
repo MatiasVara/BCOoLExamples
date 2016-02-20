@@ -1,4 +1,3 @@
-// This is the result of the compilation of a BCool spec
 import fr.inria.aoste.timesquare.ecl.EclQVToHelper;
 
 	
@@ -464,7 +463,7 @@ main() {
 
 			
 
-		if (dse1.name=dse2.name) then {
+		if ((dse1.name=dse2.name)) then {
 		
 			
 			map MatchingandCoordinationSharedEvents (
