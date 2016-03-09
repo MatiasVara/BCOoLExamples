@@ -1,0 +1,31 @@
+BCOoLFlow CameraControlFlow
+{
+	
+	import "platform:/plugin/org.gemoc.sample.bcool.tfsmandactivityhierarchical/operator/tfsmandactivity.bcool"; 
+	
+
+	// Models to apply the specification
+	Model CameraControl ( "platform:/resource/org.gemoc.sample.bcool.cameracontrol/models/tfsm_model/CameraControl.tfsm");
+	Model BatteryControl ("platform:/resource/org.gemoc.sample.bcool.cameracontrol/models/activity_model/BatterySensor.activitydiagram");					  
+	Model JPEG2000algorithm ("platform:/resource/org.gemoc.sample.bcool.cameracontrol/models/activity_model/JPEG2000algorithm.ad");
+	Model JPEGalgorithm ( "platform:/resource/org.gemoc.sample.bcool.cameracontrol/models/activity_model/JPEGalgorithm.ad");
+	
+Flows
+		// First the sync prouct between CameraControl and BatteryControl
+		apply SyncFSMEventsAndSignals on (CameraControl, BatteryControl) ;
+		
+		// Second the coordination between the activities and the cameraControl
+		apply StartActivityWhenEnter on (CameraControl, JPEG2000algorithm);
+		apply AtomicActivity on (CameraControl, JPEG2000algorithm);
+		
+		apply StartActivityWhenEnter on (CameraControl, JPEGalgorithm);
+		apply AtomicActivity on (CameraControl, JPEGalgorithm);
+	
+end Flows;
+Launchers
+	launcher URI "org.gemoc.sample.bcool.cameracontrol/models/tfsm_model/CameraEncoderControl.launch";
+	launcher URI "org.gemoc.sample.bcool.cameracontrol/models/activity_model/BatterySensorLaunch.launch";
+	launcher URI "org.gemoc.sample.bcool.cameracontrol/models/activity_model/doJPEG.launch";
+	launcher URI "org.gemoc.sample.bcool.cameracontrol/models/activity_model/doJPEG2000.launch";
+end Launchers
+}

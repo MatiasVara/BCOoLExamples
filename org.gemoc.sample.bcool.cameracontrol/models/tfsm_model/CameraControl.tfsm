@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<org.gemoc.sample.tfsm:TimedSystem xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:org.gemoc.sample.tfsm="http://www.gemoc.org/sample/tfsm" name="CameraControlSystem">
+  <tfsms name="CameraEncoderControl" initialState="//@tfsms.0/@ownedStates.0">
+    <ownedStates name="init" outgoingTransitions="//@tfsms.0/@ownedTransitions.0" OnEnterAction=""/>
+    <ownedStates name="JPEG2000Encoder" outgoingTransitions="//@tfsms.0/@ownedTransitions.1 //@tfsms.0/@ownedTransitions.3" incomingTransitions="//@tfsms.0/@ownedTransitions.0 //@tfsms.0/@ownedTransitions.2 //@tfsms.0/@ownedTransitions.3" OnEnterAction="doJPEG2000"/>
+    <ownedStates name="JPEGEncoder" outgoingTransitions="//@tfsms.0/@ownedTransitions.2 //@tfsms.0/@ownedTransitions.4" incomingTransitions="//@tfsms.0/@ownedTransitions.1 //@tfsms.0/@ownedTransitions.4" OnEnterAction="doJPEG"/>
+    <localClock name="ms" numberOfTicks="1"/>
+    <ownedTransitions name="initCameratoHighBattery" source="//@tfsms.0/@ownedStates.0" target="//@tfsms.0/@ownedStates.1" action="doInit"/>
+    <ownedTransitions name="HighBatterytoLowBattery" source="//@tfsms.0/@ownedStates.1" target="//@tfsms.0/@ownedStates.2" action="doJPEGEncoder">
+      <ownedGuard xsi:type="org.gemoc.sample.tfsm:EventGuard" name="guardHighBattery" triggeringEvent="//@globalEvents.0"/>
+    </ownedTransitions>
+    <ownedTransitions name="LowBatterytoHighBattery" source="//@tfsms.0/@ownedStates.2" target="//@tfsms.0/@ownedStates.1" action="doJPEG2000Encoder">
+      <ownedGuard xsi:type="org.gemoc.sample.tfsm:EventGuard" name="guardLowBattery" triggeringEvent="//@globalEvents.1"/>
+    </ownedTransitions>
+    <ownedTransitions name="HighBatterytoHighBattery" source="//@tfsms.0/@ownedStates.1" target="//@tfsms.0/@ownedStates.1" action="doJPEG2000Encoder">
+      <ownedGuard xsi:type="org.gemoc.sample.tfsm:TemporalGuard" name="guardHighBatterytemporal" onClock="//@tfsms.0/@localClock" afterDuration="40"/>
+    </ownedTransitions>
+    <ownedTransitions name="LowBatterytoLowBattery" source="//@tfsms.0/@ownedStates.2" target="//@tfsms.0/@ownedStates.2" action="doJPEGEncoder">
+      <ownedGuard xsi:type="org.gemoc.sample.tfsm:TemporalGuard" name="guardLowBatterytemporal" onClock="//@tfsms.0/@localClock" afterDuration="40"/>
+    </ownedTransitions>
+  </tfsms>
+  <globalClocks name="globalclock" numberOfTicks="1"/>
+  <globalEvents name="BatteryisLow"/>
+  <globalEvents name="BatteryisHigh"/>
+  <globalEvents name="start"/>
+</org.gemoc.sample.tfsm:TimedSystem>
