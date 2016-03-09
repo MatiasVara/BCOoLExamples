@@ -1,0 +1,31 @@
+TFSMandActivity
+
+ImportLib "platform:/resource/org.gemoc.sample.bcool.tfsmandactivityhierarchical/operator/facilities.bcoollib"
+ImportLib "platform:/resource/org.gemoc.sample.bcool.tfsmandactivityhierarchical/operator/facilities.moccml"
+
+ImportInterface "platform:/resource/org.gemoc.sample.tfsm.eclmoc2as/ecl/TFSM.ecl" as tfsm
+ImportInterface "platform:/resource/org.modelexecution.operationalsemantics.ad.concurrent.ecl/model/ActivitiyDiagramV2.ecl" as activity
+
+// This operator implements the syncronized product between tfsm and activities
+Operator  SyncFSMEventsAndSignals (signal : activity::signalOccurs, fsmevent : tfsm::occurs)
+	when  signal.name = fsmevent.name ;
+	CoordinationRule: facilities.RendezVous(signal, fsmevent)
+end operator; 
+
+//
+// The next operator implements the hierarchical coordination between a TFSM and an Activity models
+//
+Operator  StartActivityWhenEnter (activityStart : activity::startActivity , activityStop : activity::finishActivity, enterState : tfsm::entering, leaveState : tfsm::leaving)
+	when ((activityStart.name = activityStop.name ) and (enterState.name = leaveState.name) and (activityStart.name = enterState.OnEnterAction));
+	CoordinationRule: 
+ facilities.ExecuteActivityNonPeemptive (enterState, leaveState, activityStart, activityStop)
+end operator;
+
+
+// This operator implements the coordination of the time between a TFSM and an Activity models
+Operator  AtomicActivity (activityStart2 : activity::startActivity , activityStop2 : activity::finishActivity, timeTicks : tfsm::ticks)
+	when (activityStart2.name = activityStop2.name );
+CoordinationRule: 
+	facilities.AtomicExec (timeTicks, activityStart2, activityStop2)
+end operator;
+

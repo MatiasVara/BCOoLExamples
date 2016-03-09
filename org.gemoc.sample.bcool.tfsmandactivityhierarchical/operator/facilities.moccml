@@ -1,0 +1,143 @@
+AutomataConstraintLibrary ModeAutomataCoordination{ 
+	import "platform:/plugin/fr.inria.aoste.timesquare.ccslkernel.model/ccsllibrary/kernel.ccslLib" as kernel;
+	import "platform:/plugin/fr.inria.aoste.timesquare.ccslkernel.model/ccsllibrary/CCSL.ccslLib" as CCSLLib;
+	
+	
+	RelationLibrary CCSLBasedRelations {
+		
+		RelationDefinition RendezVousDef[RendezVous]{ 
+			Relation RendezVousrelat[Coincides ( Clock1->ClockA, Clock2->ClockB)
+		}
+		
+		RelationDefinition CausalityDef[Causality]{ 
+			Relation Causalityrelat[Causes ( LeftClock->ClockLeft, RightClock->ClockRight)
+		}
+		
+		RelationDefinition RendezVouswithGlobalClockDef[RendezVouswithGlobalClock]{ 
+			Expression sampledStartAction = SampledBy (Sampled -> globalClock, Trigger-> startAction)
+			Expression sampledOccurs = SampledBy (Sampled -> globalClock, Trigger-> occurs)
+			
+			Relation RendezVousSamples[Coincides (   Clock2-> sampledStartAction , Clock1-> sampledOccurs  )
+			}
+		
+	//	AutomataRelationDefinition LoopFromStartToFinishNonPeemptiveDef[LoopFromStartToFinishNonPeemptive]{
+	//		init: initState
+
+	//		from initState to waitEnterState : initStateTowaitEnterState
+	//		-> ( )
+
+		//	from waitEnterState to canLoop : waitEnterStateTocanLoop
+	//		-> ( when modeEnter )
+
+	//		from canLoop to waitEnterState : canLoopTowaitEnterState
+	//		-> ( when finishActivity, modeLeave )
+
+	//		from canLoop to canLoop : canLoopTocanLoop
+	//		-> ( when startActivity )
+
+	//		from canLoop to canLoop : canLoopTocanLoop2
+	//		-> ( when finishActivity )
+
+	//		State initState( out : initStateTowaitEnterState )
+
+	//		State waitEnterState ( in : initStateTowaitEnterState,
+	//		canLoopTowaitEnterState out : waitEnterStateTocanLoop )
+
+		//	State canLoop ( in : waitEnterStateTocanLoop, canLoopTocanLoop,
+	//		canLoopTocanLoop2 out : canLoopTowaitEnterState, canLoopTocanLoop,
+		//	canLoopTocanLoop2 )
+		//}
+		
+		AutomataRelationDefinition ExecuteActivityNonPeemptiveDef[ExecuteActivityNonPeemptive]{
+			init: initState
+
+			from initState to waitEnterState : initStateTowaitEnterState
+			-> ( )
+
+			from waitEnterState to waitFinishActivity : waitEnterStateTowaitFinishActivity
+			-> ( when modeEnter, startActivity)
+
+			from waitEnterState to waitEnterState : waitEnterStateTowaitEnterState
+			-> ( when modeLeave)
+		
+			from waitFinishActivity to waitEnterState : waitFinishActivityTowaitEnterState
+			-> ( when finishActivity)
+
+
+			State initState( out : initStateTowaitEnterState )
+
+			State waitEnterState ( in : waitFinishActivityTowaitEnterState, waitEnterStateTowaitEnterState,
+			initStateTowaitEnterState out : waitEnterStateTowaitFinishActivity, waitEnterStateTowaitEnterState)
+
+			State waitFinishActivity ( in :waitEnterStateTowaitFinishActivity
+				 out :  waitFinishActivityTowaitEnterState)
+		}
+		
+
+	//	AutomataRelationDefinition AtomicExecDef[AtomicExec]{
+	//		init: initState0
+//
+	//		from initState0 to canTick : initState0TocanTick
+	//		-> ( )
+
+	//		from canTick to cannotTick : canTicktocannotTick
+	//		-> ( when startAct)
+
+	//		from cannotTick  to canTick : cannotTicktocanTick
+	//		-> ( when finishAct)
+			
+			
+	//		from canTick to canTick: canTicktocanTick
+	//		-> ( when ticks)
+			
+			
+
+	//		State initState0( out : initState0TocanTick )
+
+	//		State canTick ( in : cannotTicktocanTick,
+	//		canTicktocanTick out : canTicktocannotTick, canTicktocanTick )
+
+	//		State cannotTick ( in : canTicktocannotTick 
+	//			out :  cannotTicktocanTick)
+	//	}
+		
+		
+		
+		RelationDefinition AtomicExecDef[AtomicExec]{ 
+			Expression sampledbyTime = SampledBy (Sampled -> startAct, Trigger-> ticks)
+			Relation ticksAfterActivityFinishes[Causality (  ClockLeft-> finishAct ,ClockRight-> sampledbyTime  )	
+		}
+		
+		
+		RelationDeclaration RendezVous (ClockA:clock, ClockB:clock) 
+		RelationDeclaration Causality (ClockLeft:clock, ClockRight:clock)
+		RelationDeclaration RendezVouswithGlobalClock (startAction: clock , occurs: clock, globalClock: clock )
+	RelationDeclaration ExecuteActivityNonPeemptive(modeEnter:clock, modeLeave:clock, startActivity:clock, finishActivity:clock)
+		//RelationDeclaration LoopFromStartToFinishNonPeemptive(
+		//	modeEnter:clock,
+		//	modeLeave:clock,
+		//	startActivity:clock,
+		//	finishActivity:clock
+		//)
+		RelationDeclaration AtomicExec (ticks: clock, startAct: clock, finishAct: clock)
+}
+	
+	ExpressionLibrary BCOolfilters{
+		ExpressionDefinition FilterNDef [FilterN]{
+			root=filterN_result 
+				Expression filterN_result = Periodic
+						( PeriodicBaseClock->WaitingClock, PeriodicPeriod -> WaitingValue, PeriodicOffset -> four)	
+  		}
+		
+		ExpressionDefinition SampledByDef [SampledBy]{
+			root=Sample_result 
+			Expression Sample_result = SampledOn(SampledOnTrigger -> Trigger, SampledOnSampledClock ->Sampled)
+  		}
+  		
+		ExpressionDeclaration SampledBy(Trigger: clock,  Sampled: clock):clock
+		ExpressionDeclaration FilterN(WaitingClock: clock,  WaitingValue: int):clock
+		
+	}	
+	
+	
+}
