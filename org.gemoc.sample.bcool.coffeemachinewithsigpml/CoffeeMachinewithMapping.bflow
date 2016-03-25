@@ -1,0 +1,24 @@
+BCOoLFlow CoffeeMachinewithConnectors
+{
+	// We first import the bcool that contains the operators
+	import "platform:/plugin/org.gemoc.sample.bcool.tfsmandsigpmlwithmapping/operator/TfsmAndSigpmlwithMapping.bcool";
+
+	// Models to apply the specification 
+	Model CoffeMachineControl ( "platform:/resource/org.gemoc.sample.bcool.coffeemachinewithsigpml/models/tfsm_models/coffemachine.tfsm");
+	Model CoffeeMachineAlgorithm ("platform:/resource/org.gemoc.sample.bcool.coffeemachinewithsigpml/models/sigpml_models/SelectCoffeeSystem.sigpml");
+	
+	// model of correspodence
+	Model MappingModel ("platform:/resource/org.gemoc.sample.bcool.coffeemachinewithsigpml/models/mapping_models/mappingfortfsmandsigpml.mapping");
+					  
+	Flows 
+		// we apply the operator between CameraControl and BatteryControl models
+		apply SyncFSMEventsAndAgentsbyMapping on (CoffeeMachineAlgorithm, CoffeMachineControl, MappingModel) ;
+	end Flows;
+	
+	// The launchers has information about how to launch the execution of individual models
+	Launchers 
+		launcher URI "org.gemoc.sample.bcool.coffeemachinewithsigpml/models/sigpml_models/SelectCoffeeSystem.launch";
+		launcher URI "org.gemoc.sample.bcool.coffeemachinewithsigpml/models/tfsm_models/CoffeeCoin.launch";
+	end Launchers
+	}
+	

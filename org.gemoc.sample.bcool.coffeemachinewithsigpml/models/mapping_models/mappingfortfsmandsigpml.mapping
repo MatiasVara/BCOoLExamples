@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<mapping:MappingSpecification xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:mapping="http://org.gemoc.sample.bcool.mapping/1.0" name="mappingbetweenTFSMandSigPML">
+  <mappingElements name="Mapping1">
+    <linkedFSMEvent href="../tfsm_models/coffemachine.tfsm#//@globalEvents.0"/>
+    <linkedAgent href="../sigpml_models/SelectCoffeeSystem.sigpml#//@ownedApplication/@ownedAgents.0"/>
+  </mappingElements>
+</mapping:MappingSpecification>
