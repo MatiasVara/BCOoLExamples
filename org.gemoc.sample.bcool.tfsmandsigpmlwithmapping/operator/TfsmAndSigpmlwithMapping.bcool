@@ -1,0 +1,25 @@
+// TfsmAndSigpmlMapping
+// 
+// This example shows the use of a third language to do the matching. This language is a simple mapping language which contains references
+// between FSMEvents from the TFSM language and Agents from the SigPML language. At  model level, the mapping language allows the 
+// specification of explicit correspodences between these languages. 
+//
+// Note: To correctly deploy this example, you need the mapping language that can be cloned from the BCOoL Example repo. 
+// 
+TfsmAndSigpmlMapping
+
+ImportLib "platform:/resource/org.gemoc.sample.bcool.tfsmandsigpmlwithmapping/operator/facilities.bcoollib"
+ImportLib "platform:/resource/org.gemoc.sample.bcool.tfsmandsigpmlwithmapping/operator/facilities.moccml"
+
+ImportInterface "platform:/resource/org.gemoc.sample.sigpml.moc.application/MoCApplication/SigPML.ecl"  as sigpmlecl
+ImportInterface "platform:/resource/org.gemoc.sample.tfsm.eclmoc2as/ecl/TFSM.ecl" as tfsmecl
+
+// this ecore is used to represent the mapping
+ImportInterface "platform:/resource/org.gemoc.sample.bcool.mapping/model/mapping.ecore" as mappingecore
+
+
+Operator SyncFSMEventsAndAgentsbyMapping (FSMEvents : tfsmecl::occurs,startAgent : sigpmlecl::startAgent, link : mappingecore::"mapping.MappingElement")
+	when  ((FSMEvents = link.linkedFSMEvent) and (startAgent = link.linkedAgent));
+CoordinationRule: 
+	facilities.RendezVous(FSMEvents, startAgent )  
+end operator; 
